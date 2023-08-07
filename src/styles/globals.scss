@@ -1,0 +1,100 @@
+:root {
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+.description {
+  font-style: normal;
+}
+
+h1,
+h2,
+h4,
+h5,
+p,
+.description {
+  color: $black;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Unbounded;
+}
+
+h4,
+h5,
+p,
+.description {
+  font-family: Nunito;
+}
+
+h1 {
+  font-size: 6.09375vw;
+  max-font-size: 78px;
+  font-weight: 400;
+  line-height: 108.5%;
+  letter-spacing: -1.95px;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.95px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 83%;
+  letter-spacing: 0.22px;
+  color: $blue;
+}
+
+h4 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+h5 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 113.5%;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 113.5%;
+}
