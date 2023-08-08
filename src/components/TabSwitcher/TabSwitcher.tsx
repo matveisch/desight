@@ -14,7 +14,7 @@ type TabSwitcherProps = {
 
 export default function TabSwitcher(props: TabSwitcherProps) {
   const { tabsNames, currentTabIndex } = props;
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(0);
   const tabsArrayLength = tabsNames?.length;
   const tabWidth = 100 / tabsArrayLength;
   const tabMargin = screenWidth <= 425 ? 3 : screenWidth <= 768 ? 4 : 6;
