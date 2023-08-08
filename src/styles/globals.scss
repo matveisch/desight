@@ -42,14 +42,14 @@ p,
 h1,
 h2,
 h3 {
-  font-family: Unbounded, serif;
+  font-family: var(--font-unbounded), sans-serif;
 }
 
 h4,
 h5,
 p,
 .description {
-  font-family: Nunito, serif;
+  font-family: var(--font-nunito), sans-serif;
 }
 
 h1 {

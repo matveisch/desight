@@ -2,8 +2,14 @@ import '@styles/globals.scss';
 import type { Metadata } from 'next';
 import { Unbounded, Nunito } from 'next/font/google';
 
-const unbounded = Unbounded({ subsets: ['latin', 'cyrillic'] });
-const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
+const unbounded = Unbounded({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-unbounded',
+});
+const nunito = Nunito({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-nunito',
+});
 
 export const metadata: Metadata = {
   title: 'Desight Studio',
@@ -17,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${unbounded.className} ${nunito.className}`}>
+      <body className={`${unbounded.variable} ${nunito.variable}`}>
         {children}
       </body>
     </html>
