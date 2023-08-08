@@ -9,9 +9,16 @@
   justify-content: space-evenly;
   align-items: center;
 
-  h4 {
-    color: $white;
+  .tabName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
     z-index: 1;
+
+    h4 {
+      color: $white;
+    }
   }
 
   .switcher {
@@ -20,8 +27,6 @@
     background-color: $blue;
     border-radius: 30px;
     position: absolute;
-    top: 6px;
-    bottom: 6px;
-    left: 6px;
+    margin: 6px;
   }
 }
