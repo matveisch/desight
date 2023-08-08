@@ -3,16 +3,23 @@ import { useState, useEffect } from 'react';
 import styles from './HeroAnimation.module.scss';
 import { easeIn, motion, Variants } from 'framer-motion';
 import Image from 'next/image';
-import Globus from '@images/Globus.svg';
+import cyrsqIcon from '@images/cyrsq-icon.svg';
+import devIcon from '@images/dev-icon.svg';
+import penIcon from '@images/pen-icon.svg';
+import setIcon from '@images/setting-icon.svg';
+import squareIcon from '@images/squares-icon.svg';
+import userIcon from '@images/user-icon.svg';
 import clickText from '@images/clickandhold.svg';
+import Globus from '@images/Globus.svg';
+import { clearTimeout } from 'timers';
 
 const iconsVariants = {
   tapped: {
-    rotate: [null, 660],
-    opacity: [null, 1, 0, 1, 0],
+    rotate: [null, 300],
+    opacity: [null, 1, 1, 0],
     transition: {
       rotate: { times: [0, 1], duration: 2, ease: 'easeIn' },
-      opacity: { times: [0, 0.4, 0.9, 0.99, 1], duration: 2 },
+      opacity: { times: [0, 0.4, 0.99, 1], duration: 2 },
     },
   },
   notTapped: {
@@ -26,10 +33,11 @@ const iconsVariants = {
 };
 const iconVariants = {
   tapped: {
-    y: [null, -90, 0, -110],
-    rotate: 180,
+    y: [null, -80, -80, 0, -110],
+    rotate: [null, 200],
     transition: {
-      y: { times: [0, 0.4, 0.85, 1], duration: 2 },
+      y: { times: [0, 0.4, 0.7, 0.85, 1], duration: 2 },
+      rotate: { times: [0, 1], duration: 2 },
     },
   },
   notTapped: {
@@ -47,7 +55,6 @@ const globeVariants = {
     transition: {
       scale: { times: [0, 0.85, 1], duration: 2 },
       rotate: {
-        repeat: Infinity,
         times: [0, 0.85, 1],
         duration: 2,
         ease: 'linear',
@@ -73,14 +80,18 @@ const globeVariants = {
 export function HeroAnimation() {
   const [isHovered, setHovered] = useState<boolean>(false);
   const [isTapped, setIsTapped] = useState<boolean>(false);
-  useEffect(() => {
-    isTapped
-      ? setTimeout(() => {
-          setIsTapped(false);
-          // GO TO SERVISES SECTION
-        }, 2000)
-      : undefined;
-  }, [isTapped]);
+
+  // useEffect(() => {
+  //   if (isTapped) {
+  //     const timer = setTimeout(() => {
+  //       if (isTapped) {
+  //         setIsTapped(false);
+  //       }
+  //       // GO TO SERVISES SECTION
+  //       console.log('timer up');
+  //     }, 2000);
+  //   }
+  // }, [isTapped]);
   return (
     <motion.div
       animate={isTapped ? 'tapped' : 'notTapped'}
@@ -89,27 +100,27 @@ export function HeroAnimation() {
       <motion.div variants={iconsVariants} className={styles.icons}>
         <motion.div className={styles.iconWrapper}>
           <motion.div variants={iconVariants} className={styles.icon}>
-            <Image src={Globus} alt="test" />
+            <Image src={cyrsqIcon} alt="test" />
           </motion.div>
         </motion.div>
         <motion.div className={styles.iconWrapper}>
           <motion.div variants={iconVariants} className={styles.icon}>
-            <Image src={Globus} alt="test" />
+            <Image src={penIcon} alt="test" />
           </motion.div>
         </motion.div>
         <motion.div className={styles.iconWrapper}>
           <motion.div variants={iconVariants} className={styles.icon}>
-            <Image src={Globus} alt="test" />
+            <Image src={devIcon} alt="test" />
           </motion.div>
         </motion.div>
         <motion.div className={styles.iconWrapper}>
           <motion.div variants={iconVariants} className={styles.icon}>
-            <Image src={Globus} alt="test" />
+            <Image src={userIcon} alt="test" />
           </motion.div>
         </motion.div>
         <motion.div className={styles.iconWrapper}>
           <motion.div variants={iconVariants} className={styles.icon}>
-            <Image src={Globus} alt="test" />
+            <Image src={squareIcon} alt="test" />
           </motion.div>
         </motion.div>
       </motion.div>
@@ -135,6 +146,7 @@ export function HeroAnimation() {
         whileHover={{ filter: 'blur(3px)' }}
         className={styles.globeWrapper}
         variants={globeVariants}
+        onMouseDownCapture={() => setIsTapped(true)}
         onMouseDown={() => setIsTapped(true)}
         onMouseUp={() => setIsTapped(false)}
         onMouseEnter={() => setHovered(true)}
