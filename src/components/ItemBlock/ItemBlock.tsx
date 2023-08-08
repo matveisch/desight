@@ -1,18 +1,18 @@
-import { DesignServiceType } from '@/data/data';
 import Image from 'next/image';
+import { ServiceType } from '@/data/data';
 import arrowIcon from '@images/arrow-link.svg';
 import styles from './ItemBlock.module.scss';
 
 type ItemBlockProps = {
-  service: DesignServiceType;
-  index: number;
+  service: ServiceType;
+  isBig?: boolean;
 };
 
 export default function ItemBlock(props: ItemBlockProps) {
-  const { service, index } = props;
+  const { service, isBig } = props;
 
   return (
-    <div className={index === 0 ? styles.itemBlockBig : styles.itemBlock}>
+    <div className={isBig ? styles.itemBlockBig : styles.itemBlock}>
       <Image src={service.icon} alt={'icon'} className={styles.icon} />
       <div className={styles.description}>
         <div className={styles.header}>

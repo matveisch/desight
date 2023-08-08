@@ -3,20 +3,22 @@
 import Image from 'next/image';
 import { ServicesTabType } from '@/data/data';
 import { motion } from 'framer-motion';
+import { useSwiper } from 'swiper/react';
 import { useEffect, useState } from 'react';
 import styles from './TabSwitcher.module.scss';
 
 type TabSwitcherProps = {
   tabsNames: ServicesTabType[];
+  currentTabIndex: number;
 };
 
 export default function TabSwitcher(props: TabSwitcherProps) {
-  const { tabsNames } = props;
-  const [currentTabIndex, setCurrentTabIndex] = useState(0);
+  const { tabsNames, currentTabIndex } = props;
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const tabsArrayLength = tabsNames?.length;
   const tabWidth = 100 / tabsArrayLength;
   const tabMargin = screenWidth <= 425 ? 3 : screenWidth <= 768 ? 4 : 6;
+  const swiper = useSwiper();
 
   useEffect(() => {
     function handleResize() {
@@ -48,7 +50,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
             key={tab.title + index}
             className={styles.tabName}
             style={{ width: `${tabWidth}%` }}
-            onClick={() => setCurrentTabIndex(index)}
+            onClick={() => swiper.slideTo(index)}
           >
             <Image src={tab.icon} alt="tab-icon" />
             <h4>{tab.title}</h4>

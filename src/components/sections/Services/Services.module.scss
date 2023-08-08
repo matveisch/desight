@@ -1,4 +1,19 @@
 .services {
+  .header {
+    color: $white;
+    margin-bottom: 19px;
+  }
+
+  .swiper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .headDescription {
+    color: $white;
+    margin: 25px 0;
+  }
+
   .servicesContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -16,5 +31,12 @@
       display: flex;
       flex-direction: column;
     }
+  }
+
+  .servicesContainerDev {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: clamp(15px, 2.344vw, 30px) clamp(15px, 2.344vw, 30px);
   }
 }

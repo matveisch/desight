@@ -2,7 +2,7 @@
   @include roundedDiv;
 
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 55px;
   position: relative;
   background-color: $white;
@@ -21,7 +21,7 @@
   .description {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 
     .header {
       display: flex;
@@ -32,6 +32,7 @@
 
       .arrow {
         width: clamp(45px, 7.813vw, 100px);
+        height: auto;
       }
     }
   }
@@ -47,16 +48,21 @@
     gap: 5px;
 
     .icon {
-      width: 20vw;
+      width: 19vw;
       min-width: 164px;
-      height: 20vw;
+      height: 19vw;
       min-height: 164px;
     }
 
     .arrow {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 30px;
+      right: 30px;
+
+      @media (max-width: 768px) {
+        top: 10px;
+        right: 10px;
+      }
     }
   }
 }
