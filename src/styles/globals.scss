@@ -13,6 +13,10 @@ body {
 }
 
 body {
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
@@ -66,7 +70,8 @@ h1 {
 }
 
 h2 {
-  font-size: 38px;
+  font-size: 2.969vw;
+  max-font-size: 38px;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.95px;
@@ -79,7 +84,8 @@ h2 {
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 1.719vw;
+  max-font-size: 22px;
   font-weight: 400;
   line-height: 83%;
   letter-spacing: 0.22px;
@@ -92,7 +98,8 @@ h3 {
 }
 
 h4 {
-  font-size: 40px;
+  font-size: 3.125vw;
+  max-font-size: 40px;
   font-weight: 600;
   line-height: normal;
 
@@ -102,7 +109,8 @@ h4 {
 }
 
 h5 {
-  font-size: 40px;
+  font-size: 3.125vw;
+  max-font-size: 40px;
   font-weight: 600;
   line-height: normal;
 
@@ -112,7 +120,8 @@ h5 {
 }
 
 p {
-  font-size: 24px;
+  font-size: 1.875vw;
+  max-font-size: 24px;
   font-weight: 500;
   line-height: 113.5%;
 
@@ -123,7 +132,8 @@ p {
 }
 
 .description {
-  font-size: 18px;
+  font-size: 1.406vw;
+  max-font-size: 18px;
   font-weight: 500;
   line-height: 113.5%;
 

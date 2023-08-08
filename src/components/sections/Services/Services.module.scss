@@ -1,0 +1,20 @@
+.services {
+  .servicesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: clamp(15px, 2.344vw, 30px) clamp(15px, 2.344vw, 30px);
+    grid-template-areas:
+      'One Two'
+      'One Three';
+
+    div:nth-child(1) {
+      grid-area: One;
+    }
+
+    @media (max-width: 425px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

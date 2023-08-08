@@ -1,23 +1,34 @@
 'use client';
 
 import Image from 'next/image';
-import { ServicesTabsType } from '@/data/data';
+import { ServicesTabType } from '@/data/data';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import styles from './TabSwitcher.module.scss';
 
 type TabSwitcherProps = {
-  tabsNames: ServicesTabsType;
+  tabsNames: ServicesTabType[];
 };
 
 export default function TabSwitcher(props: TabSwitcherProps) {
   const { tabsNames } = props;
+  const [currentTabIndex, setCurrentTabIndex] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const tabsArrayLength = tabsNames?.length;
   const tabWidth = 100 / tabsArrayLength;
-  const [currentTabIndex, setCurrentTabIndex] = useState(0);
+  const tabMargin = screenWidth <= 425 ? 3 : screenWidth <= 768 ? 4 : 6;
 
-  console.log(currentTabIndex);
+  useEffect(() => {
+    function handleResize() {
+      setScreenWidth(window.innerWidth);
+    }
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [screenWidth]);
 
   return (
     <div className={styles.tabSwitcher}>
@@ -25,11 +36,11 @@ export default function TabSwitcher(props: TabSwitcherProps) {
         initial={false}
         animate={{
           left: `calc(${tabWidth * currentTabIndex}% - ${
-            currentTabIndex === tabsArrayLength - 1 ? 6 : 0
+            currentTabIndex === tabsArrayLength - 1 ? tabMargin : 0
           }px)`,
         }}
         className={styles.switcher}
-        style={{ width: `calc(${tabWidth}% - 6px)` }}
+        style={{ width: `calc(${tabWidth}% - ${tabMargin}px)` }}
       />
       {tabsNames.map((tab, index) => {
         return (

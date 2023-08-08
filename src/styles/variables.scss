@@ -1,3 +1,15 @@
 $black: #05050d;
 $blue: #0054f6;
 $white: #f5f1f8;
+
+@mixin roundedDiv {
+  border-radius: 32px;
+
+  @media (max-width: 768px) {
+    border-radius: 24px;
+  }
+
+  @media (max-width: 425px) {
+    border-radius: 16px;
+  }
+}
