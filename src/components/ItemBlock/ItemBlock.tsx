@@ -13,7 +13,9 @@ export default function ItemBlock(props: ItemBlockProps) {
 
   return (
     <div className={isBig ? styles.itemBlockBig : styles.itemBlock}>
-      <Image src={service.icon} alt={'icon'} className={styles.icon} />
+      <div className={styles.imageContainer}>
+        <Image src={service.icon} alt={'icon'} className={styles.icon} />
+      </div>
       <div className={styles.description}>
         <div className={styles.header}>
           <h4>{service.title}</h4>

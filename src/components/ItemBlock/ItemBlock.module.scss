@@ -13,9 +13,15 @@
     padding: 10px;
   }
 
-  .icon {
-    width: clamp(72px, 10vw, 128px);
-    height: clamp(72px, 10vw, 128px);
+  .imageContainer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    .icon {
+      width: clamp(72px, 10vw, 128px);
+      height: clamp(72px, 10vw, 128px);
+    }
   }
 
   .description {
