@@ -38,5 +38,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: clamp(15px, 2.344vw, 30px) clamp(15px, 2.344vw, 30px);
+
+    @media (max-width: 425px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
