@@ -12,7 +12,7 @@ export default function Services() {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <div className={styles.services}>
+    <section className={styles.services}>
       <h2 className={styles.header}>Наши сервисы</h2>
       <Swiper
         centeredSlides
@@ -46,6 +46,6 @@ export default function Services() {
           </div>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </section>
   );
 }

@@ -1,5 +1,5 @@
-import { Header } from '@sections/Header/Header';
-import Services from '@sections/Services/Services';
+import { Header } from '@/sections/Header/Header';
+import Services from '@/sections/Services/Services';
 
 import styles from '@styles/page.module.scss';
 
