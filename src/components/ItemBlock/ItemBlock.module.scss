@@ -2,7 +2,7 @@
   @include roundedDiv;
 
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 55px;
   position: relative;
   background-color: $white;
@@ -13,9 +13,13 @@
     padding: 10px;
   }
 
+  @media (max-width: 425px) {
+    align-items: center;
+  }
+
   .imageContainer {
-    display: flex;
     height: 100%;
+    display: flex;
     align-items: center;
 
     .icon {
