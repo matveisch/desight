@@ -13,13 +13,14 @@ $step: 60; //Add rotation
 @for $i from 0 through $qty - 1 {
 }
 .main {
-  width: 370px;
-  height: 370px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
   .desight {
     position: absolute;
 

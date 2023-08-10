@@ -33,7 +33,7 @@ const iconsVariants = {
 };
 const iconVariants = {
   tapped: {
-    y: [null, -80, -80, 0, -110],
+    y: [null, '-200%', '-200%', '0%', '-400%'],
     rotate: [null, 200],
     transition: {
       y: { times: [0, 0.4, 0.7, 0.85, 1], duration: 2 },
@@ -82,7 +82,15 @@ const globeVariants = {
 export function HeroAnimation() {
   const [isHovered, setHovered] = useState<boolean>(false);
   const [isTapped, setIsTapped] = useState<boolean>(false);
-
+  const handleMouseUp = () => {
+    setIsTapped(false);
+  };
+  useEffect(() => {
+    window.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isTapped]);
   // useEffect(() => {
   //   if (isTapped) {
   //     const timer = setTimeout(() => {
@@ -150,15 +158,10 @@ export function HeroAnimation() {
         onMouseDown={(e) => {
           setIsTapped(true);
           e.preventDefault();
-          console.log(e);
         }}
         onMouseUp={() => setIsTapped(false)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        onDrag={(e) => {
-          setIsTapped(false);
-          console.log(e);
-        }}
       >
         <Image className={styles.globe} src={Globus} alt="Globe" />
       </motion.div>

@@ -1,6 +1,6 @@
 import { Header } from '@sections/Header/Header';
-import { HeroAnimation } from '@/components/hero-animation/HeroAnimaton';
-import { SpinAnimation } from '@/components/spin-animation/SpinAnimation';
+import { HeroAnimation } from '@/components/heroAnimation/HeroAnimaton';
+import { SpinAnimation } from '@/components/spinAnimation/SpinAnimation';
 import styles from '@styles/page.module.scss';
 
 export default function Home() {
