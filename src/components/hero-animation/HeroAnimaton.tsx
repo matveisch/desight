@@ -55,6 +55,7 @@ const globeVariants = {
     transition: {
       scale: { times: [0, 0.85, 1], duration: 2 },
       rotate: {
+        repeat: Infinity,
         times: [0, 0.85, 1],
         duration: 2,
         ease: 'linear',
@@ -63,6 +64,7 @@ const globeVariants = {
         times: [0, 0.99, 1],
         duration: 2,
       },
+      filter: { duration: 1 },
     },
   },
   notTapped: {
@@ -73,7 +75,7 @@ const globeVariants = {
     transition: {
       scale: { times: [0, 1], duration: 0.2 },
       rotate: { repeat: Infinity, times: [0, 1], duration: 10, ease: 'linear' },
-      filter: { duration: 0.2 },
+      filter: { duration: 0.1 },
     },
   },
 };
@@ -143,14 +145,20 @@ export function HeroAnimation() {
         <Image src={clickText} alt="click and hold" />
       </motion.div>
       <motion.div
-        whileHover={{ filter: 'blur(3px)' }}
         className={styles.globeWrapper}
         variants={globeVariants}
-        onMouseDownCapture={() => setIsTapped(true)}
-        onMouseDown={() => setIsTapped(true)}
+        onMouseDown={(e) => {
+          setIsTapped(true);
+          e.preventDefault();
+          console.log(e);
+        }}
         onMouseUp={() => setIsTapped(false)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        onDrag={(e) => {
+          setIsTapped(false);
+          console.log(e);
+        }}
       >
         <Image className={styles.globe} src={Globus} alt="Globe" />
       </motion.div>

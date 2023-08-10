@@ -1,4 +1,4 @@
-$angles: 0deg, 60deg, 120deg, 180deg, 220deg, 280deg;
+$angles: 0deg, 60deg, 120deg, 180deg, 240deg, 300deg;
 $qty: 6; //Number of icons
 $step: 60; //Add rotation
 
@@ -23,8 +23,8 @@ $step: 60; //Add rotation
   .desight {
     position: absolute;
 
-    width: 90px;
-    height: 90px;
+    width: 25%;
+    height: 25%;
     img {
       width: 100%;
       height: 100%;
