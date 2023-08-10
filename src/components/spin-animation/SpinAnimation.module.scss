@@ -1,0 +1,57 @@
+$angles: 0deg, 60deg, 120deg, 180deg, 220deg, 280deg;
+$qty: 6; //Number of icons
+$step: 60; //Add rotation
+
+@for $i from 0 through $qty - 1 {
+  .iconWrapper:nth-child(#{$i + 1}) {
+    transform: rotate($step * $i + deg);
+    & > div {
+      transform: rotate($step * -1 * $i + deg);
+    }
+  }
+}
+@for $i from 0 through $qty - 1 {
+}
+.main {
+  width: 370px;
+  height: 370px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .desight {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .iconsWrapper {
+    // border: 1px yellow solid;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .iconWrapper {
+    position: absolute;
+    // border: 1px red solid;
+    height: 100%;
+    width: 12%;
+    div {
+      //   border: 1px yellow solid;
+      height: fit-content;
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
