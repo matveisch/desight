@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image src={logo} alt='logo' className={styles.image}/>
+        <Image src={logo} alt='logo' className={styles.image} />
       </div>
       <nav className={styles.nav}>
         <Link href='#' className={styles.link}>Сервисы</Link>
