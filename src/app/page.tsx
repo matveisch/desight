@@ -1,4 +1,4 @@
-import { Header } from '@sections/Header/Header';
+import { Header } from '@/sections/Header/Header';
 
 import styles from '@styles/page.module.scss';
 
