@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { ServicesTabType } from '@components/utils/data/data';
 import { motion } from 'framer-motion';
 import { useSwiper } from 'swiper/react';
-import { useEffect, useState } from 'react';
 import styles from './TabSwitcher.module.scss';
 import useGetScreenWidth from '@components/utils/hooks/useGetScreenWidth';
 
