@@ -8,16 +8,24 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image src={logo} alt='logo' className={styles.image} />
+        <Image src={logo} alt="logo" className={styles.image} />
       </div>
       <nav className={styles.nav}>
-        <Link href='#' className={styles.link}>Сервисы</Link>
-        <Link href='#' className={styles.link}>Проекты</Link>
-        <Link href='#' className={styles.link}>О нас</Link>
-        <Link href='#' className={styles.link}>Контакты</Link>
+        <Link href="#">
+          <p>Сервисы</p>
+        </Link>
+        <Link href="#">
+          <p>Проекты</p>
+        </Link>
+        <Link href="#">
+          <p>О нас</p>
+        </Link>
+        <Link href="#">
+          <p>Контакты</p>
+        </Link>
       </nav>
       <button className={styles.menu}>
-        <Image src={burger} alt='burger' className={styles.image} />
+        <Image src={burger} alt="burger" className={styles.image} />
       </button>
     </header>
   );
