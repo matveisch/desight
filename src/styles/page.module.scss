@@ -3,6 +3,9 @@
   width: 100%;
   padding: 1.5vw;
 
-    background-color: $black;
+  background-color: $black;
 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ServiceType } from '@/data/data';
+import { ServiceType } from '@/utils/data/data';
 import arrowIcon from '@images/arrow-link.svg';
 import styles from './ItemBlock.module.scss';
 

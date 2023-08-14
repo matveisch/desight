@@ -7,10 +7,11 @@ import websiteIcon from '@images/website-icon.svg';
 import appIcon from '@images/app-icon.svg';
 import shopIcon from '@images/shop-icon.svg';
 import businessIcon from '@images/business-icon.svg';
+import beetrade from '@images/beetrade-icon.svg';
 
-export type ServicesTabType = {
+export type TabType = {
   title: string;
-  icon: string;
+  icon?: string;
 };
 
 export type ServiceType = {
@@ -20,7 +21,15 @@ export type ServiceType = {
   link: string;
 };
 
-export const servicesTabs: ServicesTabType[] = [
+export type WorkDataType = {
+  title: string;
+  icon: string;
+  link: string;
+  blockDescription: string;
+  description: string;
+};
+
+export const servicesTabs: TabType[] = [
   {
     title: 'Дизайн',
     icon: designIcon,
@@ -83,5 +92,47 @@ export const devServices: ServiceType[] = [
       'Продукты для повышения вашей эффективности и достижения целей, включая CRM, серверы и другие бизнес-оптимизационные инструменты.',
     icon: businessIcon,
     link: '',
+  },
+];
+
+export const workTabs: TabType[] = [
+  {
+    title: 'Libira',
+  },
+  {
+    title: 'BeeTrade',
+  },
+  {
+    title: 'Radar Digitaly',
+  },
+];
+
+export const workData: WorkDataType[] = [
+  {
+    title: 'Libira',
+    icon: beetrade,
+    link: '',
+    blockDescription:
+      'Веб-сайт для рекламы и заказа мероприятий – лучший способ презентовать продукт',
+    description:
+      'Удобная и информативная страница наглядно демонстрирует опыт, который клиент получит в заведении. Возможность быстро и просто оставить свои данные для связи с рестораном, все происходит в два клика.',
+  },
+  {
+    title: 'BeeTrade',
+    icon: beetrade,
+    link: '',
+    blockDescription:
+      'Комплексная платформа для онлайн-обучения пользователей трейдингу. ',
+    description:
+      'Грамотно спроектированный и оптимизированный веб-сайт позволяет просматривать обучающие видео, изучать материалы курса и учиться анализировать информацию. Просто и доступно для каждого пользователя.',
+  },
+  {
+    title: 'Radar Digitaly',
+    icon: beetrade,
+    link: '',
+    blockDescription:
+      'Захватывающий внимание веб-сайт для рекламного агентства',
+    description:
+      'Лучший способ впечатлить клиента – полностью погрузить его в веб-сайт. Современный дизайн и приятные анимации нацелены на привлечение внимания пользователя с первых секунд.',
   },
 ];
