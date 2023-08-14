@@ -12,6 +12,16 @@
     '. . . mobileThree mobileThree mobileThree . . . . . . . . . .';
   position: absolute;
 
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(16, 40px);
+    grid-template-rows: repeat(6, 128px);
+  }
+
+  @media (max-width: 375px) {
+    grid-template-columns: repeat(16, 30px);
+    grid-template-rows: repeat(6, 96px);
+  }
+
   div:nth-child(1) {
     grid-area: desktopOne;
   }

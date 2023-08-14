@@ -5,6 +5,7 @@ import styles from './WorkGrid.module.scss';
 import desktopPhoto from '@images/beetrade-desktop.svg';
 import mobilePhoto from '@images/menu-mobile.svg';
 import tabletPhoto from '@images/libira-tablet.svg';
+import useGetScreenWidth from '@components/utils/hooks/useGetScreenWidth';
 
 export default function WorkGrid() {
   return (
