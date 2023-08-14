@@ -120,8 +120,7 @@ h5 {
 }
 
 p {
-  font-size: 1.875vw;
-  max-font-size: 24px;
+  font-size: clamp(18px, 1.875vw, 24px);
   font-weight: 500;
   line-height: 113.5%;
 

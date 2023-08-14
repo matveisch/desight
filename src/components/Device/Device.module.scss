@@ -1,0 +1,72 @@
+.device {
+  $border-radius: 10px;
+
+  border-radius: $border-radius;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 0;
+  background-color: #f5f1f8;
+
+  @media (max-width: 768px) {
+    padding: 8px 8px 0;
+  }
+
+  @media (max-width: 425px) {
+    padding: 5px 5px 0;
+  }
+
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+
+  .cover {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+  }
+
+  .linesContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.deviceDesktop {
+  background-color: #f5f1f8;
+
+  .linesContainer {
+    padding: 0 20px;
+    height: 30px;
+
+    .dotsContainer {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+    }
+  }
+}
+
+.deviceMobile {
+  .linesContainer {
+    justify-content: center;
+    height: 40px;
+  }
+}
+
+.deviceTablet {
+  .linesContainer {
+    height: 20px;
+  }
+}

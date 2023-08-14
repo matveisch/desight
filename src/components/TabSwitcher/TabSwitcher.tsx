@@ -1,36 +1,26 @@
 'use client';
 
 import Image from 'next/image';
-import { ServicesTabType } from '@/data/data';
+import { TabType } from '@components/utils/data/data';
 import { motion } from 'framer-motion';
 import { useSwiper } from 'swiper/react';
-import { useEffect, useState } from 'react';
 import styles from './TabSwitcher.module.scss';
+import useGetScreenWidth from '@components/utils/hooks/useGetScreenWidth';
 
 type TabSwitcherProps = {
-  tabsNames: ServicesTabType[];
+  tabsNames: TabType[];
   currentTabIndex: number;
 };
 
 export default function TabSwitcher(props: TabSwitcherProps) {
   const { tabsNames, currentTabIndex } = props;
-  const [screenWidth, setScreenWidth] = useState(0);
+
+  const screenWidth = useGetScreenWidth();
+  const swiper = useSwiper();
+
   const tabsArrayLength = tabsNames?.length;
   const tabWidth = 100 / tabsArrayLength;
   const tabMargin = screenWidth <= 425 ? 3 : screenWidth <= 768 ? 4 : 6;
-  const swiper = useSwiper();
-
-  useEffect(() => {
-    function handleResize() {
-      setScreenWidth(window.innerWidth);
-    }
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, [screenWidth]);
 
   return (
     <div className={styles.tabSwitcher}>
@@ -52,7 +42,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
             style={{ width: `${tabWidth}%` }}
             onClick={() => swiper.slideTo(index)}
           >
-            <Image src={tab.icon} alt="tab-icon" />
+            {tab.icon && <Image src={tab.icon} alt="tab-icon" />}
             <h4>{tab.title}</h4>
           </div>
         );
