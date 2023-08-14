@@ -4,9 +4,9 @@ import WorkGrid from '@components/WorkGrid/WorkGrid';
 import styles from './OurWork.module.scss';
 import TabSwitcher from '@components/TabSwitcher/TabSwitcher';
 import { useState } from 'react';
-import { workTabs } from '@components/utils/data/data';
+import { workTabs } from '@/utils/data/data';
 import WorkDescription from '@components/WorkDescription/WorkDescription';
-import { workData } from '@components/utils/data/data';
+import { workData } from '@/utils/data/data';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function OurWork() {

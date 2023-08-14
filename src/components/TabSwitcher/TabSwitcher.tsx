@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { TabType } from '@components/utils/data/data';
+import { TabType } from '@/utils/data/data';
 import { motion } from 'framer-motion';
 import { useSwiper } from 'swiper/react';
 import styles from './TabSwitcher.module.scss';
-import useGetScreenWidth from '@components/utils/hooks/useGetScreenWidth';
+import useGetScreenWidth from '@/utils/hooks/useGetScreenWidth';
 
 type TabSwitcherProps = {
   tabsNames: TabType[];

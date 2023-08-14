@@ -5,11 +5,7 @@ import ItemBlock from '@components/ItemBlock/ItemBlock';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import {
-  designServices,
-  devServices,
-  servicesTabs,
-} from '@components/utils/data/data';
+import { designServices, devServices, servicesTabs } from '@/utils/data/data';
 import styles from './Services.module.scss';
 
 export default function Services() {

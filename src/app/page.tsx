@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Header />
-      <OurWork />
       <Services />
+      <OurWork />
     </main>
   );
 }

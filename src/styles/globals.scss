@@ -76,6 +76,10 @@ h2 {
   line-height: normal;
   letter-spacing: -0.95px;
 
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+
   @media (max-width: 425px) {
     font-size: 16px;
     line-height: 83%;
@@ -91,6 +95,10 @@ h3 {
   letter-spacing: 0.22px;
   color: $blue;
 
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
   @media (max-width: 425px) {
     font-size: 16px;
     letter-spacing: 0.16px;
@@ -102,6 +110,10 @@ h4 {
   max-font-size: 40px;
   font-weight: 600;
   line-height: normal;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 
   @media (max-width: 425px) {
     font-size: 13px;
