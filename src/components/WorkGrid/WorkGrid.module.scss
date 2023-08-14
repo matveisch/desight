@@ -11,15 +11,23 @@
     '. . . mobileThree mobileThree mobileThree tabletThree tabletThree tabletThree tabletThree desktopThree desktopThree desktopThree desktopThree desktopThree desktopThree'
     '. . . mobileThree mobileThree mobileThree . . . . . . . . . .';
   position: absolute;
+  transform: rotate(30deg);
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(16, 40px);
-    grid-template-rows: repeat(6, 128px);
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(16, 50px);
+    grid-template-rows: repeat(6, 160px);
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 678px) {
     grid-template-columns: repeat(16, 30px);
-    grid-template-rows: repeat(6, 96px);
+    grid-template-rows: repeat(6, 120px);
+    gap: 15px 15px;
+  }
+
+  @media (max-width: 425px) {
+    grid-template-columns: repeat(16, 20px);
+    grid-template-rows: repeat(6, 80px);
+    gap: 15px 15px;
   }
 
   div:nth-child(1) {

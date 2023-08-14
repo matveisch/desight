@@ -1,14 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { ServicesTabType } from '@components/utils/data/data';
+import { TabType } from '@components/utils/data/data';
 import { motion } from 'framer-motion';
 import { useSwiper } from 'swiper/react';
 import styles from './TabSwitcher.module.scss';
 import useGetScreenWidth from '@components/utils/hooks/useGetScreenWidth';
 
 type TabSwitcherProps = {
-  tabsNames: ServicesTabType[];
+  tabsNames: TabType[];
   currentTabIndex: number;
 };
 
@@ -42,7 +42,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
             style={{ width: `${tabWidth}%` }}
             onClick={() => swiper.slideTo(index)}
           >
-            <Image src={tab.icon} alt="tab-icon" />
+            {tab.icon && <Image src={tab.icon} alt="tab-icon" />}
             <h4>{tab.title}</h4>
           </div>
         );

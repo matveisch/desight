@@ -8,6 +8,14 @@
   padding: 10px 10px 0;
   background-color: #f5f1f8;
 
+  @media (max-width: 768px) {
+    padding: 8px 8px 0;
+  }
+
+  @media (max-width: 425px) {
+    padding: 5px 5px 0;
+  }
+
   .backgroundImage {
     position: absolute;
     top: 0;
@@ -36,7 +44,6 @@
 }
 
 .deviceDesktop {
-  padding: 10px 10px 0;
   background-color: #f5f1f8;
 
   .linesContainer {
@@ -54,6 +61,7 @@
 .deviceMobile {
   .linesContainer {
     justify-content: center;
+    height: 40px;
   }
 }
 
