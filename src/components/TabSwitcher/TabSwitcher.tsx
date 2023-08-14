@@ -37,12 +37,10 @@ export default function TabSwitcher(props: TabSwitcherProps) {
       <motion.div
         initial={false}
         animate={{
-          left: `calc(${tabWidth * currentTabIndex}% - ${
-            currentTabIndex === tabsArrayLength - 1 ? tabMargin : 0
-          }px)`,
+          x: currentTabIndex * 100 + '%',
         }}
+        transition={{ type: 'just' }}
         className={styles.switcher}
-        style={{ width: `calc(${tabWidth}% - ${tabMargin}px)` }}
       />
       {tabsNames.map((tab, index) => {
         return (
