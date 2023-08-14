@@ -10,7 +10,7 @@ type PropsType = {
 };
 
 export default function WorkDescription(props: PropsType) {
-  const { icon, description, link, title } = props;
+  const { icon, description, title } = props;
   return (
     <div className={styles.workDescription}>
       <div className={styles.head}>
