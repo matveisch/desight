@@ -1,0 +1,16 @@
+.hero{
+
+    display: flex;
+    gap: 110px;
+    flex-direction: row;
+    
+        h1{
+            color: $white;
+        }
+    
+        .social{
+            display: flex;
+            gap: 19px;
+        }
+    }
+    

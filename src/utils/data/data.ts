@@ -136,3 +136,26 @@ export const workData: WorkDataType[] = [
       'Лучший способ впечатлить клиента – полностью погрузить его в веб-сайт. Современный дизайн и приятные анимации нацелены на привлечение внимания пользователя с первых секунд.',
   },
 ];
+
+export const social = [
+  {
+    name: 'Telegram',
+    src: require("@images/tg.svg").default,
+    link: ''
+  },
+  {
+    name: 'Facebook',
+    src: require("@images/fb.svg").default,
+    link: ''
+  },
+  {
+    name: 'Behance',
+    src: require("@images/behance.svg").default,
+    link: ''
+  },
+  {
+    name: 'Instagram',
+    src: require("@images/insta.svg").default,
+    link: ''
+  }
+];
