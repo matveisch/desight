@@ -1,15 +1,20 @@
 .hero{
     padding-top: 180px;
-    min-height: 100vh;
-    display: flex;
-    gap: 110px;
-    flex-direction: row;
+    // min-height: 100vh;
+   
+    .herowrap{
+        display: flex;
+        gap: 110px;
+        flex-direction: row;
+    }
 
 
     
         h1{
             padding-top: 10px;
             color: $white;
+            font-size: min(6.09375vw, 78px);
+           
         }
     
         .social{

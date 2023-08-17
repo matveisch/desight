@@ -1,11 +1,18 @@
 .header {
   color: $white;
-  display: flex;
+
+  height: 100vh;
   padding-top: 40px;
-  // padding-left: 33px;
-  // padding-right: 27px;
-  justify-content: space-between;
-  align-items: center;
+
+
+  .headWrap{
+
+    display: flex;
+    
+
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .logo {
     max-width: 180px;
