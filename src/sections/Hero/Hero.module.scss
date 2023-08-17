@@ -1,16 +1,21 @@
 .hero{
-
+    padding-top: 180px;
+    min-height: 100vh;
     display: flex;
     gap: 110px;
     flex-direction: row;
+
+
     
         h1{
+            padding-top: 10px;
             color: $white;
         }
     
         .social{
             display: flex;
             gap: 19px;
+            padding-top: 27px;
         }
     }
     
