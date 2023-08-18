@@ -28,7 +28,6 @@ export function Hero() {
                 <Image src={placeholder}  alt='kotik'/>
             </div>
         </div>
-        <HeroImage />
     </section>
   );
 }

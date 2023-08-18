@@ -4,7 +4,7 @@ import Link from 'next/link';
 import logo from '@images/logo.svg';
 import burger from '@images/burger.svg';
 import { Hero } from '../Hero/Hero';
-
+import { HeroImage } from '../HeroImage/HeroImage';
 export function Header() {
   return (
     <header className={styles.header}>
@@ -31,6 +31,7 @@ export function Header() {
         </button>
       </div>
       <Hero />
+      <HeroImage />
     </header>
   );
 }

@@ -1,0 +1,34 @@
+.heroimage{
+    margin-top: 260px;
+    // display: flex;
+    border: 7px solid $white;
+    // z-index: 3;
+    border-radius: 20px;
+    height: 360px;
+    position: relative;
+    
+    h2{
+        text-align: center;
+        padding-top: 50px;
+
+        color: $white;
+    }
+
+    .image{
+        position: relative;
+        display: inline-block;
+        z-index: 0;
+        .left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1; /* Place it behind the border */
+          }
+          
+          .right {
+            position: relative;
+            bottom: 0;
+            z-index: 1; /* Place it above the border */
+          }
+    }
+}
