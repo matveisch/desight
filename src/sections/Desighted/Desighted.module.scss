@@ -1,0 +1,33 @@
+.main {
+  background-image: url(../../../public/images/Desighted-eyes.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 570px;
+  border-radius: 32px;
+  position: relative;
+  .button {
+    position: absolute;
+    padding: 30px 100px;
+    background-color: $blue;
+    color: $white;
+    border: none;
+    border-radius: 32px;
+    font-family: Unbounded;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 108.5%; /* 41.23px */
+    letter-spacing: -0.95px;
+    cursor: pointer;
+    // left: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: 0;
+    height: fit-content;
+    width: fit-content;
+
+    // transition: 1s 0s ease-in-out;
+  }
+}

@@ -8,6 +8,13 @@
     color: $white;
     margin: 25px 0;
     text-align: center;
+
+    @media (max-width: 1280px) {
+      margin: 15px 0;
+    }
+    @media (max-width: 744px) {
+      margin: 10px 0;
+    }
   }
 
   .blocksContainer {

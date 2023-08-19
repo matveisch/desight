@@ -1,0 +1,70 @@
+$qty: 5; //Number of icons
+$step: 72; //Add rotation
+
+@for $i from 0 through $qty - 1 {
+  .iconWrapper:nth-child(#{$i + 1}) {
+    transform: rotate($step * $i + deg);
+  }
+}
+
+.main {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  width: 100%;
+  overflow: visible;
+  .icons {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .iconWrapper {
+      position: absolute;
+      width: 15%;
+      height: 100%;
+      // border: 1px red solid;
+      display: flex;
+      align-items: center;
+      .icon {
+        width: 100%;
+        height: fit-content;
+        aspect-ratio: 1 / 1;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .clickWrapper {
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .globeWrapper {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    filter: blur(5px);
+    background-color: $black;
+
+    .globe {
+      height: 100%;
+      width: auto;
+      margin: auto;
+    }
+  }
+}

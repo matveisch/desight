@@ -20,19 +20,18 @@ export default function TabSwitcher(props: TabSwitcherProps) {
 
   const tabsArrayLength = tabsNames?.length;
   const tabWidth = 100 / tabsArrayLength;
-  const tabMargin = screenWidth <= 425 ? 3 : screenWidth <= 768 ? 4 : 6;
+  const tabMargin = screenWidth <= 744 ? 3 : 6;
 
   return (
     <div className={styles.tabSwitcher}>
       <motion.div
         initial={false}
         animate={{
-          left: `calc(${tabWidth * currentTabIndex}% - ${
-            currentTabIndex === tabsArrayLength - 1 ? tabMargin : 0
-          }px)`,
+          x: currentTabIndex * 100 + '%',
         }}
-        className={styles.switcher}
+        transition={{ type: 'just' }}
         style={{ width: `calc(${tabWidth}% - ${tabMargin}px)` }}
+        className={styles.switcher}
       />
       {tabsNames.map((tab, index) => {
         return (
