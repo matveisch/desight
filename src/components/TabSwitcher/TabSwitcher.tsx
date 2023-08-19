@@ -20,7 +20,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
 
   const tabsArrayLength = tabsNames?.length;
   const tabWidth = 100 / tabsArrayLength;
-  const tabMargin = screenWidth <= 425 ? 3 : screenWidth <= 768 ? 4 : 6;
+  const tabMargin = screenWidth <= 744 ? 3 : 6;
 
   return (
     <div className={styles.tabSwitcher}>
@@ -30,6 +30,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
           x: currentTabIndex * 100 + '%',
         }}
         transition={{ type: 'just' }}
+        style={{ width: `calc(${tabWidth}% - ${tabMargin}px)` }}
         className={styles.switcher}
       />
       {tabsNames.map((tab, index) => {

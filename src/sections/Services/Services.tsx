@@ -17,7 +17,7 @@ export default function Services() {
       <Swiper
         centeredSlides
         slidesPerView={1}
-        spaceBetween={'10px'}
+        spaceBetween={'30px'}
         className={styles.swiper}
         onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
       >

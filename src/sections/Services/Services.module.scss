@@ -13,6 +13,13 @@
     color: $white;
     margin: 25px 0;
     text-align: center;
+
+    @media (max-width: 1280px) {
+      margin: 15px 0;
+    }
+    @media (max-width: 744px) {
+      margin: 10px 0;
+    }
   }
 
   .servicesContainer {
@@ -28,7 +35,7 @@
       grid-area: One;
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 744px) {
       display: flex;
       flex-direction: column;
     }
@@ -40,7 +47,7 @@
     grid-template-rows: 1fr 1fr;
     gap: clamp(15px, 2.344vw, 30px) clamp(15px, 2.344vw, 30px);
 
-    @media (max-width: 550px) {
+    @media (max-width: 744px) {
       display: flex;
       flex-direction: column;
     }

@@ -26,10 +26,14 @@ $outlinePaddingMobile: 3px;
       color: $white;
       text-align: center;
     }
+    img {
+      height: 35px;
+      width: auto;
+    }
   }
 
   .switcher {
-    width: calc(50% - 6px);
+    // width: calc(50% - 6px);
     padding: 16px 0px;
     height: calc(100% - 12px);
     top: 6px;
@@ -38,34 +42,35 @@ $outlinePaddingMobile: 3px;
     border-radius: 32px;
     position: absolute;
   }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1280px) {
     .tabName {
+      padding: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    border: 2px solid $white;
+    padding: $outlinePaddingMobile;
+
+    .tabName {
+      padding: 4px;
+
       img {
         width: 26px;
         height: 26px;
       }
     }
 
-    // .switcher {
-    //   height: 65px;
-    // }
-  }
-  @media (max-width: 744px) {
-    border: 2px solid $white;
-    padding: $outlinePaddingMobile;
-    .tabName {
-      padding: 4px;
-    }
     .switcher {
-      width: calc(50% - $outlinePaddingMobile);
+      // width: calc(50% - $outlinePaddingMobile);
       padding: 4px 0px;
       height: calc(100% - ($outlinePaddingMobile * 2));
       top: $outlinePaddingMobile;
       left: $outlinePaddingMobile;
-      background-color: $blue;
-      border-radius: 16px;
     }
+
+    // .switcher {
+    //   height: 65px;
+    // }
   }
 
   @media (max-width: 360px) {
