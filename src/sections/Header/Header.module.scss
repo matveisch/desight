@@ -1,11 +1,18 @@
 .header {
   color: $white;
-  display: flex;
+
   padding-top: 40px;
-  padding-left: 33px;
-  padding-right: 27px;
-  justify-content: space-between;
-  align-items: center;
+
+  // margin-bottom: 260px;
+
+  .headWrap{
+
+    display: flex;
+    
+
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .logo {
     max-width: 180px;
@@ -16,7 +23,7 @@
       max-height: 32px;
     }
 
-    @media (max-width: 622px) {
+    @media (max-width: 650px) {
       max-width: 120px;
       max-height: 26px;
     }
@@ -35,7 +42,7 @@
       gap: 38px;
     }
 
-    @media (max-width: 622px) {
+    @media (max-width: 650px) {
       display: none;
     }
 
@@ -51,7 +58,7 @@
     width: 20px;
     height: 12px;
 
-    @media (max-width: 622px) {
+    @media (max-width: 650px) {
       display: block;
     }
   }

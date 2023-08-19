@@ -1,0 +1,40 @@
+.heroimage{
+ 
+
+    position: relative;
+    .border{
+
+      border: 7px solid $white;
+    border-radius: 20px;
+    height: 360px;
+    position: absolute;
+    
+    
+    
+    h2{
+        text-align: center;
+        padding-top: 50px;
+
+        color: $white;
+    }
+
+    .image{
+        position: relative;
+        display: inline-block;
+        
+        .left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1; 
+          }
+          
+          .right {
+            position: relative;
+            bottom: 0;
+            z-index: 3; 
+          }
+    }
+
+  }
+}

@@ -1,0 +1,91 @@
+.hero {
+  padding-top: 180px;
+  height: calc(100vh - 80px);
+  padding-bottom: 210px;
+
+  @media (max-width: 850px) {
+    padding-top: 130px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 75px;
+  }
+
+  .herowrap {
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 850px) {
+      gap: 20px;
+    }
+
+    @media (max-width: 650px) {
+      flex-direction: column;
+      gap: 35px;
+    }
+  }
+
+  .text {
+    width: 100%;
+
+    @media (max-width: 850px) {
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      padding-top: 10px;
+      color: $white;
+      font-size: min(6.09375vw, 78px);
+
+      @media (max-width: 850px) {
+        font-size: 40px;
+      }
+
+      @media (max-width: 650px) {
+        text-align: center;
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 19px;
+      padding-top: 27px;
+
+      @media (max-width: 850px) {
+        padding-top: 17px;
+        gap: 7px;
+      }
+    }
+  }
+
+  .animation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .animationWrap {
+      display: flex;
+      width: 315px;
+      height: 315px;
+      justify-content: flex-start;
+
+      @media (max-width: 850px) {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}
