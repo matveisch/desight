@@ -1,11 +1,16 @@
 .heroimage{
     margin-top: 260px;
-    // display: flex;
-    border: 7px solid $white;
-    // z-index: 3;
+
+    z-index: 2;
+    position: relative;
+    .border{
+
+      border: 7px solid $white;
     border-radius: 20px;
     height: 360px;
-    position: relative;
+    position: absolute;
+    
+    
     
     h2{
         text-align: center;
@@ -17,18 +22,20 @@
     .image{
         position: relative;
         display: inline-block;
-        z-index: 0;
+        
         .left {
             position: absolute;
             bottom: 0;
             left: 0;
-            z-index: 1; /* Place it behind the border */
+            z-index: 1; 
           }
           
           .right {
             position: relative;
             bottom: 0;
-            z-index: 1; /* Place it above the border */
+            z-index: 3; 
           }
     }
+
+  }
 }
