@@ -1,0 +1,79 @@
+.itemBlock {
+  @include roundedDiv;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  background-color: $white;
+  padding: 30px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  @media (max-width: 425px) {
+    align-items: center;
+  }
+
+  .imageContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .icon {
+      width: clamp(72px, 10vw, 128px);
+      height: clamp(72px, 10vw, 128px);
+    }
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+
+      .arrow {
+        width: clamp(45px, 7.813vw, 100px);
+        height: auto;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.itemBlockBig {
+  @extend .itemBlock;
+
+  @media (min-width: 550px) {
+    flex-direction: column;
+    align-items: unset;
+    justify-content: space-evenly;
+    gap: 5px;
+
+    .icon {
+      width: 19vw;
+      min-width: 164px;
+      height: 19vw;
+      min-height: 164px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+
+      @media (max-width: 768px) {
+        top: 10px;
+        right: 10px;
+      }
+    }
+  }
+}

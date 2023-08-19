@@ -14,7 +14,14 @@ body {
 }
 
 body {
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+// section {
+//   max-width: 1280px;
+// }
 
 a {
   color: inherit;
@@ -43,14 +50,14 @@ p,
 h1,
 h2,
 h3 {
-  font-family: Unbounded, serif;
+  font-family: var(--font-unbounded), sans-serif;
 }
 
 h4,
 h5,
 p,
 .description {
-  font-family: Nunito, serif;
+  font-family: var(--font-nunito), sans-serif;
 }
 
 h1 {
@@ -72,6 +79,10 @@ h2 {
   line-height: normal;
   letter-spacing: -0.95px;
 
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+
   @media (max-width: 425px) {
     font-size: 16px;
     line-height: 83%;
@@ -86,6 +97,10 @@ h3 {
   letter-spacing: 0.22px;
   color: $blue;
 
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
   @media (max-width: 425px) {
     font-size: 16px;
     letter-spacing: 0.16px;
@@ -93,9 +108,15 @@ h3 {
 }
 
 h4 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
   line-height: normal;
+  @media (max-width: 1280px) {
+    font-size: 28px;
+  }
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 
   @media (max-width: 425px) {
     font-size: 13px;
@@ -107,7 +128,10 @@ h5 {
   font-weight: 600;
   line-height: normal;
 
-  @media (max-width: 425px) {
+  @media (max-width: 1280px) {
+    font-size: 24px;
+  }
+  @media (max-width: 768px) {
     font-size: 20px;
   }
 }
@@ -115,8 +139,13 @@ h5 {
 p {
   font-size: 24px;
   font-weight: 500;
-  line-height: 113.5%;
-
+  line-height: 100%;
+  @media (max-width: 1280px) {
+    font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
   @media (max-width: 425px) {
     font-size: 12px;
     line-height: 100%;
@@ -128,7 +157,10 @@ p {
   font-weight: 500;
   line-height: 113.5%;
 
-  @media (max-width: 425px) {
+  @media (max-width: 1280px) {
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
     font-size: 12px;
   }
 }

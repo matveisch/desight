@@ -1,0 +1,89 @@
+$outlinePadding: 10px;
+
+$outlinePaddingMobile: 3px;
+
+.tabSwitcher {
+  width: 100%;
+  border-radius: 42px;
+  border: 4px solid $white;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 6px;
+
+  .tabName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+    z-index: 1;
+    height: 100%;
+    cursor: pointer;
+
+    h4 {
+      color: $white;
+      text-align: center;
+    }
+    img {
+      height: 35px;
+      width: auto;
+    }
+  }
+
+  .switcher {
+    // width: calc(50% - 6px);
+    padding: 16px 0px;
+    height: calc(100% - 12px);
+    top: 6px;
+    left: 6px;
+    background-color: $blue;
+    border-radius: 32px;
+    position: absolute;
+  }
+  @media (max-width: 1280px) {
+    .tabName {
+      padding: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    border: 2px solid $white;
+    padding: $outlinePaddingMobile;
+
+    .tabName {
+      padding: 4px;
+
+      img {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    .switcher {
+      // width: calc(50% - $outlinePaddingMobile);
+      padding: 4px 0px;
+      height: calc(100% - ($outlinePaddingMobile * 2));
+      top: $outlinePaddingMobile;
+      left: $outlinePaddingMobile;
+    }
+
+    // .switcher {
+    //   height: 65px;
+    // }
+  }
+
+  @media (max-width: 360px) {
+    .tabName {
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    // .switcher {
+    //   height: 27px;
+    //   margin: 0 3px;
+    // }
+  }
+}
