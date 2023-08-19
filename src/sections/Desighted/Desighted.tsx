@@ -1,14 +1,17 @@
 'use client';
 import styles from './Desighted.module.scss';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useVelocity } from 'framer-motion';
 import React, { useRef, useState, useEffect } from 'react';
 
 export default function Desighted() {
+  const x = useMotionValue(0);
+  const xVelocity = useVelocity(x);
+  const xAcceleration = useVelocity(xVelocity);
+
   const containerRef = useRef(null);
   const buttonRef = useRef(null);
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [isInBounders, setInBounders] = useState<boolean>(false);
   const [buttonSize, setButtonSize] = useState({
     width: 1,
     height: 1,
@@ -22,18 +25,6 @@ export default function Desighted() {
     x: 0,
     y: 0,
   });
-  //   useEffect(() => {
-  //     if (
-  //       mousePosition.x > buttonSize.width / 2 &&
-  //       mousePosition.x < containerSize.width - buttonSize.width / 2 &&
-  //       mousePosition.y > buttonSize.height / 2 &&
-  //       mousePosition.y < containerSize.height - buttonSize.height / 2
-  //     ) {
-  //       setInBounders(true);
-  //     } else {
-  //       setInBounders(false);
-  //     }
-  //   }, [mousePosition]);
 
   useEffect(() => {
     setButtonSize({
@@ -44,14 +35,25 @@ export default function Desighted() {
       width: containerRef.current.clientWidth,
       height: containerRef.current.clientHeight,
     });
-    console.log(containerSize);
   }, []);
 
   useEffect(() => {
     const updateButtonPosition = (ev: object) => {
       setMousePosition({
-        x: ev.screenX - containerRef.current?.offsetLeft,
-        y: ev.pageY - containerRef.current?.offsetTop,
+        x: Math.min(
+          Math.max(
+            Math.round((ev.clientX - containerRef.current?.offsetLeft) / 10),
+            buttonSize.width / 20
+          ),
+          (containerSize.width - buttonSize.width / 2) / 10
+        ),
+        y: Math.min(
+          Math.max(
+            Math.round((ev.pageY - containerRef.current?.offsetTop) / 10),
+            buttonSize.height / 20
+          ),
+          (containerSize.height - buttonSize.height / 2) / 10
+        ),
       });
     };
     isHovered
@@ -72,42 +74,23 @@ export default function Desighted() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <motion.button
-          //   animate={buttonPosition}
-
-          //   animate={{
-          //     left: isHovered
-          //       ? mousePosition.x > buttonSize.width / 2 &&
-          //         mousePosition.x < containerSize.width - buttonSize.width / 2
-          //         ? mousePosition.x - buttonSize.width / 2
-          //         : mousePosition.x >= containerSize.width - buttonSize.width / 2
-          //         ? containerSize.width - buttonSize.width / 2
-          //         : mousePosition <= buttonSize.width / 2
-          //         ? 0
-          //         : 'unset'
-          //       : 'unset',
-
-          //     top: isHovered
-          //       ? mousePosition.y > buttonSize.height / 2 &&
-          //         mousePosition.y < containerSize.height - buttonSize.height / 2
-          //         ? mousePosition.y - buttonSize.height / 2
-          //         : mousePosition > buttonSize.height / 2 &&
-          //           mousePosition.y >=
-          //             containerSize.height - buttonSize.height / 2
-          //         ? containerSize.height - buttonSize.height / 2
-          //         : 0
-          //       : 'unset',
-          //   }}
           animate={{
-            left: isHovered ? mousePosition.x - buttonSize.width / 2 : 'unset',
-            top: isHovered ? mousePosition.y - buttonSize.height / 2 : 'unset',
+            left: isHovered
+              ? mousePosition.x * 10 - buttonSize.width / 2
+              : 'unset',
+            top: isHovered
+              ? mousePosition.y * 10 - buttonSize.height / 2
+              : 'unset',
           }}
-          transition={{ type: 'tween' }}
+          transition={{ type: 'just' }}
           className={styles.button}
           ref={buttonRef}
         >
           Desighted?
         </motion.button>
       </motion.div>
+      <p style={{ color: '#fff' }}>x: {mousePosition.x}</p>
+      <p style={{ color: '#fff' }}>y: {mousePosition.y}</p>
     </>
   );
 }
