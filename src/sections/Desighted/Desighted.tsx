@@ -1,15 +1,12 @@
 'use client';
+
 import styles from './Desighted.module.scss';
 import { motion, useMotionValue, useVelocity } from 'framer-motion';
 import React, { useRef, useState, useEffect } from 'react';
 
 export default function Desighted() {
-  const x = useMotionValue(0);
-  const xVelocity = useVelocity(x);
-  const xAcceleration = useVelocity(xVelocity);
-
-  const containerRef = useRef(null);
-  const buttonRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [buttonSize, setButtonSize] = useState({
@@ -27,34 +24,42 @@ export default function Desighted() {
   });
 
   useEffect(() => {
-    setButtonSize({
-      width: buttonRef.current?.clientWidth,
-      height: buttonRef.current?.clientHeight,
-    });
+    if (buttonRef.current) {
+      setButtonSize({
+        width: buttonRef.current?.clientWidth,
+        height: buttonRef.current?.clientHeight,
+      });
+    }
     setContainerSize({
-      width: containerRef.current.clientWidth,
-      height: containerRef.current.clientHeight,
+      width: containerRef.current?.clientWidth
+        ? containerRef.current?.clientWidth
+        : 0,
+      height: containerRef.current?.clientHeight
+        ? containerRef.current?.clientHeight
+        : 0,
     });
   }, []);
 
   useEffect(() => {
-    const updateButtonPosition = (ev: object) => {
-      setMousePosition({
-        x: Math.min(
-          Math.max(
-            Math.round((ev.clientX - containerRef.current?.offsetLeft) / 10),
-            buttonSize.width / 20
+    const updateButtonPosition = (ev: MouseEvent) => {
+      if (containerRef.current) {
+        setMousePosition({
+          x: Math.min(
+            Math.max(
+              Math.round((ev.clientX - containerRef.current.offsetLeft) / 10),
+              buttonSize.width / 20
+            ),
+            (containerSize.width - buttonSize.width / 2) / 10
           ),
-          (containerSize.width - buttonSize.width / 2) / 10
-        ),
-        y: Math.min(
-          Math.max(
-            Math.round((ev.pageY - containerRef.current?.offsetTop) / 10),
-            buttonSize.height / 20
+          y: Math.min(
+            Math.max(
+              Math.round((ev.pageY - containerRef.current?.offsetTop) / 10),
+              buttonSize.height / 20
+            ),
+            (containerSize.height - buttonSize.height / 2) / 10
           ),
-          (containerSize.height - buttonSize.height / 2) / 10
-        ),
-      });
+        });
+      }
     };
     isHovered
       ? window.addEventListener('mousemove', updateButtonPosition)
