@@ -1,2 +1,24 @@
 .completeSolution {
+  .header {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 30px;
+    grid-template-areas: 'one one one one one one . two two two two two';
+
+    div:first-child {
+      grid-area: one;
+    }
+
+    div:last-child {
+      grid-area: two;
+      max-width: 369px;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
