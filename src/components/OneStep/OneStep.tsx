@@ -21,7 +21,7 @@ export default function OneStep(props: PropsType) {
             style={last ? { right: '0', left: 'unset' } : undefined}
           >
             {Array.from(Array(10).keys()).map((key) => {
-              return <BlueDot />;
+              return <BlueDot key={key} />;
             })}
           </div>
         )}
