@@ -1,6 +1,6 @@
 .hero {
   padding-top: 180px;
-  height: calc(100vh - 80px);
+  height: max( calc(100vh - 400px), 430px);
   padding-bottom: 210px;
 
   @media (max-width: 850px) {

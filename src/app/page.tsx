@@ -3,7 +3,7 @@ import Services from '@/sections/Services/Services';
 
 import Desighted from '@/sections/Desighted/Desighted';
  import { Hero } from '@/sections/Hero/Hero';
-//  import { HeroImage } from '@/sections/HeroImage/HeroImage';
+ import { HeroImage } from '@/sections/HeroImage/HeroImage';
 import styles from '@styles/page.module.scss';
 import OurWork from '@sections/OurWork/OurWork';
 
@@ -12,7 +12,7 @@ export default function Home() {
     <main className={styles.main}>
       <Header />
       <Hero />
-      {/* <HeroImage /> */}
+      <HeroImage />
       <Services />
       <OurWork />
       <Desighted />
