@@ -21,4 +21,26 @@
       flex-direction: column;
     }
   }
+
+  .stepsContainer {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'one one one two two two three three three four four four';
+    align-items: center;
+
+    div:nth-child(1) {
+      grid-area: one;
+    }
+    div:nth-child(2) {
+      grid-area: two;
+    }
+    div:nth-child(3) {
+      grid-area: three;
+    }
+    div:nth-child(4) {
+      grid-area: four;
+    }
+  }
 }

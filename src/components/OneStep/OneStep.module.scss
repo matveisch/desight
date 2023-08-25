@@ -1,0 +1,59 @@
+.oneStep {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+
+  .numberContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .line {
+      position: absolute;
+      height: 4px;
+      background-color: $blue;
+      width: 50%;
+      right: 0;
+    }
+
+    .dotsContainer {
+      display: flex;
+      gap: 10px;
+      position: absolute;
+      left: 0;
+    }
+
+    .number {
+      width: 44px;
+      height: 44px;
+      background-color: $blue;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+
+      p {
+        color: $white;
+      }
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 30px;
+
+    h5,
+    text {
+      color: $white;
+      text-align: center;
+    }
+  }
+}
