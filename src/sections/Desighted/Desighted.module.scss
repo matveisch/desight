@@ -25,13 +25,14 @@
     line-height: 108.5%; /* 41.23px */
     letter-spacing: -0.95px;
     cursor: pointer;
-    // left: 0;
-    // right: 0;
-    // top: 0;
-    // bottom: 0;
     height: fit-content;
     width: fit-content;
+  }
 
-    // transition: 1s 0s ease-in-out;
+  div {
+    position: absolute;
+    border-radius: 32px;
+
+    background-color: red;
   }
 }
