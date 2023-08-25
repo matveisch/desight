@@ -1,6 +1,10 @@
 .completeSolution {
   margin-top: 120px;
 
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
+
   .header {
     display: grid;
     grid-auto-columns: 1fr;
@@ -45,10 +49,35 @@
     div:nth-child(4) {
       grid-area: four;
     }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .stepsContainerMobile {
     display: flex;
-    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+
+    .innerContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dashedRectangle {
+      width: 84px;
+      height: calc(100% + 60px + 16px);
+      top: -60px;
+      border-radius: 16px;
+      border: 2px dashed $blue;
+      position: absolute;
+      left: calc(-15px - 42px - 11px);
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
 }

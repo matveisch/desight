@@ -46,14 +46,17 @@ export default function CompleteSolution() {
         ))}
       </div>
       <div className={styles.stepsContainerMobile}>
-        {steps.map((step, index) => (
-          <OneStepMobile
-            num={index + 1}
-            header={step.header}
-            description={step.description}
-            last={index === steps.length - 1}
-          />
-        ))}
+        <div className={styles.innerContainer}>
+          {steps.map((step, index) => (
+            <OneStepMobile
+              num={index + 1}
+              header={step.header}
+              description={step.description}
+              last={index === steps.length - 1}
+            />
+          ))}
+        </div>
+        <div className={styles.dashedRectangle} />
       </div>
     </div>
   );
