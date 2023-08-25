@@ -30,7 +30,7 @@ export default function OneStep(props: PropsType) {
           >
             {Array.from(Array(10).keys()).map((key) => {
               return (
-                <BlueDot key={key} blur={{ filter: `blur(${key / 6}px)` }} />
+                <BlueDot key={key} blur={{ filter: `blur(${key / 4}px)` }} />
               );
             })}
           </div>
