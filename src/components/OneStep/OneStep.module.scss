@@ -23,7 +23,8 @@
       gap: 10px;
       flex-direction: row-reverse;
       position: absolute;
-      left: 0;
+      right: calc(50% + 22px + 10px);
+      z-index: 10;
     }
 
     .number {

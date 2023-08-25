@@ -20,13 +20,17 @@ export default function OneStep(props: PropsType) {
             className={styles.dotsContainer}
             style={
               last
-                ? { right: '0', left: 'unset', flexDirection: 'row' }
+                ? {
+                    left: 'calc(50% + 22px + 10px)',
+                    right: 'unset',
+                    flexDirection: 'row',
+                  }
                 : undefined
             }
           >
             {Array.from(Array(10).keys()).map((key) => {
               return (
-                <BlueDot key={key} blur={{ filter: `blur(${key / 8}px)` }} />
+                <BlueDot key={key} blur={{ filter: `blur(${key / 6}px)` }} />
               );
             })}
           </div>
