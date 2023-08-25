@@ -68,7 +68,7 @@
 
     .dashedRectangle {
       width: 84px;
-      height: calc(100% + 60px);
+      height: calc(100% + 60px + 15px);
       top: -60px;
       border-radius: 16px;
       border: 2px dashed $blue;
