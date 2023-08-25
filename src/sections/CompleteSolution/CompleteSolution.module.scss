@@ -1,4 +1,6 @@
 .completeSolution {
+  margin-top: 120px;
+
   .header {
     display: grid;
     grid-auto-columns: 1fr;
@@ -29,6 +31,7 @@
     grid-template-rows: 1fr;
     grid-template-areas: 'one one one two two two three three three four four four';
     align-items: center;
+    margin-top: 45px;
 
     div:nth-child(1) {
       grid-area: one;
