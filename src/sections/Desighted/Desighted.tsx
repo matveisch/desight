@@ -89,18 +89,72 @@ export default function Desighted() {
               ? mousePosition.y * 10 - buttonSize.height / 2
               : 'unset',
           }}
-          transition={{ type: 'just' }}
+          transition={{ type: 'just', duration: 0.3 }}
           className={styles.button}
           ref={buttonRef}
         >
           Desighted?
         </motion.button>
-        <motion.div ref={shadowOne}></motion.div>
-        <motion.div></motion.div>
-        <motion.div></motion.div>
+        <motion.div
+          style={{
+            backgroundColor: '#27A7EF',
+            width: buttonSize.width - 3,
+            height: buttonSize.height - 3,
+            zIndex: 3,
+          }}
+          animate={{
+            left: isHovered
+              ? mousePosition.x * 10 - buttonSize.width / 2
+              : 'unset',
+            top: isHovered
+              ? mousePosition.y * 10 - buttonSize.height / 2
+              : 'unset',
+          }}
+          transition={{
+            duration: 0.35,
+          }}
+        ></motion.div>
+        <motion.div
+          style={{
+            backgroundColor: '#D327EF',
+            width: buttonSize.width - 7,
+            height: buttonSize.height - 7,
+            zIndex: 2,
+          }}
+          animate={{
+            left: isHovered
+              ? mousePosition.x * 10 - buttonSize.width / 2
+              : 'unset',
+            top: isHovered
+              ? mousePosition.y * 10 - buttonSize.height / 2
+              : 'unset',
+          }}
+          transition={{
+            duration: 0.4,
+          }}
+        ></motion.div>
+        <motion.div
+          style={{
+            backgroundColor: '#EF2727',
+            width: buttonSize.width - 10,
+            height: buttonSize.height - 10,
+            zIndex: 1,
+          }}
+          animate={{
+            left: isHovered
+              ? mousePosition.x * 10 - buttonSize.width / 2
+              : 'unset',
+            top: isHovered
+              ? mousePosition.y * 10 - buttonSize.height / 2
+              : 'unset',
+          }}
+          transition={{
+            duration: 0.45,
+          }}
+        ></motion.div>
       </motion.div>
-      <p style={{ color: '#fff' }}>x: {mousePosition.x}</p>
-      <p style={{ color: '#fff' }}>y: {mousePosition.y}</p>
+      {/* <p style={{ color: '#fff' }}>x: {mousePosition.x}</p>
+      <p style={{ color: '#fff' }}>y: {mousePosition.y}</p> */}
     </>
   );
 }

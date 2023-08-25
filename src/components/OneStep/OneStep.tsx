@@ -1,4 +1,7 @@
+'use client';
 import styles from './OneStep.module.scss';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import BlueDot from '@components/BlueDot/BlueDot';
 
 type PropsType = {
@@ -11,31 +14,55 @@ type PropsType = {
 
 export default function OneStep(props: PropsType) {
   const { num, last, first, header, description } = props;
-
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    margin: '0px 100px -300px 0px',
+    once: true,
+  });
   return (
-    <div className={styles.oneStep}>
+    <div className={styles.oneStep} ref={ref}>
       <div className={styles.numberContainer}>
         {(last || first) && (
-          <div
+          <motion.div
             className={styles.dotsContainer}
+            initial={{ width: '0%' }}
+            animate={{ width: '100%' }}
             style={
               last
                 ? {
                     left: 'calc(50% + 22px + 10px)',
                     right: 'unset',
                     flexDirection: 'row',
+                    // transform: 'none',
                   }
                 : undefined
             }
           >
             {Array.from(Array(10).keys()).map((key) => {
               return (
-                <BlueDot key={key} blur={{ filter: `blur(${key / 4}px)` }} />
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={isInView ? { scale: 1 } : {}}
+                  transition={{ delay: key * 0.1 + 3.7 }}
+                >
+                  <BlueDot key={key} blur={{ filter: `blur(${key / 3}px)` }} />
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         )}
-        <div
+        <motion.div
+          initial={{
+            left: first ? '50%' : 0,
+            width: '0%',
+          }}
+          animate={isInView ? { width: first || last ? '50%' : '100%' } : {}}
+          transition={{
+            type: 'tween',
+            ease: 'linear',
+            duration: props.last ? 0.5 : 1,
+            delay: 1 * (props.num - 1) + 0.2,
+          }}
           className={styles.line}
           style={
             last
@@ -45,14 +72,34 @@ export default function OneStep(props: PropsType) {
               : { width: '100%' }
           }
         />
-        <div className={styles.number}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{
+            type: 'tween',
+            ease: 'linear',
+            duration: 0.2,
+            delay: props.first ? 0 : 1 * (props.num - 1) + 0.7,
+          }}
+          className={styles.number}
+        >
           <p>{num}</p>
-        </div>
+        </motion.div>
       </div>
-      <div className={styles.textContainer}>
+      <motion.div
+        className={styles.textContainer}
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{
+          type: 'tween',
+          ease: 'linear',
+          duration: 0.5,
+          delay: props.first ? 0 : 1 * (props.num - 1) + 0.9,
+        }}
+      >
         <h5>{header}</h5>
         <text className="description">{description}</text>
-      </div>
+      </motion.div>
     </div>
   );
 }

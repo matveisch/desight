@@ -2,6 +2,7 @@
   background-image: url(../../../public/images/Desighted-eyes.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   background-blend-mode: hard-light;
   display: flex;
   justify-content: center;
@@ -27,6 +28,7 @@
     cursor: pointer;
     height: fit-content;
     width: fit-content;
+    z-index: 4;
   }
 
   div {
@@ -34,5 +36,20 @@
     border-radius: 32px;
 
     background-color: red;
+  }
+
+  @media (max-width: 769px) {
+    height: 328px;
+    .button {
+      font-size: 26px;
+      padding: 15px 50px;
+    }
+  }
+  @media (max-width: 630px) {
+    height: 150px;
+    .button {
+      font-size: 20px;
+      padding: 15px 50px;
+    }
   }
 }
