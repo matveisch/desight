@@ -2,6 +2,7 @@ import styles from './CompleteSolution.module.scss';
 import CompleteDescription from '@components/CompleteDescription/CompleteDescription';
 import { SpinAnimation } from '@components/spinAnimation/SpinAnimation';
 import OneStep from '@components/OneStep/OneStep';
+import OneStepMobile from '@components/OneStepMobile/OneStepMobile';
 
 export default function CompleteSolution() {
   const steps = [
@@ -40,6 +41,16 @@ export default function CompleteSolution() {
             header={step.header}
             description={step.description}
             first={index === 0}
+            last={index === steps.length - 1}
+          />
+        ))}
+      </div>
+      <div className={styles.stepsContainerMobile}>
+        {steps.map((step, index) => (
+          <OneStepMobile
+            num={index + 1}
+            header={step.header}
+            description={step.description}
             last={index === steps.length - 1}
           />
         ))}

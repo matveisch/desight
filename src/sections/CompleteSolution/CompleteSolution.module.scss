@@ -46,4 +46,9 @@
       grid-area: four;
     }
   }
+
+  .stepsContainerMobile {
+    display: flex;
+    flex-direction: column;
+  }
 }
