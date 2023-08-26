@@ -32,15 +32,28 @@ margin-bottom: 260px;
     margin-top: 65px;
   }
   
-  .left {
+  .leftContainer {
     position: absolute;
-   
+    max-height: 490px;
+    max-width: 100%;
     z-index: 0;
+
+    .left{
+      height: 100%;
+      width: 100%;
+    }
+
   }
   
-  .right {
+  .rightContainer {
     position: relative;
-
+    max-height: 490px;
+    max-width: 100%;
     z-index: 2;
+
+    .right{
+      height: 100%;
+      width: 100%;
+    }
   }
 }
