@@ -35,15 +35,13 @@ margin-bottom: 260px;
   
   .left {
     position: absolute;
-    bottom: -10px; /* Adjust this value as needed to align with the border */
-    left: -10px; /* Adjust this value as needed to align with the border */
+   
     z-index: 0;
   }
   
   .right {
     position: relative;
-    bottom: -15px;
-    left: -11px;
+
     z-index: 2;
   }
 }
