@@ -6,13 +6,13 @@
   .head {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     margin-bottom: 15px;
 
     .headData {
       display: flex;
       flex-direction: column;
-      justify-content: start;
+      justify-content: flex-start;
       gap: 20px;
 
       img {

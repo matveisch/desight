@@ -11,12 +11,14 @@ $outlinePaddingMobile: 3px;
   justify-content: space-evenly;
   align-items: center;
   padding: 6px;
+  gap: 30px;
 
   .tabName {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
+    width: 100%;
     padding: 16px 0;
     z-index: 1;
     height: 100%;

@@ -1,9 +1,11 @@
 import styles from './Hero.module.scss';
 import Social from '@/components/Social/Social';
 import { social } from '@/utils/data/data';
+import { motion } from 'framer-motion';
 import { HeroAnimation } from '@/components/heroAnimation/HeroAnimaton';
 
 export function Hero() {
+  const headerText = 'Clear sight';
   return (
     <section className={styles.hero}>
       <div className={styles.herowrap}>

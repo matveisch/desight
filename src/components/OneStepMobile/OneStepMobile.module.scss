@@ -1,0 +1,49 @@
+.oneStepMobile {
+  display: flex;
+  gap: 19px;
+  align-items: start;
+  position: relative;
+
+  .numberContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .line {
+      width: 2px;
+      background-color: $blue;
+      position: absolute;
+      height: 100%;
+      top: 0;
+    }
+
+    .number {
+      width: 30px;
+      height: 30px;
+      background-color: $blue;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+
+      p {
+        color: $white;
+      }
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    h5,
+    text {
+      color: $white;
+    }
+  }
+}

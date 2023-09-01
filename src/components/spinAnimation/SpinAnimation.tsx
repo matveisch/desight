@@ -1,7 +1,8 @@
 'use client';
 
 import styles from './SpinAnimation.module.scss';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import Image from 'next/image';
 import cyrsqIcon from '@images/cyrsq-icon.svg';
 import devIcon from '@images/dev-icon.svg';
@@ -12,8 +13,19 @@ import userIcon from '@images/user-icon.svg';
 import clickText from '@images/clickandhold.svg';
 import desightIcon from '@images/icon.svg';
 export function SpinAnimation() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    margin: '0px 100px -300px 0px',
+    once: true,
+  });
   return (
-    <div className={styles.main}>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.8, type: 'tween', ease: 'easeOut', delay: 0.5 }}
+      className={styles.main}
+    >
       <motion.div
         animate={{ scale: 1.3 }}
         transition={{
@@ -120,6 +132,6 @@ export function SpinAnimation() {
           </motion.div>
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
