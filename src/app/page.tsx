@@ -4,7 +4,7 @@ import Desighted from '@/sections/Desighted/Desighted';
 
  import { Hero } from '@/sections/Hero/Hero';
  import { HeroImage } from '@/sections/HeroImage/HeroImage';
-import styles from '@styles/page.module.scss';
+// import styles from '@styles/page.module.scss';
 
 import OurWork from '@sections/OurWork/OurWork';
 import CompleteSolution from '@sections/CompleteSolution/CompleteSolution';
