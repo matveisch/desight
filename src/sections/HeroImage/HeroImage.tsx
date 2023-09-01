@@ -1,4 +1,3 @@
-
 import styles from './HeroImage.module.scss';
 import Image from 'next/image';
 import left from '@images/negativeflow.png';
@@ -9,15 +8,15 @@ export function HeroImage() {
     <section className={styles.heroimage}>
       <div className={styles.border}>
         <h2>От идеи к реальности. Пиксель за пикселем</h2>
-      </div>   
+      </div>
       <div className={styles.image}>
         <div className={styles.leftContainer}>
-            <Image src={left} alt='left' className={styles.left}  />
-          </div>
+          <Image src={left} alt="left" className={styles.left} />
+        </div>
         <div className={styles.rightContainer}>
-          <Image src={right} alt='right' className={styles.right}  />
+          <Image src={right} alt="right" className={styles.right} />
         </div>
-        </div>
+      </div>
     </section>
   );
 }

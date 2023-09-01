@@ -1,77 +1,96 @@
-.heroimage{
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-height: 360px;
-max-height: 360px;
-padding-top: 100px;
-margin-bottom: 260px;
+.heroimage {
+  height: max(160px, min(360px, 40vw));
+  position: relative;
+  margin-bottom: 60px;
 
-    .border{
-      // max-width: 100%;
-      border: 7px solid $white;
-      border-radius: 20px;
-      height: 360px;
-      // position: absolute;
-      z-index: 1;
+  .border {
+    // max-width: 100%;
+    border: 4px solid $white;
+    border-radius: 32px;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
 
-      @media (max-width: 500px) {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-    
-      }
-    
-    h2{
-        text-align: center; 
-        padding-top: 50px;
-        padding-bottom: 275px;
-
-      @media (max-width: 1050px) {
-        font-size: 18px;
-        padding-top: 27px;
-        padding-bottom: 115px;
-      } 
-
-      @media (max-width: 500px) {
-        font-size: 16px;
-        max-width: 212px;
-        // padding: 16px 55px 115px;
-      }
-
-        color: $white;
+    @media (max-width: 1280px) {
+      border-radius: 24px;
     }
 
+    @media (max-width: 744px) {
+      border-radius: 16px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 50px;
+
+      font-size: min(2.96875vw, 38px);
+
+      @media (max-width: 1280px) {
+        margin-top: 25px;
+      }
+
+      @media (max-width: 744px) {
+        margin-top: 16px;
+      }
+      color: $white;
+    }
   }
 
   .image {
     position: absolute;
-    display: inline-block;
-    margin-top: 65px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: -10%;
+    @media (max-width: 1036px) {
+      bottom: -35%;
+    }
+    @media (max-width: 744px) {
+      left: -30%;
+      right: -40%;
+      bottom: -3%;
+    }
   }
-  
+
   .leftContainer {
     position: absolute;
-    max-height: 490px;
-    max-width: 100%;
     z-index: 0;
-
-    .left{
-      height: 100%;
-      width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    @media (max-width: 744px) {
+      height: 270px;
     }
 
+    .left {
+      width: 100%;
+      height: auto;
+    }
   }
-  
+
   .rightContainer {
-    position: relative;
-    max-height: 490px;
-    max-width: 100%;
+    position: absolute;
     z-index: 2;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    @media (max-width: 744px) {
+      height: 270px;
+    }
 
-    .right{
-      height: 100%;
+    .right {
       width: 100%;
+      height: auto;
     }
   }
+
+  // @media (max-width: 950px) {
+  //   height: 200px;
+  // }
+  // @media (max-width: 744px) {
+  //   height: 150px;
+  // }
 }

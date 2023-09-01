@@ -1,14 +1,17 @@
 .hero {
-  padding-top: 180px;
-  height: max( calc(100vh - 400px), 430px);
-  padding-bottom: 210px;
+  margin-top: 180px;
+  height: max(calc(100vh - 450px), 430px);
+  box-sizing: border-box;
+  // margin-bottom: 210px;
 
   @media (max-width: 850px) {
-    padding-top: 130px;
+    margin-top: 130px;
   }
 
   @media (max-width: 650px) {
-    padding-top: 75px;
+    margin-top: 75px;
+    height: 100%;
+    margin-bottom: 50px;
   }
 
   .herowrap {
