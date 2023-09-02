@@ -1,0 +1,35 @@
+.footer{
+   
+    margin-top: 144px;
+
+    .wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: center;
+        gap: 30px;
+        max-width: 100%;
+
+        .left{
+            background-color: $blue;
+            max-width: 450px;
+            border-radius: 32px;
+
+            .swiper{
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        .right{
+            background-color: $blue;
+            max-width: 450px;
+            border-radius: 32px;
+
+        }
+    }
+
+    .copyright{
+        color: $white;
+    }
+}

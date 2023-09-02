@@ -159,3 +159,18 @@ export const social = [
     link: ''
   }
 ];
+
+export const contact = [
+  {
+    title: 'email'
+  },
+  {
+    title: 'whatsapp'
+  },
+  {
+    title: 'telegram'
+  },
+  {
+    title: 'facebook'
+  },
+]
