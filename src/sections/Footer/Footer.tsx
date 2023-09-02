@@ -20,31 +20,33 @@ export function Footer() {
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <h2 className={styles.title}>Get response</h2>
-          <Swiper
-            centeredSlides
-            slidesPerView={1}
-            spaceBetween={'30px'}
-            className={styles.swiper}
-            onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
-          >
-            <TabSwitcher tabsNames={contact} currentTabIndex={currentTab} />
-            <SwiperSlide>
-              <p className={styles.formTitle}>Email message</p>
-              <Form />
-            </SwiperSlide>
-            <SwiperSlide>
-              <p className={styles.formTitle}>Whatsapp message</p>
-              <Form />
-            </SwiperSlide>
-            <SwiperSlide>
-              <p className={styles.formTitle}>Telegram message</p>
-              <Form />
-            </SwiperSlide>
-            <SwiperSlide>
-              <p className={styles.formTitle}>Facebook message</p>
-              <Form />
-            </SwiperSlide>
-          </Swiper>
+          <div className={styles.swiperWrap}>
+            <Swiper
+                centeredSlides
+                slidesPerView={1}
+                spaceBetween={'30px'}
+                className={styles.swiper}
+                onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
+            >
+                <TabSwitcher tabsNames={contact} currentTabIndex={currentTab} />
+                <SwiperSlide>
+                <p className={styles.formTitle}>Email message</p>
+                <Form />
+                </SwiperSlide>
+                <SwiperSlide>
+                <p className={styles.formTitle}>Whatsapp message</p>
+                <Form />
+                </SwiperSlide>
+                <SwiperSlide>
+                <p className={styles.formTitle}>Telegram message</p>
+                <Form />
+                </SwiperSlide>
+                <SwiperSlide>
+                <p className={styles.formTitle}>Facebook message</p>
+                <Form />
+                </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
         <div className={styles.right}>
           <div className={styles.header}>

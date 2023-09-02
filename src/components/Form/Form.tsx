@@ -16,18 +16,18 @@ function Form() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <fieldset>
+   
         <input
           type="email"
           name="email"
           className={styles.input}
-          placeholder="Your Email"
+          placeholder="Email"
           value={email}
           required
           onChange={(e) => setEmail(e.target.value)}
        
         />
-        <br />
+     
         <textarea
           name="message"
           placeholder="Your message"
@@ -37,7 +37,7 @@ function Form() {
           onChange={(e) => setMessage(e.target.value)}
        
         />
-      </fieldset>
+
     </form>
   );
 }
