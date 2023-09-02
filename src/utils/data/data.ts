@@ -140,22 +140,26 @@ export const workData: WorkDataType[] = [
 export const social = [
   {
     name: 'Telegram',
-    src: require("@images/tg.svg").default,
+    srcWhite: require("@images/tg-w.svg").default,
+    srcBlue: require("@images/tg.svg").default,
     link: ''
   },
   {
     name: 'Facebook',
-    src: require("@images/fb.svg").default,
+    srcWhite: require("@images/fb-w.svg").default,
+    srcBlue: require("@images/fb.svg").default,
     link: ''
   },
   {
     name: 'Behance',
-    src: require("@images/behance.svg").default,
+    srcWhite: require("@images/behance-w.svg").default,
+    srcBlue: require("@images/behance.svg").default,
     link: ''
   },
   {
     name: 'Instagram',
-    src: require("@images/insta.svg").default,
+    srcWhite: require("@images/insta-w.svg").default,
+    srcBlue: require("@images/insta.svg").default,
     link: ''
   }
 ];

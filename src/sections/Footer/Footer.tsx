@@ -11,6 +11,7 @@ import Social from '@/components/Social/Social';
 import { social } from '@/utils/data/data';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import globe from '@images/globe.svg';
 
 export function Footer() {
   const [currentTab, setCurrentTab] = React.useState(0);
@@ -22,29 +23,29 @@ export function Footer() {
           <h2 className={styles.title}>Get response</h2>
           <div className={styles.swiperWrap}>
             <Swiper
-                centeredSlides
-                slidesPerView={1}
-                spaceBetween={'30px'}
-                className={styles.swiper}
-                onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
+              centeredSlides
+              slidesPerView={1}
+              spaceBetween={'30px'}
+              className={styles.swiper}
+              onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
             >
-                <TabSwitcher tabsNames={contact} currentTabIndex={currentTab} />
-                <SwiperSlide>
+              <TabSwitcher tabsNames={contact} currentTabIndex={currentTab} />
+              <SwiperSlide>
                 <p className={styles.formTitle}>Email message</p>
                 <Form />
-                </SwiperSlide>
-                <SwiperSlide>
+              </SwiperSlide>
+              <SwiperSlide>
                 <p className={styles.formTitle}>Whatsapp message</p>
                 <Form />
-                </SwiperSlide>
-                <SwiperSlide>
+              </SwiperSlide>
+              <SwiperSlide>
                 <p className={styles.formTitle}>Telegram message</p>
                 <Form />
-                </SwiperSlide>
-                <SwiperSlide>
+              </SwiperSlide>
+              <SwiperSlide>
                 <p className={styles.formTitle}>Facebook message</p>
                 <Form />
-                </SwiperSlide>
+              </SwiperSlide>
             </Swiper>
           </div>
         </div>
@@ -56,7 +57,7 @@ export function Footer() {
                 <Social
                   key={index}
                   name={icon.name}
-                  src={icon.src}
+                  src={icon.srcWhite}
                   link={icon.link}
                 />
               ))}
@@ -64,19 +65,20 @@ export function Footer() {
           </div>
           <h2 className={styles.slogan}>Clear sight. Bright future</h2>
           <div className={styles.nav}>
-            <Link href='#'>
-                Services
+            <Link href="#">
+              <p className={styles.link}>Services</p>
             </Link>
-            <Link href='#'>
-                Projects
+            <Link href="#">
+              <p className={styles.link}>Projects</p>
             </Link>
-            <Link href='#'>
-                About us
+            <Link href="#">
+              <p className={styles.link}>About us</p>
             </Link>
-            <Link href='#'>
-                Contact
+            <Link href="#">
+              <p className={styles.link}>Contact</p>
             </Link>
           </div>
+            <Image src={globe} alt='globe' className={styles.image} />
         </div>
       </div>
       <p className={styles.copyright}>

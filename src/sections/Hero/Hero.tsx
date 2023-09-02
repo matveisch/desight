@@ -21,7 +21,7 @@ export function Hero() {
               <Social
                 key={index}
                 name={icon.name}
-                src={icon.src}
+                src={icon.srcBlue}
                 link={icon.link}
               />
             ))}

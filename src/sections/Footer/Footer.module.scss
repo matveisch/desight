@@ -50,6 +50,42 @@
             background-color: $blue;
             max-width: 595px;
             border-radius: 32px;
+            padding: 0 40px;
+            padding-top: 53px;
+ 
+            .header{
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 45px;
+
+                .social{
+                    display: flex;
+                    gap: 20px;
+                    color: $white;
+                    opacity: 70%;
+                }
+            }
+            .slogan{
+                font-size: 36px;
+                color: $white;
+                margin-bottom: 14px;
+            }
+
+            .nav{
+                display: flex;
+                gap: 45px;
+               .link{
+                color: $white;
+                opacity: 70%;
+               }
+            }
+
+            .image{
+                margin-top: 80px;
+            }
 
         }
     }
