@@ -44,8 +44,10 @@ export function Hero() {
       <div className={styles.herowrap}>
         <div className={styles.text}>
           <motion.h3
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(16px)' }}
+            animate={
+              isInView ? { opacity: 1, filter: 'blur(0px)' } : { opacity: 0 }
+            }
             transition={{
               delay: headerText1.concat('', headerText2).split('').length * 0.1,
               duration: 0.7,
@@ -95,8 +97,12 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(16px)' }}
+            animate={
+              isInView
+                ? { opacity: 1, filter: 'blur(0px)' }
+                : { opacity: 0, filter: 'blur(16px)' }
+            }
             transition={{
               delay:
                 headerText1.concat('', headerText2).split('').length * 0.1 +
@@ -116,8 +122,12 @@ export function Hero() {
         </div>
         <div className={styles.animation}>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(16px)', scale: 0.7 }}
+            animate={
+              isInView
+                ? { opacity: 1, filter: 'blur(0px)', scale: 1 }
+                : { opacity: 0, filter: 'blur(16px)' }
+            }
             transition={{
               delay:
                 headerText1.concat('', headerText2).split('').length * 0.1 + 1,
