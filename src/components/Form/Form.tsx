@@ -2,7 +2,8 @@
 
 import styles from './Form.module.scss';
 import { useState, FormEvent } from 'react';
-
+import send from '@images/send-button.svg';
+import Image from 'next/image';
 
 function Form() {
 
@@ -37,7 +38,9 @@ function Form() {
           onChange={(e) => setMessage(e.target.value)}
        
         />
-
+        <button type='submit' className={styles.button} disabled>
+            <Image src={send} alt='send' className={styles.image} />
+        </button>
     </form>
   );
 }

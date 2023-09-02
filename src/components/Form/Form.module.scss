@@ -22,6 +22,7 @@
     }
 
         .textarea{
+            position: relative;
             height: 165px;
             border-radius: 24px;
             padding: 33px 22px;
@@ -30,11 +31,27 @@
         color: $white;
             font-family: var(--font-nunito), sans-serif;
             font-size: 24px;
+            resize: none;
         &::placeholder{
             color: $white;
         }
         &:focus{
             outline-width: 0;
+        }
+    }
+
+    .button{
+        position: absolute;
+        bottom: -3px;
+        right: -1px;
+        background: transparent;
+        border: none;
+        :disabled{
+            background: transparent;
+        }
+        .image{
+            height: 100%;
+            width: 100%;
         }
     }
 }
