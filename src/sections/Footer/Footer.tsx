@@ -78,7 +78,9 @@ export function Footer() {
               <p className={styles.link}>Contact</p>
             </Link>
           </div>
+          <div className={styles.imagewrap}>
             <Image src={globe} alt='globe' className={styles.image} />
+          </div>
         </div>
       </div>
       <p className={styles.copyright}>

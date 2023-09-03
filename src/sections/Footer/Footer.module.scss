@@ -10,16 +10,21 @@
         gap: 30px;
         max-width: 100%;
 
+        @media (max-width: 990px) {
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
       
 
         .left{
             box-sizing: border-box;
-            padding-top: 53px;
-            padding-left: 57px;
-            padding-bottom: 40px;
+            padding: 53px 87px 40px 57px;
             background-color: $blue;
             max-width: 595px;
-            width: 100%;
+            // width: 100%;
+            overflow: hidden;
             border-radius: 32px;
 
             .title{
@@ -30,11 +35,16 @@
             .swiperWrap{
                 max-width: 450px;
 
+                @media (max-width: 990px) {
+                    max-width: 100%;
+                }
+
                 .formTitle{
                     text-align: center;
                     color: $white;
                     margin-bottom: 15px;
                 }
+      
             }
 
             .swiper{
@@ -42,6 +52,11 @@
                 display: flex;
                 flex-direction: column-reverse;
                 gap: 15px;
+            }
+
+            @media (max-width: 990px) {
+                max-width: 100%;
+                width: 100%;
             }
         }
 
@@ -52,6 +67,7 @@
             border-radius: 32px;
             padding: 0 40px;
             padding-top: 53px;
+            overflow: hidden;
  
             .header{
 
@@ -60,6 +76,12 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 45px;
+
+                // @media (max-width: 990px) {
+                //     flex-direction: column;
+                //     align-items: flex-start;
+                //     gap: 25px;
+                // }
 
                 .social{
                     display: flex;
@@ -77,15 +99,38 @@
             .nav{
                 display: flex;
                 gap: 45px;
+
+                  @media (max-width: 990px) {
+                    gap: 20px;
+                }
                .link{
                 color: $white;
                 opacity: 70%;
+
+                 @media (max-width: 990px) {
+                    font-size: 18px;
+                }
                }
             }
 
-            .image{
+            .imagewrap{
+
                 margin-top: 80px;
+
+                @media (max-width: 990px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+             
             }
+            
+
+              @media (max-width: 990px) {
+            max-width: 100%;
+            width: 100%;
+        }
 
         }
     }
