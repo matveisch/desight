@@ -42,10 +42,6 @@ export function Footer() {
                 <p className={styles.formTitle}>Telegram message</p>
                 <Form />
               </SwiperSlide>
-              <SwiperSlide>
-                <p className={styles.formTitle}>Facebook message</p>
-                <Form />
-              </SwiperSlide>
             </Swiper>
           </div>
         </div>
