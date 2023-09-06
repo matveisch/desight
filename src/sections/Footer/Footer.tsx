@@ -59,25 +59,27 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <h2 className={styles.slogan}>Clear sight. Bright future</h2>
-          <div className={styles.nav}>
-            <Link href="#">
-              <p className={styles.link}>Services</p>
-            </Link>
-            <Link href="#">
-              <p className={styles.link}>Projects</p>
-            </Link>
-            <Link href="#">
-              <p className={styles.link}>About us</p>
-            </Link>
-            <Link href="#">
-              <p className={styles.link}>Contact</p>
-            </Link>
+          <div className={styles.body}>
+            <h2 className={styles.slogan}>Clear sight. Bright future</h2>
+            <div className={styles.nav}>
+              <Link href="#">
+                <p className={styles.link}>Services</p>
+              </Link>
+              <Link href="#">
+                <p className={styles.link}>Projects</p>
+              </Link>
+              <Link href="#">
+                <p className={styles.link}>About us</p>
+              </Link>
+              <Link href="#">
+                <p className={styles.link}>Contact</p>
+              </Link>
+            </div>
+            <div className={styles.imagewrap}>
+              <Image src={globe} alt='globe' className={styles.image} />
+            </div>
           </div>
-          <div className={styles.imagewrap}>
-            <Image src={globe} alt='globe' className={styles.image} />
           </div>
-        </div>
       </div>
       <p className={styles.copyright}>
         Product by Desight ©{new Date().getFullYear()}{' '}

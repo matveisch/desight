@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    // max-width: 450px;
 
     .input{
         height: 75px;
@@ -42,10 +43,12 @@
 
     .button{
         position: absolute;
-        bottom: -3px;
-        right: -1px;
+        bottom: 0;
+        right: 0;
         background: transparent;
         border: none;
+        width: 104px;
+        height: 47px;
         :disabled{
             background: transparent;
         }

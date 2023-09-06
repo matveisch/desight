@@ -8,6 +8,9 @@ import appIcon from '@images/app-icon.svg';
 import shopIcon from '@images/shop-icon.svg';
 import businessIcon from '@images/business-icon.svg';
 import beetrade from '@images/beetrade-icon.svg';
+import mail from '@images/mail-foo.svg';
+import whatsapp from '@images/whatsapp-foo.svg';
+import tg from '@images/tg-foo.svg';
 
 export type TabType = {
   title: string;
@@ -164,17 +167,18 @@ export const social = [
   }
 ];
 
-export const contact = [
+export const contact: TabType[] = [
   {
-    title: 'email'
+    title: '',
+    icon: mail
   },
   {
-    title: 'whatsapp'
+    title: '',
+    icon: whatsapp
   },
   {
-    title: 'telegram'
-  },
-  {
-    title: 'facebook'
+    title: '',
+    icon: tg
+
   },
 ]

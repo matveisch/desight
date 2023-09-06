@@ -9,6 +9,7 @@
         justify-content: center;
         gap: 30px;
         max-width: 100%;
+        width: 100%;
 
         @media (max-width: 990px) {
             flex-direction: column;
@@ -22,8 +23,8 @@
             box-sizing: border-box;
             padding: 53px 87px 40px 57px;
             background-color: $blue;
-            max-width: 595px;
-            // width: 100%;
+            // max-width: 595px;
+            width: calc(50vw - 33px);
             overflow: hidden;
             border-radius: 32px;
 
@@ -33,7 +34,7 @@
             }
 
             .swiperWrap{
-                max-width: 450px;
+                // max-width: 450px;
 
                 @media (max-width: 990px) {
                     max-width: 100%;
@@ -63,7 +64,8 @@
         .right{
             box-sizing: border-box;
             background-color: $blue;
-            max-width: 595px;
+            // max-width: 100%;
+            width: 50vw;
             border-radius: 32px;
             padding: 0 40px;
             padding-top: 53px;
@@ -90,15 +92,24 @@
                     opacity: 70%;
                 }
             }
+
+            .body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            
             .slogan{
                 font-size: 36px;
                 color: $white;
                 margin-bottom: 14px;
+                text-align: center;
             }
 
             .nav{
                 display: flex;
                 gap: 45px;
+                justify-content: center;
 
                   @media (max-width: 990px) {
                     gap: 20px;
@@ -117,14 +128,15 @@
 
                 margin-top: 80px;
 
-                @media (max-width: 990px) {
+               
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                }
+            
 
              
             }
+        }
             
 
               @media (max-width: 990px) {
