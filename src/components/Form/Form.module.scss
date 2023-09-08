@@ -25,6 +25,7 @@
     @media (max-width: 450px){
         font-size: 16px;
         padding: 23px 14px;
+        border: 2px solid $white;
 
         &::placeholder{
            
@@ -57,6 +58,7 @@
         @media (max-width: 450px){
             font-size: 16px;
             padding: 18px 14px;
+            border: 2px solid $white;
 
             &::placeholder{
                
@@ -80,6 +82,12 @@
         :disabled{
             background: transparent;
         }
+
+        @media (max-width: 450px) {
+            bottom: -1px;
+            right: -1px;
+           }
+
         .image{
             height: 100%;
             width: 100%;
