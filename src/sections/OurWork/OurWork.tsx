@@ -13,7 +13,7 @@ export default function OurWork() {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <section className={styles.ourWork}>
+    <section className={styles.ourWork} id='projects'>
       <h2 className={styles.header}>Check our work</h2>
       <Swiper
         centeredSlides

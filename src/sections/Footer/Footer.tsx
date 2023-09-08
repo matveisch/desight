@@ -17,7 +17,7 @@ export function Footer() {
   const [currentTab, setCurrentTab] = React.useState(0);
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id='contact'>
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <h2 className={styles.title}>Get response</h2>
@@ -62,16 +62,16 @@ export function Footer() {
           <div className={styles.body}>
             <h2 className={styles.slogan}>Clear sight. Bright future</h2>
             <div className={styles.nav}>
-              <Link href="#">
-                <p className={styles.link}>Services</p>
+            <Link href="#services">
+                <p  className={styles.link}>Services</p>
               </Link>
-              <Link href="#">
+              <Link href="#projects">
                 <p className={styles.link}>Projects</p>
               </Link>
-              <Link href="#">
+              <Link href="#about">
                 <p className={styles.link}>About us</p>
               </Link>
-              <Link href="#">
+              <Link href="#contact">
                 <p className={styles.link}>Contact</p>
               </Link>
             </div>

@@ -11,16 +11,16 @@ export function Header() {
           <Image src={logo} alt="logo" className={styles.image} />
         </div>
         <nav className={styles.nav}>
-          <Link href="#">
+          <Link href="#services" className={styles.link}>
             <p>Сервисы</p>
           </Link>
-          <Link href="#">
+          <Link href="#projects" className={styles.link}>
             <p>Проекты</p>
           </Link>
-          <Link href="#">
+          <Link href="#about" className={styles.link}>
             <p>О нас</p>
           </Link>
-          <Link href="#">
+          <Link href="#contact" className={styles.link}>
             <p>Контакты</p>
           </Link>
         </nav>

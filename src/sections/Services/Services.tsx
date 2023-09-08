@@ -12,7 +12,7 @@ export default function Services() {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <section className={styles.services}>
+    <section className={styles.services} id='services'>
       <h2 className={styles.header}>Наши сервисы</h2>
       <Swiper
         centeredSlides

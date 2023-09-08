@@ -37,6 +37,14 @@
   .nav {
     display: flex;
     gap: 75px;
+    
+    .link{
+      transition: opacity 0.6s linear;
+
+      &:hover{
+          opacity: 0.7;
+      }
+    }
 
     @media (max-width: 850px) {
       gap: 38px;

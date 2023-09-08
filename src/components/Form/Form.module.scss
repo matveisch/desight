@@ -16,11 +16,24 @@
         &::placeholder{
             color: $white;
            
-        }
         &:focus{
             outline-width: 0;
         }
+
+       
     }
+    @media (max-width: 450px){
+        font-size: 16px;
+        padding: 23px 14px;
+
+        &::placeholder{
+           
+           
+                font-size: 16px;
+           
+        }
+    }
+}
 
         .textarea{
             position: relative;
@@ -35,10 +48,25 @@
             resize: none;
         &::placeholder{
             color: $white;
+            
         }
         &:focus{
             outline-width: 0;
         }
+
+        @media (max-width: 450px){
+            font-size: 16px;
+            padding: 18px 14px;
+
+            &::placeholder{
+               
+               
+                    font-size: 16px;
+               
+            }
+
+       
+    }
     }
 
     .button{
