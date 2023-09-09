@@ -33,7 +33,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
         'px) / ' +
         tabsArrayLength +
         ')';
-  console.log(tabWidth);
+
   return (
     <div className={styles.tabSwitcher}>
       <motion.div

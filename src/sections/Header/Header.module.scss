@@ -5,10 +5,8 @@
 
   // margin-bottom: 260px;
 
-  .headWrap{
-
+  .headWrap {
     display: flex;
-    
 
     justify-content: space-between;
     align-items: center;
@@ -55,6 +53,9 @@
     }
 
     p {
+      opacity: 0;
+      filter: blur(16px);
+
       color: $white;
     }
   }

@@ -55,7 +55,6 @@
       right: -40%;
       bottom: -3%;
     }
-
   }
 
   .leftContainer {
@@ -69,6 +68,7 @@
     }
 
     .left {
+      object-fit: contain;
       width: 100%;
       height: auto;
     }

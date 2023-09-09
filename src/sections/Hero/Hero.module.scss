@@ -33,7 +33,11 @@
 
   .text {
     width: 100%;
+    position: relative;
 
+    h3 {
+      display: inline;
+    }
     @media (max-width: 850px) {
       h3 {
         font-size: 18px;
@@ -69,6 +73,22 @@
       @media (max-width: 850px) {
         padding-top: 17px;
         gap: 7px;
+      }
+    }
+    .titleWrap {
+      // opacity: 1;
+      // left: 0;
+      // right: 0;
+      // position: absolute;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // width: 100%;
+
+      .titleChar {
+        display: inline;
+        opacity: 0;
+        filter: blur(16px);
       }
     }
   }
