@@ -10,10 +10,11 @@ import useGetScreenWidth from '@/utils/hooks/useGetScreenWidth';
 type TabSwitcherProps = {
   tabsNames: TabType[];
   currentTabIndex: number;
+  darkTab?: boolean;
 };
 
 export default function TabSwitcher(props: TabSwitcherProps) {
-  const { tabsNames, currentTabIndex } = props;
+  const { tabsNames, currentTabIndex, darkTab = false } = props;
 
   const screenWidth = useGetScreenWidth();
   const swiper = useSwiper();
@@ -48,7 +49,10 @@ export default function TabSwitcher(props: TabSwitcherProps) {
             'px)',
         }}
         transition={{ type: 'just' }}
-        style={{ width: tabWidth }}
+        style={{
+          width: tabWidth,
+          backgroundColor: darkTab ? '#05050D' : '#0054F6',
+        }}
         className={styles.switcher}
       />
       {tabsNames.map((tab, index) => {

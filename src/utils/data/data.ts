@@ -8,6 +8,9 @@ import appIcon from '@images/app-icon.svg';
 import shopIcon from '@images/shop-icon.svg';
 import businessIcon from '@images/business-icon.svg';
 import beetrade from '@images/beetrade-icon.svg';
+import mail from '@images/mail-foo.svg';
+import whatsapp from '@images/whatsapp-foo.svg';
+import tg from '@images/tg-foo.svg';
 
 export type TabType = {
   title: string;
@@ -140,22 +143,42 @@ export const workData: WorkDataType[] = [
 export const social = [
   {
     name: 'Telegram',
-    src: require("@images/tg.svg").default,
+    srcWhite: require("@images/tg-w.svg").default,
+    srcBlue: require("@images/tg.svg").default,
     link: ''
   },
   {
     name: 'Facebook',
-    src: require("@images/fb.svg").default,
+    srcWhite: require("@images/fb-w.svg").default,
+    srcBlue: require("@images/fb.svg").default,
     link: ''
   },
   {
     name: 'Behance',
-    src: require("@images/behance.svg").default,
+    srcWhite: require("@images/behance-w.svg").default,
+    srcBlue: require("@images/behance.svg").default,
     link: ''
   },
   {
     name: 'Instagram',
-    src: require("@images/insta.svg").default,
+    srcWhite: require("@images/insta-w.svg").default,
+    srcBlue: require("@images/insta.svg").default,
     link: ''
   }
 ];
+
+export const contact: TabType[] = [
+  {
+    title: '',
+    icon: mail
+  },
+  {
+    title: '',
+    icon: whatsapp
+  },
+  {
+    title: '',
+    icon: tg
+
+  },
+]
