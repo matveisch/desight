@@ -49,8 +49,9 @@ export function Hero() {
               isInView ? { opacity: 1, filter: 'blur(0px)' } : { opacity: 0 }
             }
             transition={{
-              delay: headerText1.concat('', headerText2).split('').length * 0.1,
-              duration: 0.7,
+              delay:
+                headerText1.concat('', headerText2).split('').length * 0.1 - 1,
+              duration: 0.5,
               type: 'tween',
             }}
           >
@@ -104,9 +105,7 @@ export function Hero() {
                 : { opacity: 0, filter: 'blur(16px)' }
             }
             transition={{
-              delay:
-                headerText1.concat('', headerText2).split('').length * 0.1 +
-                0.5,
+              delay: headerText1.concat('', headerText2).split('').length * 0.1,
             }}
             className={styles.social}
           >

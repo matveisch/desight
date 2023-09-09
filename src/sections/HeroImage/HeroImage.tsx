@@ -81,9 +81,13 @@ export function HeroImage() {
         >
           <Image src={left} alt="left" className={styles.left} />
         </motion.div>
-        <div className={styles.rightContainer}>
+        <motion.div
+          initial={{ opacity: 0, y: -50, filter: 'blur(16px)' }}
+          variants={imageVariants}
+          className={styles.rightContainer}
+        >
           <Image src={right} alt="right" className={styles.right} />
-        </div>
+        </motion.div>
       </motion.div>
     </motion.section>
   );
