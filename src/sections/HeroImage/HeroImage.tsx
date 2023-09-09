@@ -52,7 +52,7 @@ export function HeroImage() {
   });
 
   return (
-    <motion.section
+    <motion.div
       animate={isInView ? 'animate' : 'noAnimate'}
       className={styles.heroimage}
     >
@@ -89,6 +89,6 @@ export function HeroImage() {
           <Image src={right} alt="right" className={styles.right} />
         </motion.div>
       </motion.div>
-    </motion.section>
+    </motion.div>
   );
 }

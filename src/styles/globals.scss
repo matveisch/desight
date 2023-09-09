@@ -9,6 +9,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: $black;
 }
@@ -19,9 +20,15 @@ body {
   flex-direction: column;
   align-items: center;
 }
-// section {
-//   max-width: 1280px;
-// }
+section {
+  margin-top: 160px;
+  @media (max-width: 744px) {
+    margin-top: 80px;
+  }
+  // @media (max-width: 425px) {
+  //   margin-top: 160px;
+  // }
+}
 
 a {
   color: inherit;

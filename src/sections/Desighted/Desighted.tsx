@@ -73,7 +73,7 @@ export default function Desighted() {
   }, [isHovered]);
 
   return (
-    <>
+    <section>
       <motion.div
         className={styles.main}
         ref={containerRef}
@@ -155,6 +155,6 @@ export default function Desighted() {
       </motion.div>
       {/* <p style={{ color: '#fff' }}>x: {mousePosition.x}</p>
       <p style={{ color: '#fff' }}>y: {mousePosition.y}</p> */}
-    </>
+    </section>
   );
 }

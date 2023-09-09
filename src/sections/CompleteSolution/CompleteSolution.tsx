@@ -29,7 +29,7 @@ export default function CompleteSolution() {
   ];
 
   return (
-    <div className={styles.completeSolution} id='about'>
+    <section className={styles.completeSolution} id="about">
       <div className={styles.header}>
         <CompleteDescription />
         <SpinAnimation />
@@ -58,6 +58,6 @@ export default function CompleteSolution() {
         </div>
         <div className={styles.dashedRectangle} />
       </div>
-    </div>
+    </section>
   );
 }
