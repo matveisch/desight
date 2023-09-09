@@ -63,23 +63,25 @@ export function Header() {
         <div className={styles.logo}>
           <Image src={logo} alt="logo" className={styles.image} />
         </div>
+
         <motion.nav
           transition={{ staggerChildren: 0.3 }}
           className={styles.nav}
         >
-          <Link href="#">
+          <Link href="#services" className={styles.link}>
             <motion.p variants={navLinkVariants}>Сервисы</motion.p>
           </Link>
 
-          <Link href="#">
+          <Link href="#projects" className={styles.link}>
             <motion.p variants={navLinkVariants}>Проекты</motion.p>
           </Link>
 
-          <Link href="#">
+          <Link href="#about" className={styles.link}>
             <motion.p variants={navLinkVariants}>О нас</motion.p>
           </Link>
-          <Link href="#">
+          <Link href="#contact" className={styles.link}>
             <motion.p variants={navLinkVariants}>Контакты</motion.p>
+
           </Link>
         </motion.nav>
         <button className={styles.menu}>

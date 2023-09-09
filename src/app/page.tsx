@@ -6,6 +6,7 @@ import { HeroImage } from '@/sections/HeroImage/HeroImage';
 import styles from '@styles/page.module.scss';
 import OurWork from '@sections/OurWork/OurWork';
 import CompleteSolution from '@sections/CompleteSolution/CompleteSolution';
+import { Footer } from '@/sections/Footer/Footer';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <OurWork />
       <CompleteSolution />
       <Desighted />
+      <Footer />
     </main>
   );
 }

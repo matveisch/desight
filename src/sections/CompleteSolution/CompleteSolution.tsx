@@ -29,7 +29,7 @@ export default function CompleteSolution() {
   ];
 
   return (
-    <div className={styles.completeSolution}>
+    <div className={styles.completeSolution} id='about'>
       <div className={styles.header}>
         <CompleteDescription />
         <SpinAnimation />
