@@ -41,6 +41,7 @@ export default function OneStep(props: PropsType) {
             {Array.from(Array(10).keys()).map((key) => {
               return (
                 <motion.div
+                  key={key}
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: key * 0.1 + 3.7 }}
@@ -61,7 +62,7 @@ export default function OneStep(props: PropsType) {
             type: 'tween',
             ease: 'linear',
             duration: props.last ? 0.5 : 1,
-            delay: 1 * (props.num - 1) + 0.2,
+            delay: props.num - 1 + 0.2,
           }}
           className={styles.line}
           style={
@@ -79,7 +80,7 @@ export default function OneStep(props: PropsType) {
             type: 'tween',
             ease: 'linear',
             duration: 0.2,
-            delay: props.first ? 0 : 1 * (props.num - 1) + 0.7,
+            delay: props.first ? 0 : props.num - 1 + 0.7,
           }}
           className={styles.number}
         >
@@ -94,7 +95,7 @@ export default function OneStep(props: PropsType) {
           type: 'tween',
           ease: 'linear',
           duration: 0.5,
-          delay: props.first ? 0 : 1 * (props.num - 1) + 0.9,
+          delay: props.first ? 0 : props.num - 1 + 0.9,
         }}
       >
         <h5>{header}</h5>

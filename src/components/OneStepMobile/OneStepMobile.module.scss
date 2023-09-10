@@ -1,7 +1,7 @@
 .oneStepMobile {
   display: flex;
   gap: 19px;
-  align-items: start;
+  align-items: flex-start;
   position: relative;
 
   .numberContainer {
@@ -37,7 +37,7 @@
   .textContainer {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
     margin-bottom: 20px;
 

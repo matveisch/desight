@@ -4,7 +4,7 @@ import Social from '@/components/Social/Social';
 import { useRef } from 'react';
 import { social } from '@/utils/data/data';
 import { motion, useInView } from 'framer-motion';
-import { HeroAnimation } from '@/components/HeroAnimation/HeroAnimaton';
+import { HeroAnimation } from '@components/heroAnimation/HeroAnimaton';
 
 const titleAnimation = {
   inView: { x: 0, scale: 1, opacity: 1, filter: 'blur(0px)' },
@@ -38,7 +38,9 @@ export function Hero() {
   const isInView = useInView(ref, {
     once: true,
   });
-  console.log(headerText1.concat('', headerText2).split('').length);
+
+  // console.log(headerText1.concat('', headerText2).split('').length);
+
   return (
     <section className={styles.hero}>
       <div className={styles.herowrap}>

@@ -34,7 +34,9 @@ export default function TabSwitcher(props: TabSwitcherProps) {
   //       (15 + tabMargin * 2) +
   //       'px)';
   const tabWidth = tabNameRef.current?.clientWidth;
-  console.log(tabWidth);
+
+  // console.log(tabWidth);
+
   return (
     <div className={styles.tabSwitcher}>
       <motion.div
@@ -82,7 +84,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
         return (
           <div
             ref={tabNameRef}
-            key={tab.title + index}
+            key={`${tab.title}-${index}`}
             className={styles.tabName}
             onClick={() => swiper.slideTo(index)}
           >

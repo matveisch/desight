@@ -39,7 +39,8 @@ export default function Desighted() {
         ? containerRef.current?.clientHeight
         : 0,
     });
-    console.log(buttonSize);
+
+    // console.log(buttonSize);
   }, []);
 
   useEffect(() => {
@@ -72,8 +73,13 @@ export default function Desighted() {
     };
   }, [isHovered]);
 
+  const animation = {
+    left: isHovered ? mousePosition.x * 10 - buttonSize.width / 2 : 'unset',
+    top: isHovered ? mousePosition.y * 10 - buttonSize.height / 2 : 'unset',
+  };
+
   return (
-    <section>
+    <>
       <motion.div
         className={styles.main}
         ref={containerRef}
@@ -81,15 +87,8 @@ export default function Desighted() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <motion.button
-          animate={{
-            left: isHovered
-              ? mousePosition.x * 10 - buttonSize.width / 2
-              : 'unset',
-            top: isHovered
-              ? mousePosition.y * 10 - buttonSize.height / 2
-              : 'unset',
-          }}
-          transition={{ type: 'just', duration: 0.3 }}
+          animate={animation}
+          transition={{ duration: 0.3, type: 'tween' }}
           className={styles.button}
           ref={buttonRef}
         >
@@ -102,17 +101,8 @@ export default function Desighted() {
             height: buttonSize.height - 3,
             zIndex: 3,
           }}
-          animate={{
-            left: isHovered
-              ? mousePosition.x * 10 - buttonSize.width / 2
-              : 'unset',
-            top: isHovered
-              ? mousePosition.y * 10 - buttonSize.height / 2
-              : 'unset',
-          }}
-          transition={{
-            duration: 0.35,
-          }}
+          animate={animation}
+          transition={{ duration: 0.35 }}
         ></motion.div>
         <motion.div
           style={{
@@ -121,17 +111,8 @@ export default function Desighted() {
             height: buttonSize.height - 7,
             zIndex: 2,
           }}
-          animate={{
-            left: isHovered
-              ? mousePosition.x * 10 - buttonSize.width / 2
-              : 'unset',
-            top: isHovered
-              ? mousePosition.y * 10 - buttonSize.height / 2
-              : 'unset',
-          }}
-          transition={{
-            duration: 0.4,
-          }}
+          animate={animation}
+          transition={{ duration: 0.4 }}
         ></motion.div>
         <motion.div
           style={{
@@ -140,21 +121,12 @@ export default function Desighted() {
             height: buttonSize.height - 10,
             zIndex: 1,
           }}
-          animate={{
-            left: isHovered
-              ? mousePosition.x * 10 - buttonSize.width / 2
-              : 'unset',
-            top: isHovered
-              ? mousePosition.y * 10 - buttonSize.height / 2
-              : 'unset',
-          }}
-          transition={{
-            duration: 0.45,
-          }}
+          animate={animation}
+          transition={{ duration: 0.45 }}
         ></motion.div>
       </motion.div>
       {/* <p style={{ color: '#fff' }}>x: {mousePosition.x}</p>
       <p style={{ color: '#fff' }}>y: {mousePosition.y}</p> */}
-    </section>
+    </>
   );
 }
