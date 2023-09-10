@@ -4,7 +4,7 @@ import React from 'react';
 import TabSwitcher from '@/components/TabSwitcher/TabSwitcher';
 import styles from './Footer.module.scss';
 import { contact } from '@/utils/data/data';
-import Form from '@/components/Form/Form';
+import EmailForm from '@/components/EmailForm/EmailForm';
 import Image from 'next/image';
 import logo from '@images/logo-footer.svg';
 import Social from '@/components/Social/Social';
@@ -12,9 +12,11 @@ import { social } from '@/utils/data/data';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import globe from '@images/globe.svg';
+import CustomForm from '@/components/CustomForm/CustomForm';
 
 export function Footer() {
   const [currentTab, setCurrentTab] = React.useState(0);
+  const formTypes = ['email', 'whatsapp', 'telegram'];
 
   return (
     <footer className={styles.footer} id="contact">
@@ -36,15 +38,15 @@ export function Footer() {
               />
               <SwiperSlide>
                 <p className={styles.formTitle}>Email message</p>
-                <Form />
+                <EmailForm />
               </SwiperSlide>
               <SwiperSlide>
                 <p className={styles.formTitle}>Whatsapp message</p>
-                <Form />
+                <CustomForm formType={formTypes[currentTab]}/>
               </SwiperSlide>
               <SwiperSlide>
                 <p className={styles.formTitle}>Telegram message</p>
-                <Form />
+                <CustomForm formType={formTypes[currentTab]}/>
               </SwiperSlide>
             </Swiper>
           </div>

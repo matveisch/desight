@@ -1,11 +1,11 @@
 'use client';
 
-import styles from './Form.module.scss';
+import styles from './EmailForm.module.scss';
 import { useState, FormEvent } from 'react';
 import send from '@images/send-button.svg';
 import Image from 'next/image';
 
-function Form() {
+function EmailForm() {
 
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -44,4 +44,4 @@ function Form() {
     </form>
   );
 }
-export default Form;
+export default EmailForm;
