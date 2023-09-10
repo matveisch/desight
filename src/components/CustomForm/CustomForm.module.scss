@@ -1,31 +1,108 @@
-.chat{
-  background: #05050D;
+.chat {
+  background: #05050d;
   border-radius: 32px;
   min-height: 256px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
+
+  .messages{
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
-  padding: 10px;
+  padding: 16px 30px;
 
-  margin: auto;
-    
-    .bubble{
-        border-radius: 10px;
-        padding: 10px;
-        margin-bottom: 10px;
-        max-width: 70%;
+//   margin: auto;
+  
+
+  .bubble {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    display: flex;
+    z-index: 2;
+    // position: relative;
+
+    .text {
+      // padding: 16px 30px;
+      color: $white;
     }
 
-    .whbubble{
-        background-color: #025E4A;
-
-
+    .tgappendix {
+      position: absolute;
+      left: -8px;
+      bottom: -5px;
+      z-index: -1;
     }
 
-    .tgbubble{
-        background: #2B5278;
+    .whappendix {
+      position: absolute;
+      left: -5px;
+      top: -12px;
+      rotate: 134deg;
     }
+  }
 
+  .whbubble {
+    background-color: #025e4a;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tgbubble {
+    background: #2b5278;
+    position: relative;
+    z-index: 2;
+  }
 }
 
+  .action{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+
+    .text{
+        border-radius: 32px;
+        box-sizing: border-box;
+        padding: 15px 0;
+        height: 62px;
+        resize: none;
+        background-color: #1F2C34;
+        color: $white;
+        font-family: var(--font-nunito), sans-serif;
+        font-size: 24px;
+        
+    }
+  }
+
+  .whaction{
+    gap: 10px;
+    padding: 10px;
+    .text{
+        padding-left: 34px;
+        width: 423px;
+    }
+  }
+
+  .button{
+    background: transparent;
+    border: none;
+    height: 62px;
+    width: 62px;
+
+    .whcircle{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        border-radius: 62px;
+        background: #00AA83;
+    }
+  }
+}
