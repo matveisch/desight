@@ -76,6 +76,11 @@
         color: $white;
         font-family: var(--font-nunito), sans-serif;
         font-size: 24px;
+        border: none;
+
+        &:focus{
+            outline-width: 0;
+        }
         
     }
   }

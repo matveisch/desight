@@ -45,7 +45,7 @@ function CustomForm({ formType }: { formType: string }) {
       <form className={actionType}>
         <textarea
           name="message"
-          placeholder="Your message"
+          placeholder="Message"
           value={message}
           className={fieldType}
           required
