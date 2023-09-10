@@ -5,7 +5,6 @@ import { TabType } from '@/utils/data/data';
 import { motion } from 'framer-motion';
 import { useSwiper } from 'swiper/react';
 import styles from './TabSwitcher.module.scss';
-import useGetScreenWidth from '@/utils/hooks/useGetScreenWidth';
 import { useRef } from 'react';
 
 type TabSwitcherProps = {
@@ -17,14 +16,11 @@ type TabSwitcherProps = {
 export default function TabSwitcher(props: TabSwitcherProps) {
   const tabNameRef = useRef<HTMLDivElement>(null);
   const { tabsNames, currentTabIndex, darkTab = false } = props;
-
-  const screenWidth = useGetScreenWidth();
   const swiper = useSwiper();
+  const tabWidth = tabNameRef.current?.clientWidth;
 
   // const tabsArrayLength = tabsNames?.length;
-
   // const tabMargin = screenWidth <= 744 ? 3 : 6;
-
   // const tabWidth =
   //   screenWidth <= 744
   //     ? 100 / tabsArrayLength + '%'
@@ -33,9 +29,6 @@ export default function TabSwitcher(props: TabSwitcherProps) {
   //       ' - ' +
   //       (15 + tabMargin * 2) +
   //       'px)';
-  const tabWidth = tabNameRef.current?.clientWidth;
-
-  // console.log(tabWidth);
 
   return (
     <div className={styles.tabSwitcher}>
