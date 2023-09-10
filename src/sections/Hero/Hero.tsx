@@ -16,20 +16,20 @@ const titleInitial = {
   opacity: 0,
   filter: 'blur(16px)',
 };
-const titleWrapperAnimation = {
-  inView: {
-    opacity: 1,
-    filter: 'blur(0px)',
-    position: 'relative',
-    right: 'unset',
-    alignItems: 'left',
-  },
-  notInView: {
-    // opacity: 0,
-    // filter: 'blur(16px)',
-    // position: 'absolute',
-  },
-};
+// const titleWrapperAnimation = {
+//   inView: {
+//     opacity: 1,
+//     filter: 'blur(0px)',
+//     position: 'relative',
+//     right: 'unset',
+//     alignItems: 'left',
+//   },
+//   notInView: {
+//     // opacity: 0,
+//     // filter: 'blur(16px)',
+//     // position: 'absolute',
+//   },
+// };
 
 export function Hero() {
   const headerText1 = 'Clear Sight';

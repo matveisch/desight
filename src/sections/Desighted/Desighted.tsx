@@ -7,7 +7,7 @@ import React, { useRef, useState, useEffect } from 'react';
 export default function Desighted() {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const shadowOne = useRef(null);
+  // const shadowOne = useRef(null);
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [buttonSize, setButtonSize] = useState({

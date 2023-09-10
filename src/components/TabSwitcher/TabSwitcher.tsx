@@ -21,9 +21,9 @@ export default function TabSwitcher(props: TabSwitcherProps) {
   const screenWidth = useGetScreenWidth();
   const swiper = useSwiper();
 
-  const tabsArrayLength = tabsNames?.length;
+  // const tabsArrayLength = tabsNames?.length;
 
-  const tabMargin = screenWidth <= 744 ? 3 : 6;
+  // const tabMargin = screenWidth <= 744 ? 3 : 6;
 
   // const tabWidth =
   //   screenWidth <= 744
