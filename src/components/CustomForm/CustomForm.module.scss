@@ -89,6 +89,8 @@
         }
         
     }
+
+   
   }
 
   .whaction{
@@ -98,6 +100,9 @@
         padding-left: 34px;
         width: 423px;
         background-color: #1F2C34;
+        @media (max-width: 990px) {
+          width: 100%;
+        }
     }
   }
 
@@ -111,14 +116,17 @@
       padding-left: 28px;
       width: 387px;
       background-color: #070707;
+      @media (max-width: 990px) {
+        width: 100%;
+      }
     }
   }
 
   .button{
     background: transparent;
     border: none;
-    height: 62px;
-    width: 62px;
+    min-height: 62px;
+    min-width: 62px;
 
     .circle{
 
