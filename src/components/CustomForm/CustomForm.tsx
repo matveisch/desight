@@ -11,7 +11,7 @@ function CustomForm({ formType }: { formType: string }) {
   const isTelegram = formType === 'telegram';
 
   const SignUpSchema = z.object({
-    message: z.string().max(4),
+    message: z.string().max(100),
   });
   type SignUpSchemaType = z.infer<typeof SignUpSchema>;
   const {
@@ -56,9 +56,9 @@ function CustomForm({ formType }: { formType: string }) {
           required
           {...register('message')}
         />
-        {errors.message && (
-          <span style={{ color: 'red' }}>{errors.message.message}</span>
-        )}
+        {/*{errors.message && (*/}
+        {/*  <span style={{ color: 'red' }}>{errors.message.message}</span>*/}
+        {/*)}*/}
         <button type="submit" className={styles.button}>
           <div className={circleType}>
             <Image src={send} alt="send" className={styles.image} />

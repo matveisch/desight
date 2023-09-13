@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 function EmailForm() {
   const SignUpSchema = z.object({
     email: z.string().email(),
-    message: z.string().max(4),
+    message: z.string().max(100),
   });
   type SignUpSchemaType = z.infer<typeof SignUpSchema>;
   const {
@@ -27,18 +27,18 @@ function EmailForm() {
         required
         {...register('email')}
       />
-      {errors.email && (
-        <span style={{ color: 'red' }}>{errors.email.message}</span>
-      )}
+      {/*{errors.email && (*/}
+      {/*  <span style={{ color: 'red' }}>{errors.email.message}</span>*/}
+      {/*)}*/}
       <textarea
         placeholder="Your message"
         className={styles.textarea}
         required
         {...register('message')}
       />
-      {errors.message && (
-        <span style={{ color: 'red' }}>{errors.message.message}</span>
-      )}
+      {/*{errors.message && (*/}
+      {/*  <span style={{ color: 'red' }}>{errors.message.message}</span>*/}
+      {/*)}*/}
       <button type="submit" className={styles.button}>
         <Image src={send} alt="send" className={styles.image} />
       </button>
