@@ -1,18 +1,25 @@
-'use client';
-
 import styles from './CustomForm.module.scss';
 import tgappendix from '@images/tgappendix.svg';
 import whappendix from '@images/whappendix.svg';
 import Image from 'next/image';
-import { useState, FormEvent } from 'react';
 import send from '@images/send-message.svg';
+import { z } from 'zod';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 function CustomForm({ formType }: { formType: string }) {
-  const [message, setMessage] = useState('');
   const isTelegram = formType === 'telegram';
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
+
+  const SignUpSchema = z.object({
+    message: z.string().max(4),
+  });
+  type SignUpSchemaType = z.infer<typeof SignUpSchema>;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignUpSchemaType>({ resolver: zodResolver(SignUpSchema) });
+  const onSubmit: SubmitHandler<SignUpSchemaType> = (data) => console.log(data);
 
   //   const chatType = `${styles.chat} ${isTelegram ? styles.telegram : ''}`;
   const bubbleType = `${styles.bubble} ${
@@ -42,16 +49,17 @@ function CustomForm({ formType }: { formType: string }) {
           <Image src={appendixType} alt="" className={appendixClass} />
         </div>
       </div>
-      <form className={actionType}>
+      <form className={actionType} onSubmit={handleSubmit(onSubmit)}>
         <textarea
-          name="message"
           placeholder="Message"
-          value={message}
           className={fieldType}
           required
-          onChange={(e) => setMessage(e.target.value)}
+          {...register('message')}
         />
-        <button type="submit" className={styles.button} disabled>
+        {errors.message && (
+          <span style={{ color: 'red' }}>{errors.message.message}</span>
+        )}
+        <button type="submit" className={styles.button}>
           <div className={circleType}>
             <Image src={send} alt="send" className={styles.image} />
           </div>
