@@ -1,11 +1,13 @@
 'use client';
 import styles from './Header.module.scss';
+import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@images/logo.svg';
 import burger from '@images/burger.svg';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { constrainedMemory } from 'process';
 
 const navVariants = {
   inView: {
@@ -38,7 +40,7 @@ const navLinkVariants = {
 
 export function Header() {
   const [animate, setAnimate] = useState<boolean>(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimate(true);
@@ -81,13 +83,21 @@ export function Header() {
           </Link>
           <Link href="#contact" className={styles.link}>
             <motion.p variants={navLinkVariants}>Контакты</motion.p>
-
           </Link>
         </motion.nav>
-        <button className={styles.menu}>
+        <button
+          className={styles.menu}
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+            console.log(isMenuOpen);
+          }}
+        >
           <Image src={burger} alt="burger" className={styles.image} />
         </button>
       </motion.div>
+      <div className={styles.mobileMenuWrapper}>
+        <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+      </div>
     </motion.header>
   );
 }

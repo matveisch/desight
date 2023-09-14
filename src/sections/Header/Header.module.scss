@@ -4,7 +4,12 @@
   padding-top: 40px;
 
   // margin-bottom: 260px;
-
+  .mobileMenuWrapper {
+    display: none;
+    @media (max-width: 650px) {
+      display: block;
+    }
+  }
   .headWrap {
     display: flex;
 
@@ -35,12 +40,12 @@
   .nav {
     display: flex;
     gap: 75px;
-    
-    .link{
+
+    .link {
       transition: opacity 0.6s linear;
 
-      &:hover{
-          opacity: 0.7;
+      &:hover {
+        opacity: 0.7;
       }
     }
 

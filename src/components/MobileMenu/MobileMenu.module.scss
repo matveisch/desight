@@ -1,0 +1,74 @@
+.mainWrapper {
+  width: 100%;
+  background-color: $blue;
+  height: 0px;
+  margin-top: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border-radius: 16px;
+  nav {
+    z-index: 1;
+    width: 100%;
+    padding: 16px;
+    position: relative;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      list-style: none;
+      color: $white;
+      li {
+        p {
+          color: $white;
+        }
+      }
+    }
+  }
+  .translateWrapper {
+    background-color: $white;
+    border-radius: 32px;
+    padding: 2px 15px 2px 2px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .translateIcon {
+      padding: 5px 10px;
+      background-color: $blue;
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      img {
+        height: 15px;
+        width: auto;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      list-style: none;
+      color: $white;
+      li {
+        p {
+          color: $blue;
+        }
+      }
+    }
+  }
+  .cover {
+    background-color: $black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100px;
+    z-index: 2;
+  }
+}
