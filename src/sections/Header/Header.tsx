@@ -1,6 +1,7 @@
 'use client';
 import styles from './Header.module.scss';
 import MobileMenu from '@/components/MobileMenu/MobileMenu';
+import LangSwitch from '@/components/LangSwitch/LangSwitch';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@images/logo.svg';
@@ -61,6 +62,9 @@ export function Header() {
       ref={ref}
       className={styles.header}
     >
+      <div className={styles.langSwitchWrapper}>
+        <LangSwitch />
+      </div>
       <motion.div className={styles.headWrap}>
         <div className={styles.logo}>
           <Image src={logo} alt="logo" className={styles.image} />

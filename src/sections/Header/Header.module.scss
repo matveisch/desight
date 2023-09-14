@@ -1,8 +1,15 @@
 .header {
   color: $white;
 
-  padding-top: 40px;
-
+  padding-top: 20px;
+  .langSwitchWrapper {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 48px;
+    @media (max-width: 650px) {
+      display: none;
+    }
+  }
   // margin-bottom: 260px;
   .mobileMenuWrapper {
     display: none;

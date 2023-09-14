@@ -1,0 +1,41 @@
+.mainWrapper {
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 32px;
+  align-items: center;
+  padding: 0px;
+  width: fit-content;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+
+  .iconWrapper {
+    background-color: $blue;
+    width: fit-content;
+    border-radius: 32px;
+    padding: 6px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+    img {
+      height: 16px;
+      width: auto;
+    }
+  }
+  ul {
+    padding: 0 24px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    li {
+      p {
+        cursor: pointer;
+        font-size: 14px;
+        color: $blue;
+      }
+    }
+  }
+}
