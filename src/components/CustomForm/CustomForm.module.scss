@@ -72,18 +72,19 @@
     flex-direction: row;
     padding-bottom: 10px;
 
-    .text{
+    .input{
         border-radius: 32px;
         box-sizing: border-box;
         padding: 15px 0;
-        height: 62px;
         resize: none;
         overflow: hidden;
         color: $white;
         font-family: var(--font-nunito), sans-serif;
         font-size: 24px;
         border: none;
-
+        min-height: 62px;
+        height: 62px;
+        width: 100%;
         &:focus{
             outline-width: 0;
         }
@@ -96,9 +97,10 @@
   .whaction{
     gap: 10px;
     padding: 10px;
-    .text{
+    .whinput{
         padding-left: 34px;
         width: 423px;
+        padding-right: 12px;
         background-color: #1F2C34;
         @media (max-width: 990px) {
           width: 100%;
@@ -109,11 +111,13 @@
   .tgaction{
     background: #182533;
     padding: 13px 20px 13px 30px;
+   
     gap: 18px;
     border-radius: 0 0 32px 32px;
 
-    .text{
+    .tginput{
       padding-left: 28px;
+      padding-right: 12px;
       width: 387px;
       background-color: #070707;
       @media (max-width: 990px) {
@@ -125,8 +129,8 @@
   .button{
     background: transparent;
     border: none;
-    min-height: 62px;
-    min-width: 62px;
+    height: 62px;
+    width: 62px;
 
     .circle{
 

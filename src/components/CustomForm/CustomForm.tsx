@@ -4,7 +4,7 @@ import styles from './CustomForm.module.scss';
 import tgappendix from '@images/tgappendix.svg';
 import whappendix from '@images/whappendix.svg';
 import Image from 'next/image';
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useRef, ChangeEvent } from 'react';
 import send from '@images/send-message.svg';
 
 function CustomForm({ formType }: { formType: string }) {
@@ -14,7 +14,19 @@ function CustomForm({ formType }: { formType: string }) {
     e.preventDefault();
   };
 
-  //   const chatType = `${styles.chat} ${isTelegram ? styles.telegram : ''}`;
+ //dynamic textarea
+
+const ref = useRef<HTMLTextAreaElement>(null);
+
+const handleInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  if (ref.current) {
+    ref.current.style.height = 'auto';
+    ref.current.style.height = `${e.target.scrollHeight - 30}px`;
+  }
+};
+
+// dynamic classes
+
   const bubbleType = `${styles.bubble} ${
     isTelegram ? styles.tgbubble : styles.whbubble
   }`;
@@ -26,8 +38,8 @@ function CustomForm({ formType }: { formType: string }) {
   const circleType = `${styles.circle} ${
     isTelegram ? styles.tgcircle : styles.whcircle
   }`;
-  const fieldType = `${styles.text} ${
-    isTelegram ? styles.tgtext : styles.whtext
+  const fieldType = `${styles.input} ${
+    isTelegram ? styles.tginput : styles.whinput
   }`;
 
   return (
@@ -44,12 +56,15 @@ function CustomForm({ formType }: { formType: string }) {
       </div>
       <form className={actionType}>
         <textarea
+          ref={ref}
+          rows={1}
           name="message"
           placeholder="Message"
           value={message}
           className={fieldType}
           required
           onChange={(e) => setMessage(e.target.value)}
+          onInput={handleInput}
         />
         <button type="submit" className={styles.button} disabled>
           <div className={circleType}>
