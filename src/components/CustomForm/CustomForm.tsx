@@ -30,6 +30,13 @@ const handleInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
   if (ref.current) {
     ref.current.style.height = 'auto';
     ref.current.style.height = `${e.target.scrollHeight - 30}px`;
+
+    if (ref.current.style.height === `${128}px`) {
+      ref.current.style.overflowY = 'auto';
+    } 
+    else if (ref.current.style.height === `${32}px`) {
+      ref.current.style.overflowY = 'hidden'; 
+    }
   }
 };
 
