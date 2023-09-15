@@ -86,6 +86,7 @@
         font-size: 24px;
         border: none;
         min-height: 62px;
+        max-height: 6em; 
         overflow: hidden;
         width: 100%;
         &:focus{
@@ -105,7 +106,7 @@
         width: 423px;
         padding-right: 12px;
         background-color: #1F2C34;
-        max-height: 5em; /* Adjust the height as needed for 4 rows */
+       
 
         @media (max-width: 990px) {
           width: 100%;
@@ -125,7 +126,7 @@
       padding-right: 12px;
       width: 387px;
       background-color: #070707;
-      max-height: 5em; /* Adjust the height as needed for 4 rows */
+      
       
       @media (max-width: 990px) {
         width: 100%;
