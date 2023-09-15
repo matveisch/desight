@@ -3,27 +3,37 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import translateIcon from '@images/translate-icon.svg';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 type Props = {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
 };
 
 export default function MobileMenu({ isOpen, setIsOpen }: Props) {
+  const menuRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const onClickOutside = () => (isOpen ? setIsOpen(false) : null);
-    window.addEventListener('click', onClickOutside, false);
-    return () => window.removeEventListener('click', onClickOutside);
-  }, []);
+    const handleClick = (event: any) => {
+      menuRef.current && !menuRef.current.contains(event.target) && isOpen
+        ? setIsOpen(false)
+        : undefined;
+    };
+
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [isOpen]);
 
   return (
     <motion.div
+      ref={menuRef}
       animate={{ height: isOpen ? '100px' : '0px' }}
       className={styles.mainWrapper}
     >
       <nav>
         <motion.ul
-        // animate={{ display: isOpen ? 'flex' : 'none' }}
+          onClick={() => setIsOpen(false)}
+          // animate={{ display: isOpen ? 'flex' : 'none' }}
         >
           <li>
             <Link href="#services">
@@ -47,7 +57,10 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
           </li>
         </motion.ul>
       </nav>
-      <motion.div className={styles.translateWrapper}>
+      <motion.div
+        onClick={() => setIsOpen(false)}
+        className={styles.translateWrapper}
+      >
         <div className={styles.translateIcon}>
           <Image src={translateIcon} alt="translate-icon" />
         </div>
@@ -66,7 +79,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
         </div>
       </motion.div>
       <motion.div
-        animate={{ y: isOpen ? 100 : 0 }}
+        animate={{ height: isOpen ? '0px' : '100px', y: isOpen ? 100 : 0 }}
         transition={{ type: 'tween' }}
         className={styles.cover}
       ></motion.div>
