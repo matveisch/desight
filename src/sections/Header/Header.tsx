@@ -6,9 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@images/logo.svg';
 import burger from '@images/burger.svg';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { constrainedMemory } from 'process';
 
 const navVariants = {
   inView: {
@@ -51,9 +50,9 @@ export function Header() {
   }, []);
 
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {
-    once: true,
-  });
+  // const isInView = useInView(ref, {
+  //   once: true,
+  // });
 
   return (
     <motion.header
