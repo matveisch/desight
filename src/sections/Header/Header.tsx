@@ -42,6 +42,7 @@ const navLinkVariants = {
 export function Header() {
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimate(true);
@@ -91,10 +92,7 @@ export function Header() {
         </motion.nav>
         <button
           className={styles.menu}
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen);
-            console.log(isMenuOpen);
-          }}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <Image src={burger} alt="burger" className={styles.image} />
         </button>
