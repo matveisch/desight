@@ -159,10 +159,6 @@ export function HeroAnimation() {
           setIsTapped(true);
           e.preventDefault();
         }}
-        onClick={(e) => {
-          setIsTapped(true);
-          e.preventDefault();
-        }}
         onMouseUp={() => setIsTapped(false)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

@@ -16,7 +16,7 @@ const navVariants = {
     opacity: 1,
     filter: 'blur(0px)',
     transition: {
-      duration: 1,
+      duration: 0.8,
       type: 'tween',
     },
   },
@@ -30,7 +30,7 @@ const navLinkVariants = {
     opacity: 1,
     filter: 'blur(0px)',
     transition: {
-      duration: 1,
+      duration: 0.3,
     },
   },
   notInView: {
@@ -45,7 +45,7 @@ export function Header() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimate(true);
-    }, 3000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 

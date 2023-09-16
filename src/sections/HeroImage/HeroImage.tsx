@@ -10,6 +10,7 @@ const borderVariants = {
   animate: {
     opacity: 1,
     filter: 'blur(0px)',
+    y: 0,
     transition: {
       duration: 1,
       type: 'tween',
@@ -57,17 +58,21 @@ export function HeroImage() {
       className={styles.heroimage}
     >
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, y: 50 }}
         variants={borderVariants}
-        ref={ref}
+        // animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        // transition={{ delay: 5, duration: 1.5 }}
         className={styles.border}
       >
         <motion.h2
+          ref={ref}
           initial={{
             y: -20,
             opacity: 0,
             filter: 'blur(16px)',
           }}
+          // animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+          // transition={{ delay: 5.5, duration: 1 }}
           variants={textVariants}
         >
           От идеи к реальности. Пиксель за пикселем

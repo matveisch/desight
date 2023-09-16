@@ -61,8 +61,8 @@ export default function OneStep(props: PropsType) {
           transition={{
             type: 'tween',
             ease: 'linear',
-            duration: props.last ? 0.5 : 1,
-            delay: props.num - 1 + 0.2,
+            duration: props.last ? 0.4 : 0.8,
+            delay: props.num * 0.8,
           }}
           className={styles.line}
           style={
@@ -80,7 +80,7 @@ export default function OneStep(props: PropsType) {
             type: 'tween',
             ease: 'linear',
             duration: 0.2,
-            delay: props.first ? 0 : props.num - 1 + 0.7,
+            delay: props.first ? 0 : props.num * 0.8 + 0.4,
           }}
           className={styles.number}
         >
@@ -94,8 +94,8 @@ export default function OneStep(props: PropsType) {
         transition={{
           type: 'tween',
           ease: 'linear',
-          duration: 0.5,
-          delay: props.first ? 0 : props.num - 1 + 0.9,
+          duration: 0.2,
+          delay: props.first ? 0 : props.num * 0.8 + 0.6,
         }}
       >
         <h5>{header}</h5>

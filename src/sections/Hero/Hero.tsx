@@ -52,7 +52,8 @@ export function Hero() {
             }
             transition={{
               delay:
-                headerText1.concat('', headerText2).split('').length * 0.1 - 1,
+                headerText1.concat('', headerText2).split('').length * 0.1 -
+                1.5,
               duration: 0.5,
               type: 'tween',
             }}
@@ -64,7 +65,7 @@ export function Hero() {
             layout
             animate={isInView ? 'inView' : 'notInView'}
             // variants={titleWrapperAnimation}
-            transition={{ duration: 5, staggerChildren: 0.1 }}
+            transition={{ duration: 5, staggerChildren: 0.05 }}
             className={styles.titleWrap}
           >
             <div style={{ display: 'block' }}>
@@ -73,7 +74,7 @@ export function Hero() {
                   <motion.h1
                     initial={titleInitial}
                     variants={titleAnimation}
-                    transition={{ duration: 1, type: 'tween' }}
+                    transition={{ duration: 0.8, type: 'tween' }}
                     className={styles.titleChar}
                     key={index}
                   >
@@ -88,7 +89,7 @@ export function Hero() {
                   <motion.h1
                     initial={titleInitial}
                     variants={titleAnimation}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.8 }}
                     className={styles.titleChar}
                     key={index}
                   >
@@ -107,7 +108,8 @@ export function Hero() {
                 : { opacity: 0, filter: 'blur(16px)' }
             }
             transition={{
-              delay: headerText1.concat('', headerText2).split('').length * 0.1,
+              delay:
+                headerText1.concat('', headerText2).split('').length * 0.1 - 1,
             }}
             className={styles.social}
           >
@@ -131,8 +133,9 @@ export function Hero() {
             }
             transition={{
               delay:
-                headerText1.concat('', headerText2).split('').length * 0.1 + 1,
-              duration: 2,
+                headerText1.concat('', headerText2).split('').length * 0.1 -
+                0.5,
+              duration: 3,
             }}
             className={styles.animationWrap}
           >
