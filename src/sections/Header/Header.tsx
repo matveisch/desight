@@ -6,9 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@images/logo.svg';
 import burger from '@images/burger.svg';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { constrainedMemory } from 'process';
 
 const navVariants = {
   inView: {
@@ -42,6 +41,7 @@ const navLinkVariants = {
 export function Header() {
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimate(true);
@@ -50,9 +50,9 @@ export function Header() {
   }, []);
 
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {
-    once: true,
-  });
+  // const isInView = useInView(ref, {
+  //   once: true,
+  // });
 
   return (
     <motion.header
@@ -91,10 +91,7 @@ export function Header() {
         </motion.nav>
         <button
           className={styles.menu}
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen);
-            console.log(isMenuOpen);
-          }}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <Image src={burger} alt="burger" className={styles.image} />
         </button>
