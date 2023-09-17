@@ -14,9 +14,31 @@ function EmailForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<SignUpSchemaType>({ resolver: zodResolver(SignUpSchema) });
-  const onSubmit: SubmitHandler<SignUpSchemaType> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<SignUpSchemaType> = (data) => sendEmail(data);
+
+  async function sendEmail(data: SignUpSchemaType) {
+    try {
+      const res = await fetch('/api/sendEmail', {
+        method: 'POST',
+        body: JSON.stringify(data, null, 2),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!res.ok) {
+        // setSentSuccessfully(false);
+      } else {
+        // setSentSuccessfully(true);
+        reset();
+      }
+    } catch (e) {
+      if (e instanceof Error) console.log(e.message);
+    }
+  }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
