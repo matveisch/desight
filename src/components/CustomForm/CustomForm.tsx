@@ -2,7 +2,7 @@ import styles from './CustomForm.module.scss';
 import tgappendix from '@images/tgappendix.svg';
 import whappendix from '@images/whappendix.svg';
 import Image from 'next/image';
-import { useState, FormEvent, useRef, ChangeEvent } from 'react';
+import { useRef, ChangeEvent } from 'react';
 import send from '@images/send-message.svg';
 import { z } from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -10,7 +10,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 function CustomForm({ formType }: { formType: string }) {
   const isTelegram = formType === 'telegram';
-
   const SignUpSchema = z.object({
     message: z.string().max(100),
   });
@@ -21,27 +20,20 @@ function CustomForm({ formType }: { formType: string }) {
     formState: { errors },
   } = useForm<SignUpSchemaType>({ resolver: zodResolver(SignUpSchema) });
   const onSubmit: SubmitHandler<SignUpSchemaType> = (data) => console.log(data);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
+  const { ref, ...rest } = register('message');
+  const handleInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    if (inputRef.current) {
+      inputRef.current.style.height = 'auto';
+      inputRef.current.style.height = `${e.target.scrollHeight - 30}px`;
 
- //dynamic textarea
-
-const ref = useRef<HTMLTextAreaElement>(null);
-
-const handleInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
-  if (ref.current) {
-    ref.current.style.height = 'auto';
-    ref.current.style.height = `${e.target.scrollHeight - 30}px`;
-
-    if (ref.current.style.height === `${160}px`) {
-      ref.current.style.overflowY = 'auto';
-    } 
-    else if (ref.current.style.height === `${32}px`) {
-      ref.current.style.overflowY = 'hidden'; 
+      if (inputRef.current.style.height === `${160}px`) {
+        inputRef.current.style.overflowY = 'auto';
+      } else if (inputRef.current.style.height === `${32}px`) {
+        inputRef.current.style.overflowY = 'hidden';
+      }
     }
-  }
-};
-
-// dynamic classes
-
+  };
   const bubbleType = `${styles.bubble} ${
     isTelegram ? styles.tgbubble : styles.whbubble
   }`;
@@ -71,13 +63,16 @@ const handleInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
       </div>
       <form className={actionType} onSubmit={handleSubmit(onSubmit)}>
         <textarea
-          ref={ref}
+          {...rest}
+          ref={(e) => {
+            ref(e);
+            inputRef.current = e;
+          }}
           rows={1}
           name="message"
           placeholder="Message"
           className={fieldType}
           required
-          onChange={(e) => setMessage(e.target.value)}
           onInput={handleInput}
         />
         {/*{errors.message && (*/}
