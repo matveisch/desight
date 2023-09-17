@@ -7,7 +7,6 @@ import React, { useRef, useState, useEffect } from 'react';
 export default function Desighted() {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  // const shadowOne = useRef(null);
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [buttonSize, setButtonSize] = useState({
@@ -39,8 +38,6 @@ export default function Desighted() {
         ? containerRef.current?.clientHeight
         : 0,
     });
-
-    // console.log(buttonSize);
   }, []);
 
   useEffect(() => {
@@ -79,7 +76,7 @@ export default function Desighted() {
   };
 
   return (
-    <>
+    <section>
       <motion.div
         className={styles.main}
         ref={containerRef}
@@ -127,6 +124,6 @@ export default function Desighted() {
       </motion.div>
       {/* <p style={{ color: '#fff' }}>x: {mousePosition.x}</p>
       <p style={{ color: '#fff' }}>y: {mousePosition.y}</p> */}
-    </>
+    </section>
   );
 }

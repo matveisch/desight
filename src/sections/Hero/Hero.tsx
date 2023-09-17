@@ -4,7 +4,7 @@ import Social from '@/components/Social/Social';
 import { useRef } from 'react';
 import { social } from '@/utils/data/data';
 import { motion, useInView } from 'framer-motion';
-import { HeroAnimation } from '@components/heroAnimation/HeroAnimaton';
+import { HeroAnimation } from '@components/HeroAnimation/HeroAnimaton';
 
 const titleAnimation = {
   inView: { x: 0, scale: 1, opacity: 1, filter: 'blur(0px)' },
@@ -39,8 +39,6 @@ export function Hero() {
     once: true,
   });
 
-  // console.log(headerText1.concat('', headerText2).split('').length);
-
   return (
     <section className={styles.hero}>
       <div className={styles.herowrap}>
@@ -68,7 +66,7 @@ export function Hero() {
             transition={{ duration: 5, staggerChildren: 0.05 }}
             className={styles.titleWrap}
           >
-            <div style={{ display: 'block' }}>
+            <div className={styles.strokeWrapper}>
               {headerText1.split('').map((char, index) => {
                 return (
                   <motion.h1
@@ -83,7 +81,7 @@ export function Hero() {
                 );
               })}
             </div>
-            <div style={{ display: 'block' }}>
+            <div className={styles.strokeWrapper}>
               {headerText2.split('').map((char, index) => {
                 return (
                   <motion.h1

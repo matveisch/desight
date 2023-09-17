@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import styles from './HeroAnimation.module.scss';
-import { easeIn, motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import cyrsqIcon from '@images/cyrsq-icon.svg';
 import devIcon from '@images/dev-icon.svg';
@@ -11,7 +11,6 @@ import squareIcon from '@images/squares-icon.svg';
 import userIcon from '@images/user-icon.svg';
 import clickText from '@images/clickandhold.svg';
 import Globus from '@images/Globus.svg';
-import { clearTimeout } from 'timers';
 
 const iconsVariants = {
   tapped: {

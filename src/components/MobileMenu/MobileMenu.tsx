@@ -31,10 +31,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
       className={styles.mainWrapper}
     >
       <nav>
-        <motion.ul
-          onClick={() => setIsOpen(false)}
-          // animate={{ display: isOpen ? 'flex' : 'none' }}
-        >
+        <motion.ul onClick={() => setIsOpen(false)}>
           <li>
             <Link href="#services">
               <p>Сервисы</p>

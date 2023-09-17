@@ -29,6 +29,7 @@ const navLinkVariants = {
     opacity: 1,
     filter: 'blur(0px)',
     transition: {
+      delay: 0.4,
       duration: 0.3,
     },
   },

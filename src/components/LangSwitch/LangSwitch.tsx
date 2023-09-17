@@ -8,11 +8,22 @@ export default function LangSwitch() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <motion.div
-      whileHover={!isOpen ? { padding: '4px', width: '66px' } : {}}
-      animate={{
-        width: isOpen ? 'fit-content' : '58px',
-        padding: isOpen ? '4px' : '0px',
-      }}
+      whileHover={!isOpen ? { padding: '4px', width: '66px', x: 4, y: -4 } : {}}
+      animate={
+        isOpen
+          ? {
+              width: 'fit-content',
+              padding: '4px',
+              x: 4,
+              y: -4,
+            }
+          : {
+              width: '58px',
+              padding: '0px',
+              x: 0,
+              y: 0,
+            }
+      }
       transition={{ type: 'tween', duration: 0.3 }}
       className={styles.mainWrapper}
     >

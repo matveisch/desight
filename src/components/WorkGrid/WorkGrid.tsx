@@ -4,13 +4,14 @@ import desktopPhoto from '@images/beetrade-desktop.svg';
 import mobilePhoto from '@images/menu-mobile.svg';
 import tabletPhoto from '@images/libira-tablet.svg';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function WorkGrid() {
   const ref = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'end end'],
+    offset: ['1000px', '-500px'],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);

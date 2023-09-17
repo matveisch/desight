@@ -10,14 +10,15 @@ import penIcon from '@images/pen-icon.svg';
 import setIcon from '@images/setting-icon.svg';
 import squareIcon from '@images/squares-icon.svg';
 import userIcon from '@images/user-icon.svg';
-import clickText from '@images/clickandhold.svg';
 import desightIcon from '@images/icon.svg';
+
 export function SpinAnimation() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     margin: '0px 100px -300px 0px',
     once: true,
   });
+
   return (
     <motion.div
       ref={ref}
