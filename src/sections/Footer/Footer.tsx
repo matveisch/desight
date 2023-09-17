@@ -1,10 +1,9 @@
 'use client';
 
-import React from 'react';
 import TabSwitcher from '@/components/TabSwitcher/TabSwitcher';
 import styles from './Footer.module.scss';
 import { contact } from '@/utils/data/data';
-import Form from '@/components/Form/Form';
+import EmailForm from '@/components/EmailForm/EmailForm';
 import Image from 'next/image';
 import logo from '@images/logo-footer.svg';
 import Social from '@/components/Social/Social';
@@ -14,7 +13,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import globe from '@images/globe.svg';
 
 export function Footer() {
-  const [currentTab, setCurrentTab] = React.useState(0);
+  // const [currentTab, setCurrentTab] = useState(0);
+  // const formTypes = [
+  //   'email',
+  //   'whatsapp',
+  //   'telegram',
+  // ];
 
   return (
     <footer className={styles.footer} id="contact">
@@ -27,25 +31,21 @@ export function Footer() {
               slidesPerView={1}
               spaceBetween={'30px'}
               className={styles.swiper}
-              onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
+              // onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
             >
-              <TabSwitcher
-                tabsNames={contact}
-                currentTabIndex={currentTab}
-                darkTab
-              />
+              <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab />
               <SwiperSlide>
                 <p className={styles.formTitle}>Email message</p>
-                <Form />
+                <EmailForm />
               </SwiperSlide>
-              <SwiperSlide>
-                <p className={styles.formTitle}>Whatsapp message</p>
-                <Form />
-              </SwiperSlide>
-              <SwiperSlide>
-                <p className={styles.formTitle}>Telegram message</p>
-                <Form />
-              </SwiperSlide>
+              {/*<SwiperSlide>*/}
+              {/*  <p className={styles.formTitle}>Whatsapp message</p>*/}
+              {/*  <CustomForm formType={formTypes[currentTab]} />*/}
+              {/*</SwiperSlide>*/}
+              {/*<SwiperSlide>*/}
+              {/*  <p className={styles.formTitle}>Telegram message</p>*/}
+              {/*  <CustomForm formType={formTypes[currentTab]} />*/}
+              {/*</SwiperSlide>*/}
             </Swiper>
           </div>
         </div>
@@ -54,12 +54,7 @@ export function Footer() {
             <Image src={logo} alt="logo" className={styles.logo} />
             <div className={styles.social}>
               {social.map((icon, index) => (
-                <Social
-                  key={index}
-                  name={icon.name}
-                  src={icon.srcWhite}
-                  link={icon.link}
-                />
+                <Social key={index} name={icon.name} src={icon.srcWhite} link={icon.link} />
               ))}
             </div>
           </div>
@@ -85,9 +80,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <p className={styles.copyright}>
-        Product by Desight ©{new Date().getFullYear()}{' '}
-      </p>
+      <p className={styles.copyright}>Product by Desight ©{new Date().getFullYear()} </p>
     </footer>
   );
 }

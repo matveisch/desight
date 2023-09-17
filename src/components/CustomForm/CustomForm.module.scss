@@ -1,0 +1,169 @@
+.chat {
+  background: #05050d;
+  border-radius: 32px;
+  min-height: 256px;
+  max-height: 264px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // align-items: center;
+  align-content: center;
+
+
+  .messages{
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+
+//   margin: auto;
+  
+
+  .bubble {
+    width: 315px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    display: flex;
+    z-index: 2;
+    // position: relative;
+
+    .text {
+      // padding: 16px 30px;
+      color: $white;
+    }
+
+    .tgappendix {
+      position: absolute;
+      left: -8px;
+      bottom: -5px;
+      z-index: -1;
+    }
+
+    .whappendix {
+      position: absolute;
+      left: -5px;
+      top: -12px;
+      rotate: 134deg;
+    }
+  }
+
+  .whbubble {
+    
+    height: 110px;
+    background-color: #025e4a;
+    position: relative;
+    z-index: 2;
+    margin: 22px 40px;
+  }
+
+  .tgbubble {
+    height: 120px;
+    background: #2b5278;
+    position: relative;
+    z-index: 2;
+    margin: 28px 38px
+  }
+}
+
+  .action{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    align-items: center;
+   
+
+    .input{
+        border-radius: 32px;
+        box-sizing: border-box;
+        padding: 15px 0;
+        resize: none;
+        color: $white;
+        font-family: var(--font-nunito), sans-serif;
+        font-size: 24px;
+        border: none;
+        min-height: 62px;
+        max-height: 6em; 
+        overflow: hidden;
+        width: 100%;
+        &:focus{
+            outline-width: 0;
+        }
+        
+    }
+
+   
+  }
+
+  .whaction{
+    gap: 10px;
+    padding: 10px;
+    .whinput{
+        padding-left: 34px;
+        width: 423px;
+        padding-right: 12px;
+        background-color: #1F2C34;
+       
+
+        @media (max-width: 990px) {
+          width: 100%;
+        }
+    }
+  }
+
+  .tgaction{
+    background: #182533;
+    padding: 13px 20px 13px 30px;
+   
+    gap: 18px;
+    border-radius: 0 0 32px 32px;
+
+    .tginput{
+      padding-left: 28px;
+      padding-right: 12px;
+      width: 387px;
+      background-color: #070707;
+      
+      
+      @media (max-width: 990px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .button{
+    background: transparent;
+    border: none;
+    height: 62px;
+    width: 62px;
+ 
+
+    .circle{
+
+      display: flex;
+      align-items: center;
+      align-self: center;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      border-radius: 62px;
+    
+     
+
+  }
+
+  .whcircle{
+    background: #00AA83;
+   
+}
+
+
+.tgcircle{
+  background:  #279FDB;
+ 
+}
+  }
+}
