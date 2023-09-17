@@ -85,15 +85,18 @@ export function HeroAnimation() {
   const [isHovered, setHovered] = useState<boolean>(false);
   const [isTapped, setIsTapped] = useState<boolean>(false);
   const icons = [cyrsqIcon, penIcon, devIcon, userIcon, squareIcon];
+
   const handleMouseUp = () => {
     setIsTapped(false);
   };
+
   useEffect(() => {
     window.addEventListener('mouseup', handleMouseUp);
     return () => {
       window.removeEventListener('mouseup', handleMouseUp);
     };
   }, [isTapped]);
+
   // useEffect(() => {
   //   if (isTapped) {
   //     const timer = setTimeout(() => {
@@ -109,14 +112,13 @@ export function HeroAnimation() {
     <motion.div animate={isTapped ? 'tapped' : 'notTapped'} className={styles.main}>
       <motion.div variants={iconsVariants} className={styles.icons}>
         {icons.map((icon, index) => (
-          <motion.div key={index} className={styles.iconWrapper}>
+          <motion.div key={`${index}-icon`} className={styles.iconWrapper}>
             <motion.div variants={iconVariants} className={styles.icon}>
               <Image src={icon} alt={`icon ${index}`} />
             </motion.div>
           </motion.div>
         ))}
       </motion.div>
-
       <motion.div
         className={styles.clickWrapper}
         animate={{
