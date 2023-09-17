@@ -31,22 +31,18 @@ export function Footer() {
               className={styles.swiper}
               onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
             >
-              <TabSwitcher
-                tabsNames={contact}
-                currentTabIndex={currentTab}
-                darkTab
-              />
+              <TabSwitcher tabsNames={contact} currentTabIndex={currentTab} darkTab />
               <SwiperSlide>
                 <p className={styles.formTitle}>Email message</p>
                 <EmailForm />
               </SwiperSlide>
               <SwiperSlide>
                 <p className={styles.formTitle}>Whatsapp message</p>
-                <CustomForm formType={formTypes[currentTab]}/>
+                <CustomForm formType={formTypes[currentTab]} />
               </SwiperSlide>
               <SwiperSlide>
                 <p className={styles.formTitle}>Telegram message</p>
-                <CustomForm formType={formTypes[currentTab]}/>
+                <CustomForm formType={formTypes[currentTab]} />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -56,12 +52,7 @@ export function Footer() {
             <Image src={logo} alt="logo" className={styles.logo} />
             <div className={styles.social}>
               {social.map((icon, index) => (
-                <Social
-                  key={index}
-                  name={icon.name}
-                  src={icon.srcWhite}
-                  link={icon.link}
-                />
+                <Social key={index} name={icon.name} src={icon.srcWhite} link={icon.link} />
               ))}
             </div>
           </div>
@@ -87,9 +78,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <p className={styles.copyright}>
-        Product by Desight ©{new Date().getFullYear()}{' '}
-      </p>
+      <p className={styles.copyright}>Product by Desight ©{new Date().getFullYear()} </p>
     </footer>
   );
 }
