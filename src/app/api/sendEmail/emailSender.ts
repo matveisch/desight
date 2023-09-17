@@ -26,7 +26,6 @@ const smtpOptions = {
 
 export const sendEmail = async (data: EmailPayload) => {
   const transporter = nodemailer.createTransport(smtpOptions);
-
   return await transporter.sendMail({
     ...data,
   });
