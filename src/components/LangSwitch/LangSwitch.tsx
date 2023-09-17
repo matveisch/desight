@@ -42,8 +42,8 @@ export default function LangSwitch() {
                 : 'M1 10L5.17412 6.24329C5.6155 5.84605 5.6155 5.15395 5.17412 4.75671L1 1'
             }
             stroke="#F5F1F8"
-            stroke-width="1.5"
-            stroke-linecap="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
           />
         </motion.svg>
 
