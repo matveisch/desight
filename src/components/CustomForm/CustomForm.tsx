@@ -34,34 +34,27 @@ function CustomForm({ formType }: { formType: string }) {
       }
     }
   };
-  const bubbleType = `${styles.bubble} ${
-    isTelegram ? styles.tgbubble : styles.whbubble
-  }`;
-  const appendixType = isTelegram ? tgappendix : whappendix;
-  const appendixClass = `${isTelegram ? styles.tgappendix : styles.whappendix}`;
-  const actionType = `${styles.action} ${
-    isTelegram ? styles.tgaction : styles.whaction
-  }`;
-  const circleType = `${styles.circle} ${
-    isTelegram ? styles.tgcircle : styles.whcircle
-  }`;
-  const fieldType = `${styles.input} ${
-    isTelegram ? styles.tginput : styles.whinput
-  }`;
 
   return (
     <div className={styles.chat}>
       <div className={styles.messages}>
-        <div className={bubbleType}>
+        <div className={`${styles.bubble} ${isTelegram ? styles.tgbubble : styles.whbubble}`}>
           <div className={styles.bubbleWrap}>
             <p className={styles.text}>
               The Desight team welcomes you, what question interests you?
             </p>
           </div>
-          <Image src={appendixType} alt="" className={appendixClass} />
+          <Image
+            src={isTelegram ? tgappendix : whappendix}
+            alt=""
+            className={`${isTelegram ? styles.tgappendix : styles.whappendix}`}
+          />
         </div>
       </div>
-      <form className={actionType} onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className={`${styles.action} ${isTelegram ? styles.tgaction : styles.whaction}`}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <textarea
           {...rest}
           ref={(e) => {
@@ -71,7 +64,7 @@ function CustomForm({ formType }: { formType: string }) {
           rows={1}
           name="message"
           placeholder="Message"
-          className={fieldType}
+          className={`${styles.input} ${isTelegram ? styles.tginput : styles.whinput}`}
           required
           onInput={handleInput}
         />
@@ -79,7 +72,7 @@ function CustomForm({ formType }: { formType: string }) {
         {/*  <span style={{ color: 'red' }}>{errors.message.message}</span>*/}
         {/*)}*/}
         <button type="submit" className={styles.button}>
-          <div className={circleType}>
+          <div className={`${styles.circle} ${isTelegram ? styles.tgcircle : styles.whcircle}`}>
             <Image src={send} alt="send" className={styles.image} />
           </div>
         </button>
