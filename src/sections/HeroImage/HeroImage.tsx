@@ -53,10 +53,7 @@ export function HeroImage() {
   });
 
   return (
-    <motion.div
-      animate={isInView ? 'animate' : 'noAnimate'}
-      className={styles.heroimage}
-    >
+    <motion.div animate={isInView ? 'animate' : 'noAnimate'} className={styles.heroimage}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         variants={borderVariants}
@@ -75,7 +72,8 @@ export function HeroImage() {
           // transition={{ delay: 5.5, duration: 1 }}
           variants={textVariants}
         >
-          От идеи к реальности. Пиксель за пикселем
+          <div>От идеи к реальности.</div>
+          <div>Пиксель за пикселем</div>
         </motion.h2>
       </motion.div>
       <motion.div className={styles.image}>
