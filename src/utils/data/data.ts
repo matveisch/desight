@@ -9,8 +9,8 @@ import shopIcon from '@images/shop-icon.svg';
 import businessIcon from '@images/business-icon.svg';
 import beetrade from '@images/beetrade-icon.svg';
 import mail from '@images/mail-foo.svg';
-import whatsapp from '@images/whatsapp-foo.svg';
-import tg from '@images/tg-foo.svg';
+// import whatsapp from '@images/whatsapp-foo.svg';
+// import tg from '@images/tg-foo.svg';
 
 export type TabType = {
   title?: string;
@@ -124,8 +124,7 @@ export const workData: WorkDataType[] = [
     title: 'BeeTrade',
     icon: beetrade,
     link: '',
-    blockDescription:
-      'Комплексная платформа для онлайн-обучения пользователей трейдингу. ',
+    blockDescription: 'Комплексная платформа для онлайн-обучения пользователей трейдингу. ',
     description:
       'Грамотно спроектированный и оптимизированный веб-сайт позволяет просматривать обучающие видео, изучать материалы курса и учиться анализировать информацию. Просто и доступно для каждого пользователя.',
   },
@@ -133,8 +132,7 @@ export const workData: WorkDataType[] = [
     title: 'Radar Digitaly',
     icon: beetrade,
     link: '',
-    blockDescription:
-      'Захватывающий внимание веб-сайт для рекламного агентства',
+    blockDescription: 'Захватывающий внимание веб-сайт для рекламного агентства',
     description:
       'Лучший способ впечатлить клиента – полностью погрузить его в веб-сайт. Современный дизайн и приятные анимации нацелены на привлечение внимания пользователя с первых секунд.',
   },
@@ -171,10 +169,10 @@ export const contact: TabType[] = [
   {
     icon: mail,
   },
-  {
-    icon: whatsapp,
-  },
-  {
-    icon: tg,
-  },
+  // {
+  //   icon: whatsapp,
+  // },
+  // {
+  //   icon: tg,
+  // },
 ];

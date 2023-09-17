@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import TabSwitcher from '@/components/TabSwitcher/TabSwitcher';
 import styles from './Footer.module.scss';
 import { contact } from '@/utils/data/data';
@@ -12,11 +11,14 @@ import { social } from '@/utils/data/data';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import globe from '@images/globe.svg';
-import CustomForm from '@/components/CustomForm/CustomForm';
 
 export function Footer() {
-  const [currentTab, setCurrentTab] = React.useState(0);
-  const formTypes = ['email', 'whatsapp', 'telegram'];
+  // const [currentTab, setCurrentTab] = useState(0);
+  // const formTypes = [
+  //   'email',
+  //   'whatsapp',
+  //   'telegram',
+  // ];
 
   return (
     <footer className={styles.footer} id="contact">
@@ -29,21 +31,21 @@ export function Footer() {
               slidesPerView={1}
               spaceBetween={'30px'}
               className={styles.swiper}
-              onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
+              // onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
             >
-              <TabSwitcher tabsNames={contact} currentTabIndex={currentTab} darkTab />
+              <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab />
               <SwiperSlide>
                 <p className={styles.formTitle}>Email message</p>
                 <EmailForm />
               </SwiperSlide>
-              <SwiperSlide>
-                <p className={styles.formTitle}>Whatsapp message</p>
-                <CustomForm formType={formTypes[currentTab]} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <p className={styles.formTitle}>Telegram message</p>
-                <CustomForm formType={formTypes[currentTab]} />
-              </SwiperSlide>
+              {/*<SwiperSlide>*/}
+              {/*  <p className={styles.formTitle}>Whatsapp message</p>*/}
+              {/*  <CustomForm formType={formTypes[currentTab]} />*/}
+              {/*</SwiperSlide>*/}
+              {/*<SwiperSlide>*/}
+              {/*  <p className={styles.formTitle}>Telegram message</p>*/}
+              {/*  <CustomForm formType={formTypes[currentTab]} />*/}
+              {/*</SwiperSlide>*/}
             </Swiper>
           </div>
         </div>
