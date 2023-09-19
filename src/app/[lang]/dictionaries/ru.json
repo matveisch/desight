@@ -4,5 +4,14 @@
     "projects": "Проекты",
     "about": "О нас",
     "contacts": "Контакты"
+  },
+  "hero": {
+    "webAgency": "Веб-студия полного цикла",
+    "clearSight": "Чистый взгляд",
+    "brightFuture": "Светлое будущее"
+  },
+  "heroImage": {
+    "fromIdea": "От идеи к реальности.",
+    "pixelByPixel": "Пиксель за пикселем"
   }
 }

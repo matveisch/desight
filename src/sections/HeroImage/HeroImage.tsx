@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './HeroImage.module.scss';
 import Image from 'next/image';
 import left from '@images/negativeflow.png';
@@ -45,7 +46,8 @@ const textVariants = {
   noAnimate: {},
 };
 
-export function HeroImage() {
+export function HeroImage(props: { dict: any }) {
+  const { dict } = props;
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     margin: '0px 100px -300px 0px',
@@ -57,8 +59,6 @@ export function HeroImage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         variants={borderVariants}
-        // animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        // transition={{ delay: 5, duration: 1.5 }}
         className={styles.border}
       >
         <motion.h2
@@ -68,12 +68,10 @@ export function HeroImage() {
             opacity: 0,
             filter: 'blur(16px)',
           }}
-          // animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-          // transition={{ delay: 5.5, duration: 1 }}
           variants={textVariants}
         >
-          <div>От идеи к реальности.</div>
-          <div>Пиксель за пикселем</div>
+          <div>{dict.heroImage.fromIdea}</div>
+          <div>{dict.heroImage.pixelByPixel}</div>
         </motion.h2>
       </motion.div>
       <motion.div className={styles.image}>

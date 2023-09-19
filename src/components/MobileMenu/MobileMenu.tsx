@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import translateIcon from '@images/translate-icon.svg';
 import { ReactNode, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 type Props = {
   isOpen: boolean;
@@ -41,15 +42,15 @@ export default function MobileMenu({ isOpen, setIsOpen, children }: Props) {
         </div>
         <div>
           <ul>
-            <li>
+            <Link href="/en">
               <p>English</p>
-            </li>
-            <li>
+            </Link>
+            <Link href="/ru">
               <p>Русский</p>
-            </li>
-            <li>
+            </Link>
+            <Link href="/he">
               <p>עברית</p>
-            </li>
+            </Link>
           </ul>
         </div>
       </motion.div>

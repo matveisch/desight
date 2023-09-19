@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './Hero.module.scss';
 import Social from '@/components/Social/Social';
 import { useRef } from 'react';
@@ -16,24 +17,11 @@ const titleInitial = {
   opacity: 0,
   filter: 'blur(16px)',
 };
-// const titleWrapperAnimation = {
-//   inView: {
-//     opacity: 1,
-//     filter: 'blur(0px)',
-//     position: 'relative',
-//     right: 'unset',
-//     alignItems: 'left',
-//   },
-//   notInView: {
-//     // opacity: 0,
-//     // filter: 'blur(16px)',
-//     // position: 'absolute',
-//   },
-// };
 
-export function Hero() {
-  const headerText1 = 'Clear Sight';
-  const headerText2 = 'Bright Future';
+export function Hero(props: { dict: any }) {
+  const { dict } = props;
+  const headerText1: string = dict.hero.clearSight;
+  const headerText2: string = dict.hero.brightFuture;
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     once: true,
@@ -52,13 +40,12 @@ export function Hero() {
               type: 'tween',
             }}
           >
-            Full cycle web agency
+            {dict.hero.webAgency}
           </motion.h3>
           <motion.div
             ref={ref}
             layout
             animate={isInView ? 'inView' : 'notInView'}
-            // variants={titleWrapperAnimation}
             transition={{ duration: 5, staggerChildren: 0.05 }}
             className={styles.titleWrap}
           >
@@ -93,7 +80,6 @@ export function Hero() {
               })}
             </div>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, filter: 'blur(16px)' }}
             animate={

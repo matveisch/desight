@@ -3,6 +3,7 @@ import styles from './LangSwitch.module.scss';
 import languageIcon from '@images/translate-icon.svg';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function LangSwitch() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -50,15 +51,15 @@ export default function LangSwitch() {
         <Image src={languageIcon} alt="language-icon" />
       </div>
       <ul onClick={() => setIsOpen(false)}>
-        <li>
+        <Link href="/en">
           <p>English</p>
-        </li>
-        <li>
+        </Link>
+        <Link href="/ru">
           <p>Русский</p>
-        </li>
-        <li>
+        </Link>
+        <Link href="/he">
           <p>עברית</p>
-        </li>
+        </Link>
       </ul>
     </motion.div>
   );
