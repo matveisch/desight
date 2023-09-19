@@ -87,8 +87,8 @@ export function Header(props: { dict: any }) {
           <Image src={logo} alt="logo" className={styles.image} />
         </div>
         <motion.nav transition={{ staggerChildren: 0.3 }} className={styles.nav}>
-          {links.map((link) => (
-            <Link href={link.href} className={styles.link}>
+          {links.map((link, index) => (
+            <Link href={link.href} className={styles.link} key={`${link.title}-${index}`}>
               <motion.p variants={navLinkVariants}>{link.title}</motion.p>
             </Link>
           ))}
@@ -99,8 +99,8 @@ export function Header(props: { dict: any }) {
       </motion.div>
       <div className={styles.mobileMenuWrapper}>
         <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen}>
-          {links.map((link) => (
-            <li>
+          {links.map((link, index) => (
+            <li key={`${link.title}-${index}`}>
               <Link href={link.href}>
                 <p>{link.title}</p>
               </Link>
