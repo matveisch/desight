@@ -2,6 +2,7 @@ import 'normalize.css/normalize.css';
 import '@styles/globals.scss';
 import type { Metadata } from 'next';
 import { Unbounded, Nunito } from 'next/font/google';
+import { ReactNode } from 'react';
 
 const unbounded = Unbounded({
   subsets: ['latin', 'cyrillic'],
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   description: 'Full Cycle Web Agency',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={`${unbounded.variable} ${nunito.variable}`}>{children}</body>

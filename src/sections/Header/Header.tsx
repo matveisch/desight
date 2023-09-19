@@ -40,8 +40,7 @@ const navLinkVariants = {
   },
 };
 
-export function Header(props: { dict: any }) {
-  const { dict } = props;
+export function Header({ dict }: { dict: any }) {
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
