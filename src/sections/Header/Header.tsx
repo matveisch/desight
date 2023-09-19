@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './Header.module.scss';
 import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import LangSwitch from '@/components/LangSwitch/LangSwitch';
@@ -39,7 +40,8 @@ const navLinkVariants = {
   },
 };
 
-export function Header() {
+export function Header(props: { dict: any }) {
+  const { dict } = props;
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -51,9 +53,6 @@ export function Header() {
   }, []);
 
   const ref = useRef<HTMLDivElement>(null);
-  // const isInView = useInView(ref, {
-  //   once: true,
-  // });
 
   return (
     <motion.header
@@ -71,12 +70,9 @@ export function Header() {
           <Image src={logo} alt="logo" className={styles.image} />
         </div>
 
-        <motion.nav
-          transition={{ staggerChildren: 0.3 }}
-          className={styles.nav}
-        >
+        <motion.nav transition={{ staggerChildren: 0.3 }} className={styles.nav}>
           <Link href="#services" className={styles.link}>
-            <motion.p variants={navLinkVariants}>Сервисы</motion.p>
+            <motion.p variants={navLinkVariants}>{dict.header.services}</motion.p>
           </Link>
 
           <Link href="#projects" className={styles.link}>
@@ -90,10 +86,7 @@ export function Header() {
             <motion.p variants={navLinkVariants}>Контакты</motion.p>
           </Link>
         </motion.nav>
-        <button
-          className={styles.menu}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
+        <button className={styles.menu} onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Image src={burger} alt="burger" className={styles.image} />
         </button>
       </motion.div>

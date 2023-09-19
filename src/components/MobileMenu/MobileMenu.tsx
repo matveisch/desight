@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import translateIcon from '@images/translate-icon.svg';
 import { useEffect, useRef } from 'react';
+
 type Props = {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
@@ -11,6 +12,7 @@ type Props = {
 
 export default function MobileMenu({ isOpen, setIsOpen }: Props) {
   const menuRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleClick = (event: any) => {
       menuRef.current && !menuRef.current.contains(event.target) && isOpen
@@ -54,10 +56,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
           </li>
         </motion.ul>
       </nav>
-      <motion.div
-        onClick={() => setIsOpen(false)}
-        className={styles.translateWrapper}
-      >
+      <motion.div onClick={() => setIsOpen(false)} className={styles.translateWrapper}>
         <div className={styles.translateIcon}>
           <Image src={translateIcon} alt="translate-icon" />
         </div>
