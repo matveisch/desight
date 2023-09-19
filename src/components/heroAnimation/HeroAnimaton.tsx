@@ -42,7 +42,7 @@ const iconVariants = {
     },
   },
   notTapped: {
-    y: ['0%', 0, 0], // Initial value replaced with '0%'
+    y: [0, 0, 0], // Initial value replaced with '0%'
     rotate: 0,
     transition: { y: { times: [0, 0.5, 1], duration: 0.4 } },
   },

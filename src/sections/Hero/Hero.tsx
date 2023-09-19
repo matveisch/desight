@@ -4,7 +4,7 @@ import Social from '@/components/Social/Social';
 import { useRef } from 'react';
 import { social } from '@/utils/data/data';
 import { motion, useInView } from 'framer-motion';
-import { HeroAnimation } from '@components/HeroAnimation/HeroAnimaton';
+import { HeroAnimation } from '@components/heroAnimation/HeroAnimaton';
 
 const titleAnimation = {
   inView: { x: 0, scale: 1, opacity: 1, filter: 'blur(0px)' },
@@ -45,13 +45,9 @@ export function Hero() {
         <div className={styles.text}>
           <motion.h3
             initial={{ opacity: 0, filter: 'blur(16px)' }}
-            animate={
-              isInView ? { opacity: 1, filter: 'blur(0px)' } : { opacity: 0 }
-            }
+            animate={isInView ? { opacity: 1, filter: 'blur(0px)' } : { opacity: 0 }}
             transition={{
-              delay:
-                headerText1.concat('', headerText2).split('').length * 0.1 -
-                1.5,
+              delay: headerText1.concat('', headerText2).split('').length * 0.1 - 1.5,
               duration: 0.5,
               type: 'tween',
             }}
@@ -101,23 +97,15 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, filter: 'blur(16px)' }}
             animate={
-              isInView
-                ? { opacity: 1, filter: 'blur(0px)' }
-                : { opacity: 0, filter: 'blur(16px)' }
+              isInView ? { opacity: 1, filter: 'blur(0px)' } : { opacity: 0, filter: 'blur(16px)' }
             }
             transition={{
-              delay:
-                headerText1.concat('', headerText2).split('').length * 0.1 - 1,
+              delay: headerText1.concat('', headerText2).split('').length * 0.1 - 1,
             }}
             className={styles.social}
           >
             {social.map((icon, index) => (
-              <Social
-                key={index}
-                name={icon.name}
-                src={icon.srcBlue}
-                link={icon.link}
-              />
+              <Social key={index} name={icon.name} src={icon.srcBlue} link={icon.link} />
             ))}
           </motion.div>
         </div>
@@ -130,9 +118,7 @@ export function Hero() {
                 : { opacity: 0, filter: 'blur(16px)' }
             }
             transition={{
-              delay:
-                headerText1.concat('', headerText2).split('').length * 0.1 -
-                0.5,
+              delay: headerText1.concat('', headerText2).split('').length * 0.1 - 0.5,
               duration: 3,
             }}
             className={styles.animationWrap}
