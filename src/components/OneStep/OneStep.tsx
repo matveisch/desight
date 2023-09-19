@@ -41,7 +41,7 @@ export default function OneStep(props: PropsType) {
             {Array.from(Array(10).keys()).map((key) => {
               return (
                 <motion.div
-                  key={key}
+                  key={`key-${key}`}
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: key * 0.1 + 3.7 }}
@@ -65,13 +65,7 @@ export default function OneStep(props: PropsType) {
             delay: props.num * 0.8,
           }}
           className={styles.line}
-          style={
-            last
-              ? { right: 'unset', left: '0' }
-              : first
-              ? {}
-              : { width: '100%' }
-          }
+          style={last ? { right: 'unset', left: '0' } : first ? {} : { width: '100%' }}
         />
         <motion.div
           initial={{ opacity: 0 }}

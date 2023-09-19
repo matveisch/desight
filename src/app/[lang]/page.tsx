@@ -18,7 +18,7 @@ export default async function Home({ params: { lang } }: { params: { lang: 'en' 
       <Hero dict={dict} />
       <HeroImage dict={dict} />
       <Services dict={dict} />
-      <OurWork />
+      <OurWork dict={dict} />
       <CompleteSolution />
       <Desighted />
       <Footer />

@@ -4,17 +4,59 @@ import WorkGrid from '@components/WorkGrid/WorkGrid';
 import styles from './OurWork.module.scss';
 import TabSwitcher from '@components/TabSwitcher/TabSwitcher';
 import { useState } from 'react';
-import { workTabs } from '@/utils/data/data';
+import { TabType } from '@/utils/data/data';
 import WorkDescription from '@components/WorkDescription/WorkDescription';
-import { workData } from '@/utils/data/data';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import beetrade from '@images/beetrade-icon.svg';
 
-export default function OurWork() {
+type WorkDataType = {
+  title: string;
+  icon: string;
+  link: string;
+  blockDescription: string;
+  description: string;
+};
+
+export default function OurWork({ dict }: { dict: any }) {
   const [currentTab, setCurrentTab] = useState(0);
+  const workTabs: TabType[] = [
+    {
+      title: 'Libira',
+    },
+    {
+      title: 'BeeTrade',
+    },
+    {
+      title: 'Radar Digitaly',
+    },
+  ];
+  const workData: WorkDataType[] = [
+    {
+      title: 'Libira',
+      icon: beetrade,
+      link: '',
+      blockDescription: dict.ourWork.workData.libira.blockDescription,
+      description: dict.ourWork.workData.libira.description,
+    },
+    {
+      title: 'BeeTrade',
+      icon: beetrade,
+      link: '',
+      blockDescription: dict.ourWork.workData.beeTrade.blockDescription,
+      description: dict.ourWork.workData.beeTrade.description,
+    },
+    {
+      title: 'Radar Digitaly',
+      icon: beetrade,
+      link: '',
+      blockDescription: dict.ourWork.workData.radarDigitaly.blockDescription,
+      description: dict.ourWork.workData.radarDigitaly.description,
+    },
+  ];
 
   return (
-    <section className={styles.ourWork} id='projects'>
-      <h2 className={styles.header}>Check our work</h2>
+    <section className={styles.ourWork} id="projects">
+      <h2 className={styles.header}>{dict.ourWork.check}</h2>
       <Swiper
         centeredSlides
         slidesPerView={1}
