@@ -44,6 +44,25 @@ export function Header(props: { dict: any }) {
   const { dict } = props;
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const links: { title: string; href: string }[] = [
+    {
+      title: dict.header.services,
+      href: '#services',
+    },
+    {
+      title: dict.header.projects,
+      href: '#projects',
+    },
+    {
+      title: dict.header.about,
+      href: '#about',
+    },
+    {
+      title: dict.header.contacts,
+      href: '#contact',
+    },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -51,8 +70,6 @@ export function Header(props: { dict: any }) {
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
-
-  const ref = useRef<HTMLDivElement>(null);
 
   return (
     <motion.header
@@ -69,29 +86,27 @@ export function Header(props: { dict: any }) {
         <div className={styles.logo}>
           <Image src={logo} alt="logo" className={styles.image} />
         </div>
-
         <motion.nav transition={{ staggerChildren: 0.3 }} className={styles.nav}>
-          <Link href="#services" className={styles.link}>
-            <motion.p variants={navLinkVariants}>{dict.header.services}</motion.p>
-          </Link>
-
-          <Link href="#projects" className={styles.link}>
-            <motion.p variants={navLinkVariants}>Проекты</motion.p>
-          </Link>
-
-          <Link href="#about" className={styles.link}>
-            <motion.p variants={navLinkVariants}>О нас</motion.p>
-          </Link>
-          <Link href="#contact" className={styles.link}>
-            <motion.p variants={navLinkVariants}>Контакты</motion.p>
-          </Link>
+          {links.map((link) => (
+            <Link href={link.href} className={styles.link}>
+              <motion.p variants={navLinkVariants}>{link.title}</motion.p>
+            </Link>
+          ))}
         </motion.nav>
         <button className={styles.menu} onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Image src={burger} alt="burger" className={styles.image} />
         </button>
       </motion.div>
       <div className={styles.mobileMenuWrapper}>
-        <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+        <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen}>
+          {links.map((link) => (
+            <li>
+              <Link href={link.href}>
+                <p>{link.title}</p>
+              </Link>
+            </li>
+          ))}
+        </MobileMenu>
       </div>
     </motion.header>
   );

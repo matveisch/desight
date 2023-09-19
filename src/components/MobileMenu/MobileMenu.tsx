@@ -1,16 +1,16 @@
 import styles from './MobileMenu.module.scss';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import Image from 'next/image';
 import translateIcon from '@images/translate-icon.svg';
-import { useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 
 type Props = {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
+  children: ReactNode;
 };
 
-export default function MobileMenu({ isOpen, setIsOpen }: Props) {
+export default function MobileMenu({ isOpen, setIsOpen, children }: Props) {
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,28 +33,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: Props) {
       className={styles.mainWrapper}
     >
       <nav>
-        <motion.ul onClick={() => setIsOpen(false)}>
-          <li>
-            <Link href="#services">
-              <p>Сервисы</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="#projects">
-              <p>Проекты</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="#about">
-              <p>О нас</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="#contact">
-              <p>Контакты</p>
-            </Link>
-          </li>
-        </motion.ul>
+        <motion.ul onClick={() => setIsOpen(false)}>{children}</motion.ul>
       </nav>
       <motion.div onClick={() => setIsOpen(false)} className={styles.translateWrapper}>
         <div className={styles.translateIcon}>
