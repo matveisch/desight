@@ -3,35 +3,41 @@ import CompleteDescription from '@components/CompleteDescription/CompleteDescrip
 import { SpinAnimation } from '@components/spinAnimation/SpinAnimation';
 import OneStep from '@components/OneStep/OneStep';
 import OneStepMobile from '@components/OneStepMobile/OneStepMobile';
+import Image from 'next/image';
+import arrow from '@images/arrow-link.svg';
 
-export default function CompleteSolution() {
+export default function CompleteSolution({ dict }: { dict: any }) {
   const steps = [
     {
       header: 'Wireframe',
-      description:
-        'Исследование пользователей и рынка для создания прототипа продукта. ',
+      description: dict.completeSolution.steps.wireframe.description,
     },
     {
       header: 'Design',
-      description:
-        'На основе прототипа создается современный дизайн, чтобы клиент был рад пользоваться вашим сайтом.',
+      description: dict.completeSolution.steps.design.description,
     },
     {
       header: 'Development',
-      description:
-        'Разработка с помощью самых совеременных технологий гарантирует долгую поддержку сайта.',
+      description: dict.completeSolution.steps.development.description,
     },
     {
       header: 'Optimisation',
-      description:
-        'Оптимизация SEO и процессов внутри бизнеса нужна, чтобы сэкономить ваше время и деньги, при этом увеличить продажи.',
+      description: dict.completeSolution.steps.optimisation.description,
     },
   ];
 
   return (
     <section className={styles.completeSolution} id="about">
       <div className={styles.header}>
-        <CompleteDescription />
+        <CompleteDescription>
+          <h3>{dict.completeSolution.description.from}</h3>
+          <h2>{dict.completeSolution.description.completeSolution}</h2>
+          <p className={styles.text}>{dict.completeSolution.description.ourPackage}</p>
+          <button>
+            <p>{dict.completeSolution.description.getDetails}</p>
+            <Image src={arrow} alt={'arrow'} />
+          </button>
+        </CompleteDescription>
         <SpinAnimation />
       </div>
       <div className={styles.stepsContainer}>

@@ -7,7 +7,6 @@ import Image from 'next/image';
 import cyrsqIcon from '@images/cyrsq-icon.svg';
 import devIcon from '@images/dev-icon.svg';
 import penIcon from '@images/pen-icon.svg';
-// import setIcon from '@images/setting-icon.svg';
 import squareIcon from '@images/squares-icon.svg';
 import userIcon from '@images/user-icon.svg';
 import clickText from '@images/clickandhold.svg';
@@ -97,17 +96,6 @@ export function HeroAnimation() {
     };
   }, [isTapped]);
 
-  // useEffect(() => {
-  //   if (isTapped) {
-  //     const timer = setTimeout(() => {
-  //       if (isTapped) {
-  //         setIsTapped(false);
-  //       }
-  //       // GO TO SERVISES SECTION
-  //       console.log('timer up');
-  //     }, 2000);
-  //   }
-  // }, [isTapped]);
   return (
     <motion.div animate={isTapped ? 'tapped' : 'notTapped'} className={styles.main}>
       <motion.div variants={iconsVariants} className={styles.icons}>

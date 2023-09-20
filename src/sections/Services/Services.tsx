@@ -86,7 +86,7 @@ export default function Services({ dict }: { dict: any }) {
 
   return (
     <section className={styles.services} id="services">
-      <h2 className={styles.header}>Наши сервисы</h2>
+      <h2 className={styles.header}>{servicesDict.ourServices}</h2>
       <Swiper
         centeredSlides
         slidesPerView={1}
