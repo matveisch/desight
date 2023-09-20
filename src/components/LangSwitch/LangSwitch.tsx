@@ -5,8 +5,9 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function LangSwitch() {
+export default function LangSwitch({ lang }: { lang: 'en' | 'ru' | 'he' }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <motion.div
       whileHover={!isOpen ? { padding: '4px', width: '66px', x: 4, y: -4 } : {}}
@@ -38,7 +39,7 @@ export default function LangSwitch() {
         >
           <motion.path
             d={
-              !isOpen
+              (lang === 'he') === isOpen
                 ? 'M6 1L1.82588 4.75671C1.3845 5.15395 1.3845 5.84605 1.82588 6.24329L6 10'
                 : 'M1 10L5.17412 6.24329C5.6155 5.84605 5.6155 5.15395 5.17412 4.75671L1 1'
             }

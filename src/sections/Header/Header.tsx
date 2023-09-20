@@ -45,9 +45,10 @@ interface PropsType {
     title: string;
     href: string;
   }[];
+  lang: 'en' | 'ru' | 'he';
 }
 
-export function Header({ links }: PropsType) {
+export function Header({ links, lang }: PropsType) {
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -68,7 +69,7 @@ export function Header({ links }: PropsType) {
       className={styles.header}
     >
       <div className={styles.langSwitchWrapper}>
-        <LangSwitch />
+        <LangSwitch lang={lang} />
       </div>
       <motion.div className={styles.headWrap}>
         <div className={styles.logo}>

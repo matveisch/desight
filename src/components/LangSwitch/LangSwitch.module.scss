@@ -4,7 +4,7 @@
   justify-content: space-between;
   border-radius: 32px;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   width: fit-content;
   box-sizing: border-box;
   overflow: hidden;
@@ -19,6 +19,7 @@
     align-items: center;
     cursor: pointer;
     gap: 4px;
+
     img {
       height: 16px;
       width: auto;
