@@ -1,4 +1,5 @@
 'use client';
+
 import styles from './OneStep.module.scss';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
@@ -33,7 +34,6 @@ export default function OneStep(props: PropsType) {
                     left: 'calc(50% + 22px + 10px)',
                     right: 'unset',
                     flexDirection: 'row',
-                    // transform: 'none',
                   }
                 : undefined
             }

@@ -1,1 +1,108 @@
-{}
+{
+  "header": {
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About Us",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "webAgency": "Full-Cycle Web Studio",
+    "clearSight": "Clear Sight",
+    "brightFuture": "Bright Future"
+  },
+  "heroImage": {
+    "fromIdea": "From idea to reality.",
+    "pixelByPixel": "Pixel by pixel"
+  },
+  "services": {
+    "ourServices": "Our Services",
+    "tabs": {
+      "design": "Design",
+      "dev": "Development"
+    },
+    "design": {
+      "header": "Usability and appearance of your product is the key to a good conversion rate. Let's take care of this.",
+      "services": {
+        "webDesign": {
+          "title": "Website Design",
+          "description": "We design websites based on the canons of user interaction with the interface. Our clients can boast of websites with high conversion."
+        },
+        "logo": {
+          "title": "Logo",
+          "description": "A quality logo gives a first impression of the company, promotes recognition and increases customer trust."
+        },
+        "product": {
+          "title": "Product",
+          "description": "Creating and improving products to meet user needs."
+        }
+      }
+    },
+    "dev": {
+      "header": "You can be confident that you will get exactly what you have envisioned from us. We guarantee the result.",
+      "services": {
+        "websites": {
+          "title": "Websites",
+          "description": "We develop websites of any complexity, from simple single-page landings to multi-page web portals."
+        },
+        "applications": {
+          "title": "Applications",
+          "description": "We create quality and convenient apps for iOS and Android according to modern standards."
+        },
+        "eCommerce": {
+          "title": "E-commerce",
+          "description": "An online store can increase your sales. We ensure benefits for the business and convenience for the customers."
+        },
+        "business": {
+          "title": "For business",
+          "description": "Products to boost your efficiency and achieve goals, including CRM, servers and other business optimization tools."
+        }
+      }
+    }
+  },
+  "ourWork": {
+    "check": "Our clients",
+    "workData": {
+      "libira": {
+        "blockDescription": "A website for advertising and ordering events is the best way to present a product.",
+        "description": "A convenient and informative page clearly demonstrates the experience that the client will get in the establishment. The ability to quickly and easily leave your data for contacting the restaurant, everything happens in two clicks."
+      },
+      "beeTrade": {
+        "blockDescription": "A comprehensive platform for online learning of trading.",
+        "description": "A properly designed and optimized website allows viewing training videos, studying course materials and learning to analyze information. Simple and accessible for every user."
+      },
+      "radarDigitaly": {
+        "blockDescription": "An attention-grabbing website for an advertising agency.",
+        "description": "The best way to impress a client is to fully immerse them in the website. Modern design and pleasant animations are aimed at attracting the user's attention from the first seconds."
+      }
+    }
+  },
+  "completeSolution": {
+    "description": {
+      "from": "From $999",
+      "completeSolution": "Complete Service Package",
+      "ourPackage": "Our service package covers the entire spectrum of website development, from creative design to development and support, so you can focus on your business.",
+      "getDetails": "Get Details"
+    },
+    "steps": {
+      "wireframe": {
+        "description": "User and market research to create a product prototype."
+      },
+      "design": {
+        "description": "Based on the prototype, a modern design is created so that the client enjoys using your website."
+      },
+      "development": {
+        "description": "Development using the most modern technologies ensures long-term support for the site."
+      },
+      "optimisation": {
+        "description": "SEO optimization and business process optimization are needed to save your time and money, while increasing sales."
+      }
+    }
+  },
+  "footer": {
+    "getResponse": "Write Us",
+    "emailMessage": "Email Message",
+    "clearSight": "Clear Sight. Bright Future",
+    "email": "Email",
+    "message": "Message"
+  }
+}
