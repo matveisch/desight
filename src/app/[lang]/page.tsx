@@ -10,18 +10,37 @@ import { Footer } from '@sections/Footer/Footer';
 import { getDictionary } from '@/app/[lang]/dictionaries';
 
 export default async function Home({ params: { lang } }: { params: { lang: 'en' | 'ru' | 'he' } }) {
-  const dict = await getDictionary(lang);
+  const dict: any = await getDictionary(lang);
+
+  const links: { title: string; href: string }[] = [
+    {
+      title: dict.header.services,
+      href: '#services',
+    },
+    {
+      title: dict.header.projects,
+      href: '#projects',
+    },
+    {
+      title: dict.header.about,
+      href: '#about',
+    },
+    {
+      title: dict.header.contacts,
+      href: '#contact',
+    },
+  ];
 
   return (
     <main className={styles.main} style={lang === 'he' ? { direction: 'rtl' } : undefined}>
-      <Header dict={dict} />
+      <Header dict={dict} links={links} />
       <Hero dict={dict} />
       <HeroImage dict={dict} />
       <Services dict={dict} />
       <OurWork dict={dict} />
       <CompleteSolution dict={dict} />
       <Desighted />
-      <Footer />
+      <Footer dict={dict} links={links} />
     </main>
   );
 }

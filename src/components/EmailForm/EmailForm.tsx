@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-function EmailForm() {
+function EmailForm({ dict }: { dict: any }) {
   const SignUpSchema = z.object({
     email: z.string().email(),
     message: z.string().max(100),
@@ -45,7 +45,7 @@ function EmailForm() {
       <input
         type="email"
         className={styles.input}
-        placeholder="Email"
+        placeholder={dict.footer.email}
         required
         {...register('email')}
       />
@@ -53,7 +53,7 @@ function EmailForm() {
       {/*  <span style={{ color: 'red' }}>{errors.email.message}</span>*/}
       {/*)}*/}
       <textarea
-        placeholder="Your message"
+        placeholder={dict.footer.message}
         className={styles.textarea}
         required
         {...register('message')}

@@ -12,7 +12,15 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import globe from '@images/globe.svg';
 
-export function Footer() {
+interface PropsType {
+  dict: any;
+  links: {
+    title: string;
+    href: string;
+  }[];
+}
+
+export function Footer({ dict, links }: PropsType) {
   // const [currentTab, setCurrentTab] = useState(0);
   // const formTypes = [
   //   'email',
@@ -24,7 +32,7 @@ export function Footer() {
     <footer className={styles.footer} id="contact">
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <h2 className={styles.title}>Get response</h2>
+          <h2 className={styles.title}>{dict.footer.getResponse}</h2>
           <div className={styles.swiperWrap}>
             <Swiper
               centeredSlides
@@ -35,8 +43,8 @@ export function Footer() {
             >
               <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab />
               <SwiperSlide>
-                <p className={styles.formTitle}>Email message</p>
-                <EmailForm />
+                <p className={styles.formTitle}>{dict.footer.emailMessage}</p>
+                <EmailForm dict={dict} />
               </SwiperSlide>
               {/*<SwiperSlide>*/}
               {/*  <p className={styles.formTitle}>Whatsapp message</p>*/}
@@ -59,20 +67,13 @@ export function Footer() {
             </div>
           </div>
           <div className={styles.body}>
-            <h2 className={styles.slogan}>Clear sight. Bright future</h2>
+            <h2 className={styles.slogan}>{dict.footer.clearSight}</h2>
             <div className={styles.nav}>
-              <Link href="#services">
-                <p className={styles.link}>Services</p>
-              </Link>
-              <Link href="#projects">
-                <p className={styles.link}>Projects</p>
-              </Link>
-              <Link href="#about">
-                <p className={styles.link}>About us</p>
-              </Link>
-              <Link href="#contact">
-                <p className={styles.link}>Contact</p>
-              </Link>
+              {links.map((link, index) => (
+                <Link href={link.href} key={`${link.title}-${index}`}>
+                  <p className={styles.link}>{link.title}</p>
+                </Link>
+              ))}
             </div>
             <div className={styles.imagewrap}>
               <Image src={globe} alt="globe" className={styles.image} />

@@ -40,28 +40,17 @@ const navLinkVariants = {
   },
 };
 
-export function Header({ dict }: { dict: any }) {
+interface PropsType {
+  links: {
+    title: string;
+    href: string;
+  }[];
+}
+
+export function Header({ links }: PropsType) {
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
-  const links: { title: string; href: string }[] = [
-    {
-      title: dict.header.services,
-      href: '#services',
-    },
-    {
-      title: dict.header.projects,
-      href: '#projects',
-    },
-    {
-      title: dict.header.about,
-      href: '#about',
-    },
-    {
-      title: dict.header.contacts,
-      href: '#contact',
-    },
-  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
