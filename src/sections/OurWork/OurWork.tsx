@@ -76,7 +76,7 @@ export default function OurWork({ dict }: { dict: any }) {
                 description={item.description}
               />
               <div className={styles.gridContainer}>
-                <WorkGrid />
+                <WorkGrid title={item.title} />
               </div>
             </div>
           </SwiperSlide>
