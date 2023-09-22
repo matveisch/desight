@@ -67,7 +67,7 @@ export default function OurWork({ dict, lang }: { dict: any; lang: 'en' | 'he' |
       >
         <TabSwitcher tabsNames={workTabs} currentTabIndex={currentTab} lang={lang} />
         {workData.map((item, index) => (
-          <SwiperSlide key={`${item.title} ${index}`}>
+          <SwiperSlide key={`${item.title}-${index}`}>
             <p className={styles.headDescription}>{item.blockDescription}</p>
             <div className={styles.blocksContainer}>
               <WorkDescription
