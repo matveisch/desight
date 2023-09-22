@@ -1,7 +1,7 @@
 .oneStep {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  // overflow: hidden;
   height: 100%;
 
   .numberContainer {
@@ -10,12 +10,22 @@
     align-items: center;
     position: relative;
 
+    // .line {
+    //   position: absolute;
+    //   height: 4px;
+    //   background-color: $blue;
+    //   width: 100%;
+    //   right: 0;
+    //   left: 0;
+    // }
+
     .line {
-      position: absolute;
+      width: 0%;
       height: 4px;
       background-color: $blue;
-      width: 50%;
-      right: 0;
+      position: absolute;
+      top: 20px;
+      left: 50%;
     }
 
     .dotsContainer {
@@ -24,7 +34,7 @@
       flex-direction: row-reverse;
       left: -50%;
       position: absolute;
-      right: calc(50% + 22px + 10px);
+      right: calc(50% + 32px);
       z-index: 10;
       // transform: rotateY(180deg);
     }

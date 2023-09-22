@@ -39,6 +39,7 @@
     grid-template-areas: 'one one one two two two three three three four four four';
     align-items: center;
     margin-top: 45px;
+    position: relative;
 
     div:nth-child(1) {
       grid-area: one;

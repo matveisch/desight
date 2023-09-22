@@ -21,7 +21,6 @@ export default function OneStep(props: PropsType) {
     margin: '0px 100px -300px 0px',
     once: true,
   });
-
   return (
     <div className={styles.oneStep} ref={ref}>
       <div className={styles.numberContainer}>
@@ -31,9 +30,15 @@ export default function OneStep(props: PropsType) {
             initial={{ width: '0%' }}
             animate={{ width: '100%' }}
             style={
-              last
+              lang == 'he'
                 ? {
-                    left: 'calc(50% + 22px + 10px)',
+                    right: last ? 'calc(50% + 32px)' : 'unset',
+                    left: last ? 'unset' : 'calc(50% + 32px)',
+                    flexDirection: last ? 'row' : 'row-reverse',
+                  }
+                : last
+                ? {
+                    left: 'calc(50% + 32px)',
                     right: 'unset',
                     flexDirection: 'row',
                   }
@@ -46,7 +51,7 @@ export default function OneStep(props: PropsType) {
                   key={`key-${key}`}
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
-                  transition={{ delay: key * 0.1 + 3.7 }}
+                  transition={{ delay: key * 0.1 + 1.8 }}
                 >
                   <BlueDot key={key} blur={{ filter: `blur(${key / 3}px)` }} />
                 </motion.div>
@@ -54,9 +59,10 @@ export default function OneStep(props: PropsType) {
             })}
           </motion.div>
         )}
-        <motion.div
+        {/* <motion.div
           initial={{
             left: first ? '50%' : 0,
+
             width: '0%',
           }}
           animate={isInView ? { width: first || last ? '50%' : '100%' } : {}}
@@ -66,9 +72,33 @@ export default function OneStep(props: PropsType) {
             duration: props.last ? 0.4 : 0.8,
             delay: props.num * 0.8,
           }}
+          style={
+            last
+              ? { right: 'unset', left: '0' }
+              : first
+              ? {
+                  left: '0',
+                  right: 'unset',
+                }
+              : first && lang == 'he'
+              ? { rotate: 180 }
+              : {}
+          }
           className={styles.line}
-          style={last ? { right: 'unset', left: '0' } : first ? {} : { width: '100%' }}
-        />
+        /> */}
+        {first && (
+          <motion.div
+            initial={lang == 'he' ? { left: 'unset', right: '50%' } : {}}
+            animate={isInView ? { width: '300%' } : {}}
+            transition={{
+              type: 'tween',
+              ease: 'linear',
+              duration: 1.2,
+              delay: 0.5,
+            }}
+            className={styles.line}
+          />
+        )}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
@@ -76,7 +106,7 @@ export default function OneStep(props: PropsType) {
             type: 'tween',
             ease: 'linear',
             duration: 0.2,
-            delay: props.first ? 0 : props.num * 0.8 + 0.4,
+            delay: props.num * 0.4,
           }}
           className={styles.number}
         >
@@ -91,7 +121,7 @@ export default function OneStep(props: PropsType) {
           type: 'tween',
           ease: 'linear',
           duration: 0.2,
-          delay: props.first ? 0 : props.num * 0.8 + 0.6,
+          delay: props.num * 0.4 + 0.2,
         }}
       >
         <h5>{header}</h5>
