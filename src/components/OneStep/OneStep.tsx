@@ -51,7 +51,7 @@ export default function OneStep(props: PropsType) {
                   key={`key-${key}`}
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
-                  transition={{ delay: key * 0.1 + 1.8 }}
+                  transition={{ delay: key * 0.1 + 2.5 }}
                 >
                   <BlueDot key={key} blur={{ filter: `blur(${key / 3}px)` }} />
                 </motion.div>
@@ -93,7 +93,7 @@ export default function OneStep(props: PropsType) {
             transition={{
               type: 'tween',
               ease: 'linear',
-              duration: 1.2,
+              duration: 2,
               delay: 0.5,
             }}
             className={styles.line}
@@ -106,7 +106,7 @@ export default function OneStep(props: PropsType) {
             type: 'tween',
             ease: 'linear',
             duration: 0.2,
-            delay: props.num * 0.4,
+            delay: props.num * 0.6,
           }}
           className={styles.number}
         >
@@ -121,7 +121,7 @@ export default function OneStep(props: PropsType) {
           type: 'tween',
           ease: 'linear',
           duration: 0.2,
-          delay: props.num * 0.4 + 0.2,
+          delay: props.num * 0.6 + 0.2,
         }}
       >
         <h5>{header}</h5>
