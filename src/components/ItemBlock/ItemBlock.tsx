@@ -19,7 +19,12 @@ export default function ItemBlock(props: ItemBlockProps) {
       <div className={styles.description}>
         <div className={styles.header}>
           <h4>{service.title}</h4>
-          <Image src={arrowIcon} alt={'arrow-icon'} className={styles.arrow} />
+          <Image
+            src={arrowIcon}
+            alt={'arrow-icon'}
+            className={styles.arrow}
+            style={{ visibility: 'hidden' }} // todo: unhide later
+          />
         </div>
         <p>{service.description}</p>
       </div>

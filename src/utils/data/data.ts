@@ -29,6 +29,13 @@ export type TabType = {
   icon?: string;
 };
 
+export type ServiceType = {
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+};
+
 export const social = [
   {
     name: 'Telegram',

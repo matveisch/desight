@@ -1,10 +1,11 @@
 import styles from './CompleteSolution.module.scss';
 import CompleteDescription from '@components/CompleteDescription/CompleteDescription';
-import { SpinAnimation } from '@components/spinAnimation/SpinAnimation';
+import { SpinAnimation } from '@components/SpinAnimation/SpinAnimation';
 import OneStep from '@components/OneStep/OneStep';
 import OneStepMobile from '@components/OneStepMobile/OneStepMobile';
 import Image from 'next/image';
 import arrow from '@images/arrow-link.svg';
+import Link from 'next/link';
 
 export default function CompleteSolution({ dict, lang }: { dict: any; lang: 'he' | 'en' | 'ru' }) {
   const steps = [
@@ -33,10 +34,12 @@ export default function CompleteSolution({ dict, lang }: { dict: any; lang: 'he'
           <h3>{dict.completeSolution.description.from}</h3>
           <h2>{dict.completeSolution.description.completeSolution}</h2>
           <p className={styles.text}>{dict.completeSolution.description.ourPackage}</p>
-          <button>
-            <p>{dict.completeSolution.description.getDetails}</p>
-            <Image src={arrow} alt={'arrow'} />
-          </button>
+          <Link href="#contact">
+            <button style={{ width: '100%' }}>
+              <p>{dict.completeSolution.description.getDetails}</p>
+              <Image src={arrow} alt={'arrow'} />
+            </button>
+          </Link>
         </CompleteDescription>
         <SpinAnimation />
       </div>

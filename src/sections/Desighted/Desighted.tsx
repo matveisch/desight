@@ -3,6 +3,7 @@
 import styles from './Desighted.module.scss';
 import { motion } from 'framer-motion';
 import React, { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Desighted() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -85,7 +86,7 @@ export default function Desighted() {
           className={styles.button}
           ref={buttonRef}
         >
-          Desighted?
+          <Link href="#contact">Desighted?</Link>
         </motion.button>
         <motion.div
           style={{

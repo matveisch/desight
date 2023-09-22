@@ -23,7 +23,12 @@ export default function WorkDescription(props: PropsType) {
           <h5>{title}</h5>
           <Image src={arrow} alt={'arrow-link'} className={styles.arrow} />
         </div>
-        <Image src={arrow} alt={'arrow-link'} className={styles.arrow} />
+        <Image
+          src={arrow}
+          alt={'arrow-link'}
+          className={styles.arrow}
+          style={{ visibility: 'hidden' }} // todo: unhide later
+        />
       </div>
       <p className={styles.description}>{description}</p>
     </div>
