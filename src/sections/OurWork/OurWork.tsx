@@ -17,8 +17,9 @@ type WorkDataType = {
   description: string;
 };
 
-export default function OurWork({ dict }: { dict: any }) {
+export default function OurWork({ dict, lang }: { dict: any; lang: 'en' | 'he' | 'ru' }) {
   const [currentTab, setCurrentTab] = useState(0);
+
   const workTabs: TabType[] = [
     {
       title: 'Libira',
@@ -64,7 +65,7 @@ export default function OurWork({ dict }: { dict: any }) {
         className={styles.swiper}
         onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
       >
-        <TabSwitcher tabsNames={workTabs} currentTabIndex={currentTab} />
+        <TabSwitcher tabsNames={workTabs} currentTabIndex={currentTab} lang={lang} />
         {workData.map((item, index) => (
           <SwiperSlide key={`${item.title} ${index}`}>
             <p className={styles.headDescription}>{item.blockDescription}</p>

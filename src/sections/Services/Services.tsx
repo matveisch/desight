@@ -24,7 +24,7 @@ type ServiceType = {
   link: string;
 };
 
-export default function Services({ dict }: { dict: any }) {
+export default function Services({ dict, lang }: { dict: any; lang: 'en' | 'ru' | 'he' }) {
   const [currentTab, setCurrentTab] = useState(0);
   const servicesDict = dict.services;
   const designServices: ServiceType[] = [
@@ -94,7 +94,7 @@ export default function Services({ dict }: { dict: any }) {
         className={styles.swiper}
         onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
       >
-        <TabSwitcher tabsNames={servicesTabs} currentTabIndex={currentTab} />
+        <TabSwitcher tabsNames={servicesTabs} currentTabIndex={currentTab} lang={lang} />
         <SwiperSlide>
           <p className={styles.headDescription}>{servicesDict.design.header}</p>
           <div className={styles.servicesContainer}>

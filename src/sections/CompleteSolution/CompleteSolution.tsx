@@ -6,7 +6,7 @@ import OneStepMobile from '@components/OneStepMobile/OneStepMobile';
 import Image from 'next/image';
 import arrow from '@images/arrow-link.svg';
 
-export default function CompleteSolution({ dict }: { dict: any }) {
+export default function CompleteSolution({ dict, lang }: { dict: any; lang: 'he' | 'en' | 'ru' }) {
   const steps = [
     {
       header: 'Wireframe',
@@ -48,6 +48,7 @@ export default function CompleteSolution({ dict }: { dict: any }) {
             description={step.description}
             first={index === 0}
             last={index === steps.length - 1}
+            lang={lang}
           />
         ))}
       </div>

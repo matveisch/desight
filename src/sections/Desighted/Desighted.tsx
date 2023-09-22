@@ -31,12 +31,8 @@ export default function Desighted() {
       });
     }
     setContainerSize({
-      width: containerRef.current?.clientWidth
-        ? containerRef.current?.clientWidth
-        : 0,
-      height: containerRef.current?.clientHeight
-        ? containerRef.current?.clientHeight
-        : 0,
+      width: containerRef.current?.clientWidth ? containerRef.current?.clientWidth : 0,
+      height: containerRef.current?.clientHeight ? containerRef.current?.clientHeight : 0,
     });
   }, []);
 
@@ -76,7 +72,7 @@ export default function Desighted() {
   };
 
   return (
-    <section>
+    <section style={{ direction: 'ltr' }}>
       <motion.div
         className={styles.main}
         ref={containerRef}

@@ -11,15 +11,17 @@ type PropsType = {
   first?: boolean;
   header: string;
   description: string;
+  lang: 'he' | 'en' | 'ru';
 };
 
 export default function OneStep(props: PropsType) {
-  const { num, last, first, header, description } = props;
+  const { num, last, first, header, description, lang } = props;
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     margin: '0px 100px -300px 0px',
     once: true,
   });
+
   return (
     <div className={styles.oneStep} ref={ref}>
       <div className={styles.numberContainer}>

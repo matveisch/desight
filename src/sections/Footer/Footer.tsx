@@ -14,13 +14,14 @@ import globe from '@images/globe.svg';
 
 interface PropsType {
   dict: any;
+  lang: 'en' | 'ru' | 'he';
   links: {
     title: string;
     href: string;
   }[];
 }
 
-export function Footer({ dict, links }: PropsType) {
+export function Footer({ dict, links, lang }: PropsType) {
   // const [currentTab, setCurrentTab] = useState(0);
   // const formTypes = [
   //   'email',
@@ -41,7 +42,7 @@ export function Footer({ dict, links }: PropsType) {
               className={styles.swiper}
               // onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
             >
-              <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab />
+              <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab lang={lang} />
               <SwiperSlide>
                 <p className={styles.formTitle}>{dict.footer.emailMessage}</p>
                 <EmailForm dict={dict} />

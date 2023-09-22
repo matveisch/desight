@@ -36,11 +36,11 @@ export default async function Home({ params: { lang } }: { params: { lang: 'en' 
       <Header links={links} lang={lang} />
       <Hero dict={dict} />
       <HeroImage dict={dict} />
-      <Services dict={dict} />
-      <OurWork dict={dict} />
-      <CompleteSolution dict={dict} />
+      <Services dict={dict} lang={lang} />
+      <OurWork dict={dict} lang={lang} />
+      <CompleteSolution dict={dict} lang={lang} />
       <Desighted />
-      <Footer dict={dict} links={links} />
+      <Footer dict={dict} links={links} lang={lang} />
     </main>
   );
 }
