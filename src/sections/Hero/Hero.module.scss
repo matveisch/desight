@@ -2,6 +2,7 @@
   margin-top: 160px;
   height: max(calc(100vh - 380px), 430px);
   box-sizing: border-box;
+  display: flex;
   // margin-bottom: 210px;
 
   @media (max-width: 850px) {
@@ -20,6 +21,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex: 7;
 
     @media (max-width: 850px) {
       gap: 20px;
@@ -34,7 +36,6 @@
   .text {
     width: 100%;
     position: relative;
-    min-width: 845px;
 
     h3 {
       display: inline;
@@ -88,7 +89,7 @@
       .strokeWrapper {
         display: flex;
 
-        @media (max-width: 850px) {
+        @media (max-width: 650px) {
           // display: flex;
           // gap: 1px;
           align-items: center;
@@ -99,7 +100,6 @@
           opacity: 0;
           filter: blur(16px);
           margin: 0;
-          min-width: 25px
         }
       }
     }
@@ -110,6 +110,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @media (max-width: 850px) {
+      justify-content: center;
+
+    }
 
     .animationWrap {
       display: flex;
