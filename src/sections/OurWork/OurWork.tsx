@@ -77,7 +77,7 @@ export default function OurWork({ dict, lang }: { dict: any; lang: 'en' | 'he' |
                 description={item.description}
               />
               <div className={styles.gridContainer}>
-                <WorkGrid />
+                <WorkGrid title={item.title} />
               </div>
             </div>
           </SwiperSlide>

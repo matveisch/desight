@@ -7,7 +7,7 @@ type Size = 'desktop' | 'mobile' | 'tablet';
 
 type DeviceProps = {
   size: Size;
-  image: string;
+  image: any;
 };
 
 export default function Device(props: DeviceProps) {
@@ -28,11 +28,7 @@ export default function Device(props: DeviceProps) {
 
   return (
     <div className={`${styles.device} ${getCSSClass(size)}`}>
-      <Image
-        className={styles.backgroundImage}
-        src={dots}
-        alt={'background-dots'}
-      />
+      <Image className={styles.backgroundImage} src={dots} alt={'background-dots'} />
       <Image className={styles.cover} src={image} alt={'app-cover'} />
       {size === 'desktop' && (
         <div className={styles.linesContainer}>
