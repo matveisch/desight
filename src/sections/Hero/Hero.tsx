@@ -18,8 +18,8 @@ const titleInitial = {
   filter: 'blur(16px)',
 };
 
-export function Hero(props: { dict: any }) {
-  const { dict } = props;
+export function Hero(props: { dict: any; lang: 'ru' | 'en' | 'he' }) {
+  const { dict, lang } = props;
   const headerText1: string = dict.hero.clearSight;
   const headerText2: string = dict.hero.brightFuture;
   const ref = useRef<HTMLDivElement>(null);
@@ -58,6 +58,7 @@ export function Hero(props: { dict: any }) {
                     transition={{ duration: 0.8, type: 'tween' }}
                     className={styles.titleChar}
                     key={index}
+                    style={lang == 'ru' ? { fontSize: 'min(60px, 5.4vw)' } : undefined}
                   >
                     {char}
                   </motion.h1>
@@ -73,6 +74,7 @@ export function Hero(props: { dict: any }) {
                     transition={{ duration: 0.8 }}
                     className={styles.titleChar}
                     key={index}
+                    style={lang == 'ru' ? { fontSize: 'min(60px, 5.4vw)' } : undefined}
                   >
                     {char}
                   </motion.h1>
