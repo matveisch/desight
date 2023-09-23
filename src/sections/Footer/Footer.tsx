@@ -63,7 +63,12 @@ export function Footer({ dict, links, lang }: PropsType) {
             <Image src={logo} alt="logo" className={styles.logo} />
             <div className={styles.social}>
               {social.map((icon, index) => (
-                <Social key={index} name={icon.name} src={icon.srcWhite} link={icon.link} />
+                <Social
+                  key={`footer-${icon.name}-${index}`}
+                  name={icon.name}
+                  src={icon.srcWhite}
+                  link={icon.link}
+                />
               ))}
             </div>
           </div>

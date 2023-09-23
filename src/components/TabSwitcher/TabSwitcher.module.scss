@@ -37,7 +37,7 @@ $outlinePaddingMobile: 3px;
 
   .switcher {
     // width: calc(50% - 6px);
-    padding: 16px 0px;
+    padding: 16px 0;
     height: calc(100% - 12px);
     top: 6px;
     left: 6px;
@@ -65,7 +65,7 @@ $outlinePaddingMobile: 3px;
 
     .switcher {
       // width: calc(50% - $outlinePaddingMobile);
-      padding: 4px 0px;
+      padding: 4px 0;
       height: calc(100% - ($outlinePaddingMobile * 2));
       top: $outlinePaddingMobile;
       left: $outlinePaddingMobile;

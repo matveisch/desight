@@ -34,9 +34,11 @@
   .text {
     width: 100%;
     position: relative;
+    flex: 7;
 
     h3 {
-      display: inline;
+      display: block;
+      margin-bottom: 10px;
     }
     @media (max-width: 850px) {
       h3 {
@@ -54,14 +56,18 @@
     h1 {
       padding-top: 10px;
       color: $white;
-      font-size: min(6.09375vw, 78px);
+      font-size: 68px;
 
-      @media (max-width: 850px) {
-        font-size: 40px;
+      @media (max-width: 1220px) {
+        font-size: 6.08vw;
       }
+      // @media (max-width: 850px) {
+      //   font-size: 40px;
+      // }
 
       @media (max-width: 650px) {
         text-align: center;
+        font-size: 32px !important;
       }
     }
 
@@ -84,12 +90,14 @@
       // flex-direction: column;
       // align-items: center;
       // width: 100%;
+
       .strokeWrapper {
         display: block;
 
-        @media (max-width: 850px) {
-          // display: flex;
+        @media (max-width: 650px) {
+          //display: flex;
           // gap: 1px;
+          width: 100%;
           align-items: center;
           justify-content: center;
         }
@@ -99,6 +107,12 @@
           filter: blur(16px);
         }
       }
+
+      @media (max-width: 650px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 
@@ -106,15 +120,19 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    flex: 4;
 
+    @media (max-width: 650px) {
+      justify-content: center;
+    }
     .animationWrap {
       display: flex;
-      width: 315px;
-      height: 315px;
+      width: min(315px, 30vw);
+      height: min(315px, 30vw);
       justify-content: flex-start;
 
-      @media (max-width: 850px) {
+      @media (max-width: 650px) {
         width: 300px;
         height: 300px;
       }

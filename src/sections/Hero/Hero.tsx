@@ -18,8 +18,8 @@ const titleInitial = {
   filter: 'blur(16px)',
 };
 
-export function Hero(props: { dict: any }) {
-  const { dict } = props;
+export function Hero(props: { dict: any; lang: 'ru' | 'en' | 'he' }) {
+  const { dict, lang } = props;
   const headerText1: string = dict.hero.clearSight;
   const headerText2: string = dict.hero.brightFuture;
   const ref = useRef<HTMLDivElement>(null);
@@ -49,35 +49,41 @@ export function Hero(props: { dict: any }) {
             transition={{ duration: 5, staggerChildren: 0.05 }}
             className={styles.titleWrap}
           >
-            <div className={styles.strokeWrapper}>
-              {headerText1.split('').map((char, index) => {
-                return (
-                  <motion.h1
-                    initial={titleInitial}
-                    variants={titleAnimation}
-                    transition={{ duration: 0.8, type: 'tween' }}
-                    className={styles.titleChar}
-                    key={index}
-                  >
-                    {char}
-                  </motion.h1>
-                );
-              })}
+            <div className={styles.title}>
+              <div className={styles.strokeWrapper}>
+                {headerText1.split('').map((char, index) => {
+                  return (
+                    <motion.h1
+                      initial={titleInitial}
+                      variants={titleAnimation}
+                      transition={{ duration: 0.8, type: 'tween' }}
+                      className={styles.titleChar}
+                      key={`headerText-${index}`}
+                      style={lang == 'ru' ? { fontSize: 'min(60px, 5.4vw)' } : undefined}
+                    >
+                      {char}
+                    </motion.h1>
+                  );
+                })}
+              </div>
             </div>
-            <div className={styles.strokeWrapper}>
-              {headerText2.split('').map((char, index) => {
-                return (
-                  <motion.h1
-                    initial={titleInitial}
-                    variants={titleAnimation}
-                    transition={{ duration: 0.8 }}
-                    className={styles.titleChar}
-                    key={index}
-                  >
-                    {char}
-                  </motion.h1>
-                );
-              })}
+            <div className={styles.title}>
+              <div className={styles.strokeWrapper}>
+                {headerText2.split('').map((char, index) => {
+                  return (
+                    <motion.h1
+                      initial={titleInitial}
+                      variants={titleAnimation}
+                      transition={{ duration: 0.8 }}
+                      className={styles.titleChar}
+                      key={`hero-char-${index}`}
+                      style={lang == 'ru' ? { fontSize: 'min(60px, 5.4vw)' } : undefined}
+                    >
+                      {char}
+                    </motion.h1>
+                  );
+                })}
+              </div>
             </div>
           </motion.div>
           <motion.div
@@ -91,7 +97,12 @@ export function Hero(props: { dict: any }) {
             className={styles.social}
           >
             {social.map((icon, index) => (
-              <Social key={index} name={icon.name} src={icon.srcBlue} link={icon.link} />
+              <Social
+                key={`hero-${icon.name}-${index}`}
+                name={icon.name}
+                src={icon.srcBlue}
+                link={icon.link}
+              />
             ))}
           </motion.div>
         </div>
