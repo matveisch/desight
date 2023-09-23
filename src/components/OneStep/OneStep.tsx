@@ -48,7 +48,7 @@ export default function OneStep(props: PropsType) {
             {Array.from(Array(10).keys()).map((key) => {
               return (
                 <motion.div
-                  key={`key-${key}`}
+                  key={`oneStep-${key}`}
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: key * 0.1 + 2.5 }}

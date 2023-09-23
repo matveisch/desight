@@ -45,7 +45,7 @@ export default function TabSwitcher(props: TabSwitcherProps) {
       {tabsNames.map((tab, index) => (
         <div
           ref={tabNameRef}
-          key={`${tab.title}-${index}`}
+          key={`${tab.title}-${index}-switcher`}
           className={styles.tabName}
           onClick={() => swiper.slideTo(index)}
         >

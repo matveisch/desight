@@ -58,7 +58,7 @@ export function Hero(props: { dict: any; lang: 'ru' | 'en' | 'he' }) {
                       variants={titleAnimation}
                       transition={{ duration: 0.8, type: 'tween' }}
                       className={styles.titleChar}
-                      key={index}
+                      key={`headerText-${index}`}
                       style={lang == 'ru' ? { fontSize: 'min(60px, 5.4vw)' } : undefined}
                     >
                       {char}
@@ -76,7 +76,7 @@ export function Hero(props: { dict: any; lang: 'ru' | 'en' | 'he' }) {
                       variants={titleAnimation}
                       transition={{ duration: 0.8 }}
                       className={styles.titleChar}
-                      key={index}
+                      key={`hero-char-${index}`}
                       style={lang == 'ru' ? { fontSize: 'min(60px, 5.4vw)' } : undefined}
                     >
                       {char}
@@ -97,7 +97,12 @@ export function Hero(props: { dict: any; lang: 'ru' | 'en' | 'he' }) {
             className={styles.social}
           >
             {social.map((icon, index) => (
-              <Social key={index} name={icon.name} src={icon.srcBlue} link={icon.link} />
+              <Social
+                key={`hero-${icon.name}-${index}`}
+                name={icon.name}
+                src={icon.srcBlue}
+                link={icon.link}
+              />
             ))}
           </motion.div>
         </div>

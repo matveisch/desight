@@ -100,7 +100,7 @@ export function HeroAnimation() {
     <motion.div animate={isTapped ? 'tapped' : 'notTapped'} className={styles.main}>
       <motion.div variants={iconsVariants} className={styles.icons}>
         {icons.map((icon, index) => (
-          <motion.div key={`${index}-icon`} className={styles.iconWrapper}>
+          <motion.div key={`${index}-icon-hero`} className={styles.iconWrapper}>
             <motion.div variants={iconVariants} className={styles.icon}>
               <Image src={icon} alt={`icon ${index}`} />
             </motion.div>
