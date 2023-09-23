@@ -90,6 +90,7 @@
       // flex-direction: column;
       // align-items: center;
       // width: 100%;
+
       .strokeWrapper {
         display: block;
 
@@ -106,6 +107,13 @@
           filter: blur(16px);
         }
       }
+
+      @media (max-width: 650px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+
     }
   }
 
