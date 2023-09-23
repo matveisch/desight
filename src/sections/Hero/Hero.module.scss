@@ -34,7 +34,7 @@
   }
 
   .text {
-    width: 100%;
+   width: 60%;
     position: relative;
 
     h3 {
@@ -106,10 +106,10 @@
   }
 
   .animation {
-    width: 100%;
+    width: 40%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     @media (max-width: 850px) {
       justify-content: center;
