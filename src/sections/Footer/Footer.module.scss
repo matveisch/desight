@@ -18,9 +18,9 @@
 
     .left {
       box-sizing: border-box;
+      position: relative;
       padding: 53px 87px 40px 57px;
       background-color: $blue;
-      // max-width: 595px;
       width: calc(50vw - 33px);
       overflow: hidden;
       border-radius: 32px;
@@ -56,7 +56,7 @@
         width: 100%;
       }
 
-      @media (max-width: 450px) {
+      @media (max-width: 425px) {
         padding: 30px 20px;
       }
     }

@@ -48,7 +48,7 @@ interface PropsType {
   lang: 'en' | 'ru' | 'he';
 }
 
-export function Header({ links, lang }: PropsType) {
+export default function Header({ links, lang }: PropsType) {
   const [animate, setAnimate] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);

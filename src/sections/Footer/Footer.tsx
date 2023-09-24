@@ -11,6 +11,7 @@ import { social } from '@/utils/data/data';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import globe from '@images/globe.svg';
+import ContactErrorMessage from '@components/ContactErrorMessage/ContactErrorMessage';
 
 interface PropsType {
   dict: any;
@@ -21,7 +22,7 @@ interface PropsType {
   }[];
 }
 
-export function Footer({ dict, links, lang }: PropsType) {
+export default function Footer({ dict, links, lang }: PropsType) {
   // const [currentTab, setCurrentTab] = useState(0);
   // const formTypes = [
   //   'email',
@@ -33,6 +34,7 @@ export function Footer({ dict, links, lang }: PropsType) {
     <footer className={styles.footer} id="contact">
       <div className={styles.wrapper}>
         <div className={styles.left}>
+          <ContactErrorMessage message={'error'} />
           <h2 className={styles.title}>{dict.footer.getResponse}</h2>
           <div className={styles.swiperWrap}>
             <Swiper

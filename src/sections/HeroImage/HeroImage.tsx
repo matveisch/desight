@@ -46,7 +46,7 @@ const textVariants = {
   noAnimate: {},
 };
 
-export function HeroImage(props: { dict: any }) {
+export default function HeroImage(props: { dict: any }) {
   const { dict } = props;
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
