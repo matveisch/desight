@@ -4,10 +4,16 @@ import Image from 'next/image';
 import { z } from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Dispatch, SetStateAction } from 'react';
 
-function EmailForm({ dict }: { dict: any }) {
+interface PropsType {
+  dict: any;
+  setHasError: Dispatch<SetStateAction<boolean>>;
+}
+
+function EmailForm({ dict, setHasError }: PropsType) {
   const SignUpSchema = z.object({
-    email: z.string().email(),
+    email: z.string().email().nonempty(),
     message: z.string().max(100),
   });
   type SignUpSchemaType = z.infer<typeof SignUpSchema>;
@@ -30,7 +36,7 @@ function EmailForm({ dict }: { dict: any }) {
       });
 
       if (!res.ok) {
-        // setSentSuccessfully(false);
+        setHasError(true);
       } else {
         // setSentSuccessfully(true);
         reset();
@@ -38,6 +44,10 @@ function EmailForm({ dict }: { dict: any }) {
     } catch (e) {
       if (e instanceof Error) console.log(e.message);
     }
+  }
+
+  if (errors.email || errors.message) {
+    setHasError(true);
   }
 
   return (
@@ -49,9 +59,7 @@ function EmailForm({ dict }: { dict: any }) {
         required
         {...register('email')}
       />
-      {/*{errors.email && (*/}
-      {/*  <span style={{ color: 'red' }}>{errors.email.message}</span>*/}
-      {/*)}*/}
+      {/*{errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}*/}
       <textarea
         placeholder={dict.footer.message}
         className={styles.textarea}

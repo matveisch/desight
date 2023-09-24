@@ -1,4 +1,4 @@
-import 'normalize.css/normalize.css';
+import 'normalize.css';
 import '@styles/globals.scss';
 import type { Metadata } from 'next';
 import { Unbounded, Nunito } from 'next/font/google';

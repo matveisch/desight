@@ -12,6 +12,8 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import globe from '@images/globe.svg';
 import ContactErrorMessage from '@components/ContactErrorMessage/ContactErrorMessage';
+import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 interface PropsType {
   dict: any;
@@ -23,6 +25,7 @@ interface PropsType {
 }
 
 export default function Footer({ dict, links, lang }: PropsType) {
+  const [hasError, setHasError] = useState(false);
   // const [currentTab, setCurrentTab] = useState(0);
   // const formTypes = [
   //   'email',
@@ -34,7 +37,7 @@ export default function Footer({ dict, links, lang }: PropsType) {
     <footer className={styles.footer} id="contact">
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <ContactErrorMessage message={'error'} />
+          <AnimatePresence>{hasError && <ContactErrorMessage message={'error'} />}</AnimatePresence>
           <h2 className={styles.title}>{dict.footer.getResponse}</h2>
           <div className={styles.swiperWrap}>
             <Swiper
@@ -47,7 +50,7 @@ export default function Footer({ dict, links, lang }: PropsType) {
               <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab lang={lang} />
               <SwiperSlide>
                 <p className={styles.formTitle}>{dict.footer.emailMessage}</p>
-                <EmailForm dict={dict} />
+                <EmailForm dict={dict} setHasError={setHasError} />
               </SwiperSlide>
               {/*<SwiperSlide>*/}
               {/*  <p className={styles.formTitle}>Whatsapp message</p>*/}
