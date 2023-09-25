@@ -25,7 +25,9 @@ interface PropsType {
 }
 
 export default function Footer({ dict, links, lang }: PropsType) {
-  const [hasError, setHasError] = useState(false);
+  const [hasNotification, setHasNotification] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('Something is wrong');
+  const [beenSent, setBeenSent] = useState(false);
   // const [currentTab, setCurrentTab] = useState(0);
   // const formTypes = [
   //   'email',
@@ -37,7 +39,11 @@ export default function Footer({ dict, links, lang }: PropsType) {
     <footer className={styles.footer} id="contact">
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <AnimatePresence>{hasError && <ContactErrorMessage message={'error'} />}</AnimatePresence>
+          <AnimatePresence>
+            {hasNotification && (
+              <ContactErrorMessage message={errorMessage} successMessage={beenSent} />
+            )}
+          </AnimatePresence>
           <h2 className={styles.title}>{dict.footer.getResponse}</h2>
           <div className={styles.swiperWrap}>
             <Swiper
@@ -50,7 +56,12 @@ export default function Footer({ dict, links, lang }: PropsType) {
               <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab lang={lang} />
               <SwiperSlide>
                 <p className={styles.formTitle}>{dict.footer.emailMessage}</p>
-                <EmailForm dict={dict} setHasError={setHasError} />
+                <EmailForm
+                  dict={dict}
+                  setHasNotification={setHasNotification}
+                  setErrorMessage={setErrorMessage}
+                  setBeenSent={setBeenSent}
+                />
               </SwiperSlide>
               {/*<SwiperSlide>*/}
               {/*  <p className={styles.formTitle}>Whatsapp message</p>*/}

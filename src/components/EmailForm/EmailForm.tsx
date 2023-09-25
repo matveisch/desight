@@ -8,21 +8,20 @@ import { Dispatch, SetStateAction } from 'react';
 
 interface PropsType {
   dict: any;
-  setHasError: Dispatch<SetStateAction<boolean>>;
+  setHasNotification: Dispatch<SetStateAction<boolean>>;
+  setErrorMessage: Dispatch<SetStateAction<string>>;
+  setBeenSent: Dispatch<SetStateAction<boolean>>;
 }
 
-function EmailForm({ dict, setHasError }: PropsType) {
+function EmailForm({ dict, setHasNotification, setErrorMessage, setBeenSent }: PropsType) {
   const SignUpSchema = z.object({
-    email: z.string().email().nonempty(),
+    email: z.string().email(),
     message: z.string().max(100),
   });
   type SignUpSchemaType = z.infer<typeof SignUpSchema>;
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<SignUpSchemaType>({ resolver: zodResolver(SignUpSchema) });
+  const { register, handleSubmit, reset } = useForm<SignUpSchemaType>({
+    resolver: zodResolver(SignUpSchema),
+  });
   const onSubmit: SubmitHandler<SignUpSchemaType> = (data) => sendEmail(data);
 
   async function sendEmail(data: SignUpSchemaType) {
@@ -35,19 +34,21 @@ function EmailForm({ dict, setHasError }: PropsType) {
         },
       });
 
-      if (!res.ok) {
-        setHasError(true);
-      } else {
-        // setSentSuccessfully(true);
-        reset();
-      }
-    } catch (e) {
-      if (e instanceof Error) console.log(e.message);
-    }
-  }
+      setHasNotification(true);
 
-  if (errors.email || errors.message) {
-    setHasError(true);
+      if (!res.ok) {
+        setBeenSent(false);
+      } else {
+        reset();
+        setBeenSent(true);
+      }
+
+      setTimeout(() => {
+        setHasNotification(false);
+      }, 2500);
+    } catch (e) {
+      if (e instanceof Error) setErrorMessage(e.message);
+    }
   }
 
   return (
@@ -59,16 +60,12 @@ function EmailForm({ dict, setHasError }: PropsType) {
         required
         {...register('email')}
       />
-      {/*{errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}*/}
       <textarea
         placeholder={dict.footer.message}
         className={styles.textarea}
         required
         {...register('message')}
       />
-      {/*{errors.message && (*/}
-      {/*  <span style={{ color: 'red' }}>{errors.message.message}</span>*/}
-      {/*)}*/}
       <button type="submit" className={styles.button}>
         <Image src={send} alt="send" className={styles.image} />
       </button>

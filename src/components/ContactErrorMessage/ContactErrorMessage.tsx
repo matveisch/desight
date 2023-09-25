@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
 import styles from './ContactErrorMessage.module.scss';
 
-export default function ContactErrorMessage({ message }: { message: string }) {
+interface PropsType {
+  message: string;
+  successMessage?: boolean;
+}
+
+export default function ContactErrorMessage({ message, successMessage }: PropsType) {
   const variants = {
     hidden: { y: '-100vh' },
     show: { y: 0 },
@@ -16,8 +21,13 @@ export default function ContactErrorMessage({ message }: { message: string }) {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       variants={variants}
       className={styles.contactErrorMessage}
+      style={
+        successMessage
+          ? { background: 'green', boxShadow: '0 6px 16px 0 rgba(0, 255, 0, 0.25)' }
+          : {}
+      }
     >
-      {message}
+      {successMessage ? 'Sent!' : message}
     </motion.div>
   );
 }
