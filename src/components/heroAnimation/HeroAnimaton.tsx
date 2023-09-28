@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './HeroAnimation.module.scss';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -18,7 +19,7 @@ const iconsVariants = {
     opacity: [1, 1, 0],
     transition: {
       rotate: { times: [0, 1], duration: 2, ease: 'easeIn' },
-      opacity: { times: [0, 0.4, 0.99, 1], duration: 2 },
+      opacity: { times: [0, 0.99, 1], duration: 2 },
     },
   },
   notTapped: {
@@ -81,6 +82,8 @@ const globeVariants = {
   },
 };
 export function HeroAnimation() {
+  const router = useRouter();
+
   const [isHovered, setHovered] = useState<boolean>(false);
   const [isTapped, setIsTapped] = useState<boolean>(false);
   const icons = [cyrsqIcon, penIcon, devIcon, userIcon, squareIcon];
@@ -90,9 +93,14 @@ export function HeroAnimation() {
   };
 
   useEffect(() => {
+    const timer = setTimeout(
+      () => (isTapped ? router.push('#about', { scroll: true }) : undefined),
+      1800
+    );
     window.addEventListener('mouseup', handleMouseUp);
     return () => {
       window.removeEventListener('mouseup', handleMouseUp);
+      clearTimeout(timer);
     };
   }, [isTapped]);
 
@@ -131,11 +139,27 @@ export function HeroAnimation() {
           setIsTapped(true);
           e.preventDefault();
         }}
+        // onTapStart={(e) => {
+        //   setIsTapped(true);
+        //   e.preventDefault();
+        // }}
+        onTouchStart={(e) => {
+          setIsTapped(true);
+          e.preventDefault();
+        }}
+        onTouchEnd={() => setIsTapped(false)}
         onMouseUp={() => setIsTapped(false)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <Image className={styles.globe} src={Globus} alt="Globe" />
+        <div className={styles.imgWrapper}>
+          <Image
+            className={styles.globe}
+            src={Globus}
+            alt="Globe"
+            onClick={(e) => e.preventDefault}
+          />
+        </div>
       </motion.div>
     </motion.div>
   );
