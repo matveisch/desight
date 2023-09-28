@@ -87,7 +87,7 @@ export default function Header({ links, lang }: PropsType) {
         </button>
       </motion.div>
       <div className={styles.mobileMenuWrapper}>
-        <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen}>
+        <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} lang={lang}>
           {links.map((link, index) => (
             <li key={`${link.title}-${index}`}>
               <Link href={link.href}>

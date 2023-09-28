@@ -55,9 +55,11 @@
       list-style: none;
       color: $white;
       li {
-        p {
-          color: $blue;
-          cursor: pointer;
+        a {
+          p {
+            color: $blue;
+            cursor: pointer;
+          }
         }
       }
     }

@@ -52,15 +52,27 @@ export default function LangSwitch({ lang }: { lang: 'en' | 'ru' | 'he' }) {
         <Image src={languageIcon} alt="language-icon" />
       </div>
       <ul onClick={() => setIsOpen(false)}>
-        <Link href="/en">
-          <p>English</p>
-        </Link>
-        <Link href="/ru">
-          <p>Русский</p>
-        </Link>
-        <Link href="/he">
-          <p>עברית</p>
-        </Link>
+        <li>
+          <Link href="/en">
+            <p style={{ opacity: lang == 'en' ? 1 : 0.7, fontWeight: lang == 'en' ? 800 : 600 }}>
+              English
+            </p>
+          </Link>
+        </li>
+        <li>
+          <Link href="/ru">
+            <p style={{ opacity: lang == 'ru' ? 1 : 0.7, fontWeight: lang == 'ru' ? 800 : 600 }}>
+              Русский
+            </p>
+          </Link>
+        </li>
+        <li>
+          <Link href="/he">
+            <p style={{ opacity: lang == 'he' ? 1 : 0.7, fontWeight: lang == 'he' ? 800 : 600 }}>
+              עברית
+            </p>
+          </Link>
+        </li>
       </ul>
     </motion.div>
   );

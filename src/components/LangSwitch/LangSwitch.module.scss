@@ -32,10 +32,14 @@
     justify-content: space-between;
     gap: 16px;
     li {
-      p {
-        cursor: pointer;
-        font-size: 14px;
-        color: $blue;
+      a {
+        p {
+          cursor: pointer;
+          font-size: 14px;
+          color: $blue;
+          opacity: 0.7;
+          font-weight: 600;
+        }
       }
     }
   }
