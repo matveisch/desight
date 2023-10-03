@@ -8,9 +8,10 @@ let locales = ['en-US', 'ru-RU', 'he'];
 function getLocale(request: NextRequest) {
   let headers = { 'accept-language': request.headers.get('accept-language') || 'en-US,en;q=0.5' };
   let languages = new Negotiator({ headers }).languages();
-  let defaultLocale = 'en-US';
+  let matchedLocale = match(languages, locales, 'en-US');
 
-  return match(languages, locales, defaultLocale); // -> 'en-US'
+  // return match(languages, locales, defaultLocale);
+  return locales.find((locale) => locale.startsWith(matchedLocale)) || 'en-US';
 }
 
 export function middleware(request: NextRequest) {
