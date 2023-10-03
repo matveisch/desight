@@ -6,7 +6,7 @@ let locales = ['en-US', 'ru-RU', 'he'];
 
 // Get the preferred locale, similar to above or using a library
 function getLocale(request: NextRequest) {
-  let headers = { 'accept-language': 'en-US,en;q=0.5' };
+  let headers = { 'accept-language': request.headers.get('accept-language') || 'en-US,en;q=0.5' };
   let languages = new Negotiator({ headers }).languages();
   let defaultLocale = 'en-US';
 
@@ -26,7 +26,9 @@ export function middleware(request: NextRequest) {
 
     // e.g. incoming request is /products
     // The new URL is now /en-US/products
-    return NextResponse.redirect(new URL(`/${locale}/${pathname}`, request.url));
+    return NextResponse.redirect(
+      `${request.url.toString().replace(/\/$/, '')}/${locale}${pathname}`
+    );
   }
 }
 
