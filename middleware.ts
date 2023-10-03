@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
   );
 
   // Redirect if there is no locale
-  if (pathnameIsMissingLocale || pathname === '/') {
+  if (pathname === '/' || pathnameIsMissingLocale) {
     const locale = getLocale(request);
 
     // e.g. incoming request is /products
