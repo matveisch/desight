@@ -39,7 +39,7 @@ export default function MobileMenu({ isOpen, setIsOpen, children, lang }: Props)
       </nav>
       <motion.div onClick={() => setIsOpen(false)} className={styles.translateWrapper}>
         <div className={styles.translateIcon}>
-          <Image src={translateIcon} alt="translate-icon" />
+          <Image src={translateIcon} alt="translate-icon" priority />
         </div>
         <div>
           <ul>

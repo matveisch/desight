@@ -2,7 +2,7 @@
 
 import styles from './Desighted.module.scss';
 import { motion } from 'framer-motion';
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Desighted() {

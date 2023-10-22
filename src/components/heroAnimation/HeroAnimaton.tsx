@@ -81,9 +81,9 @@ const globeVariants = {
     },
   },
 };
+
 export function HeroAnimation() {
   const router = useRouter();
-
   const [isHovered, setHovered] = useState<boolean>(false);
   const [isTapped, setIsTapped] = useState<boolean>(false);
   const icons = [cyrsqIcon, penIcon, devIcon, userIcon, squareIcon];
@@ -110,7 +110,7 @@ export function HeroAnimation() {
         {icons.map((icon, index) => (
           <motion.div key={`${index}-icon-hero`} className={styles.iconWrapper}>
             <motion.div variants={iconVariants} className={styles.icon}>
-              <Image src={icon} alt={`icon ${index}`} />
+              <Image src={icon} alt={`icon ${index}`} priority />
             </motion.div>
           </motion.div>
         ))}
@@ -130,7 +130,7 @@ export function HeroAnimation() {
           },
         }}
       >
-        <Image src={clickText} alt="click and hold" />
+        <Image src={clickText} alt="click and hold" priority />
       </motion.div>
       <motion.div
         className={styles.globeWrapper}
@@ -158,6 +158,7 @@ export function HeroAnimation() {
             src={Globus}
             alt="Globe"
             onClick={(e) => e.preventDefault}
+            priority
           />
         </div>
       </motion.div>

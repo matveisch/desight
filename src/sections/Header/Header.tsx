@@ -73,7 +73,7 @@ export default function Header({ links, lang }: PropsType) {
       </div>
       <motion.div className={styles.headWrap}>
         <div className={styles.logo}>
-          <Image src={logo} alt="logo" className={styles.image} />
+          <Image src={logo} alt="logo" className={styles.image} priority />
         </div>
         <motion.nav transition={{ staggerChildren: 0.3 }} className={styles.nav}>
           {links.map((link, index) => (
@@ -83,7 +83,7 @@ export default function Header({ links, lang }: PropsType) {
           ))}
         </motion.nav>
         <button className={styles.menu} onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <Image src={burger} alt="burger" className={styles.image} />
+          <Image src={burger} alt="burger" className={styles.image} priority />
         </button>
       </motion.div>
       <div className={styles.mobileMenuWrapper}>

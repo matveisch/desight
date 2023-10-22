@@ -12,7 +12,6 @@ import { SiteContent } from '@/utils/types';
 
 export default async function Home({ params: { lang } }: { params: { lang: 'en' | 'ru' | 'he' } }) {
   const dict: SiteContent = await getDictionary(lang);
-
   const links: { title: string; href: string }[] = [
     {
       title: dict.header.services,

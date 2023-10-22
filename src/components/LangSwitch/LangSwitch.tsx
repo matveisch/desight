@@ -48,8 +48,7 @@ export default function LangSwitch({ lang }: { lang: 'en' | 'ru' | 'he' }) {
             strokeLinecap="round"
           />
         </motion.svg>
-
-        <Image src={languageIcon} alt="language-icon" />
+        <Image src={languageIcon} alt="language-icon" priority />
       </div>
       <ul onClick={() => setIsOpen(false)}>
         <li>
