@@ -5,7 +5,7 @@ import Social from '@/components/Social/Social';
 import { useRef } from 'react';
 import { social } from '@/utils/data/data';
 import { motion, useInView } from 'framer-motion';
-import { HeroAnimation } from '@components/heroAnimation/HeroAnimaton';
+import { HeroAnimation } from '@components/HeroAnimation/HeroAnimaton';
 import { SiteContent } from '@/utils/types';
 
 const titleAnimation = {

@@ -18,9 +18,19 @@ export const metadata: Metadata = {
   description: 'Full Cycle Web Agency',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'he' }, { lang: 'ru' }];
+}
+
+export default function RootLayout({
+  children,
+  params,
+}: {
+  children: ReactNode;
+  params: { lang: string };
+}) {
   return (
-    <html>
+    <html lang={params.lang} dir={params.lang === 'he' ? 'rtl' : 'ltr'}>
       <body className={`${unbounded.variable} ${nunito.variable}`}>{children}</body>
     </html>
   );

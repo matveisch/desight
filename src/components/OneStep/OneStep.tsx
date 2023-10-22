@@ -21,6 +21,7 @@ export default function OneStep(props: PropsType) {
     margin: '0px 100px -300px 0px',
     once: true,
   });
+
   return (
     <div className={styles.oneStep} ref={ref}>
       <div className={styles.numberContainer}>

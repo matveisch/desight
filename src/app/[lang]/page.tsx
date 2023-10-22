@@ -32,7 +32,7 @@ export default async function Home({ params: { lang } }: { params: { lang: 'en' 
   ];
 
   return (
-    <main className={styles.main} style={lang === 'he' ? { direction: 'rtl' } : undefined}>
+    <main className={styles.main}>
       <Header links={links} lang={lang} />
       <Hero dict={dict} lang={lang} />
       <HeroImage dict={dict} />
