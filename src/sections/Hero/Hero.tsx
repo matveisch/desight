@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { social } from '@/utils/data/data';
 import { motion, useInView } from 'framer-motion';
 import { HeroAnimation } from '@components/heroAnimation/HeroAnimaton';
+import { SiteContent } from '@/utils/types';
 
 const titleAnimation = {
   inView: { x: 0, scale: 1, opacity: 1, filter: 'blur(0px)' },
@@ -18,7 +19,7 @@ const titleInitial = {
   filter: 'blur(16px)',
 };
 
-export default function Hero(props: { dict: any; lang: 'ru' | 'en' | 'he' }) {
+export default function Hero(props: { dict: SiteContent; lang: 'ru' | 'en' | 'he' }) {
   const { dict, lang } = props;
   const headerText1: string = dict.hero.clearSight;
   const headerText2: string = dict.hero.brightFuture;

@@ -14,9 +14,10 @@ import globe from '@images/globe.svg';
 import ContactErrorMessage from '@components/ContactErrorMessage/ContactErrorMessage';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { SiteContent } from '@/utils/types';
 
 interface PropsType {
-  dict: any;
+  dict: SiteContent;
   lang: 'en' | 'ru' | 'he';
   links: {
     title: string;

@@ -6,8 +6,15 @@ import OneStepMobile from '@components/OneStepMobile/OneStepMobile';
 import Image from 'next/image';
 import arrow from '@images/arrow-link.svg';
 import Link from 'next/link';
+import { SiteContent } from '@/utils/types';
 
-export default function CompleteSolution({ dict, lang }: { dict: any; lang: 'he' | 'en' | 'ru' }) {
+export default function CompleteSolution({
+  dict,
+  lang,
+}: {
+  dict: SiteContent;
+  lang: 'he' | 'en' | 'ru';
+}) {
   const steps = [
     {
       header: 'Wireframe',

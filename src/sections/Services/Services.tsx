@@ -16,8 +16,9 @@ import businessIcon from '@images/business-icon.svg';
 import designIcon from '@images/design-tab-icon.svg';
 import devIcon from '@images/dev-tab-icon.svg';
 import { ServiceType, TabType } from '@/utils/data/data';
+import { SiteContent } from '@/utils/types';
 
-export default function Services({ dict, lang }: { dict: any; lang: 'en' | 'ru' | 'he' }) {
+export default function Services({ dict, lang }: { dict: SiteContent; lang: 'en' | 'ru' | 'he' }) {
   const [currentTab, setCurrentTab] = useState(0);
   const servicesDict = dict.services;
   const designServices: ServiceType[] = [

@@ -6,6 +6,7 @@ import left from '@images/negativeflow.png';
 import right from '@images/positiveflow.png';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { SiteContent } from '@/utils/types';
 
 const borderVariants = {
   animate: {
@@ -46,7 +47,7 @@ const textVariants = {
   noAnimate: {},
 };
 
-export default function HeroImage(props: { dict: any }) {
+export default function HeroImage(props: { dict: SiteContent }) {
   const { dict } = props;
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html>
       <body className={`${unbounded.variable} ${nunito.variable}`}>{children}</body>
     </html>
   );

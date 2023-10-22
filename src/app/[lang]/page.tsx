@@ -8,9 +8,10 @@ import OurWork from '@sections/OurWork/OurWork';
 import CompleteSolution from '@sections/CompleteSolution/CompleteSolution';
 import Footer from '@sections/Footer/Footer';
 import { getDictionary } from '@/app/[lang]/dictionaries';
+import { SiteContent } from '@/utils/types';
 
 export default async function Home({ params: { lang } }: { params: { lang: 'en' | 'ru' | 'he' } }) {
-  const dict: any = await getDictionary(lang);
+  const dict: SiteContent = await getDictionary(lang);
 
   const links: { title: string; href: string }[] = [
     {

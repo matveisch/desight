@@ -8,6 +8,7 @@ import { TabType } from '@/utils/data/data';
 import WorkDescription from '@components/WorkDescription/WorkDescription';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import beetrade from '@images/beetrade-icon.svg';
+import { SiteContent } from '@/utils/types';
 
 type WorkDataType = {
   title: string;
@@ -17,7 +18,7 @@ type WorkDataType = {
   description: string;
 };
 
-export default function OurWork({ dict, lang }: { dict: any; lang: 'en' | 'he' | 'ru' }) {
+export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' | 'he' | 'ru' }) {
   const [currentTab, setCurrentTab] = useState(0);
 
   const workTabs: TabType[] = [
