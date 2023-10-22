@@ -21,7 +21,6 @@ export default function MobileMenu({ isOpen, setIsOpen, children, lang }: Props)
         ? setIsOpen(false)
         : undefined;
     };
-
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
@@ -46,17 +45,22 @@ export default function MobileMenu({ isOpen, setIsOpen, children, lang }: Props)
             <li>
               <Link href="/en">
                 <p
-                  style={{ opacity: lang == 'en' ? 1 : 0.7, fontWeight: lang == 'en' ? 800 : 600 }}
+                  style={{
+                    opacity: lang === 'en' ? 1 : 0.7,
+                    fontWeight: lang === 'en' ? 800 : 600,
+                  }}
                 >
                   English
                 </p>
               </Link>
             </li>
-
             <li>
               <Link href="/ru">
                 <p
-                  style={{ opacity: lang == 'ru' ? 1 : 0.7, fontWeight: lang == 'ru' ? 800 : 600 }}
+                  style={{
+                    opacity: lang === 'ru' ? 1 : 0.7,
+                    fontWeight: lang === 'ru' ? 800 : 600,
+                  }}
                 >
                   Русский
                 </p>
@@ -65,7 +69,10 @@ export default function MobileMenu({ isOpen, setIsOpen, children, lang }: Props)
             <li>
               <Link href="/he">
                 <p
-                  style={{ opacity: lang == 'he' ? 1 : 0.7, fontWeight: lang == 'he' ? 800 : 600 }}
+                  style={{
+                    opacity: lang === 'he' ? 1 : 0.7,
+                    fontWeight: lang === 'he' ? 800 : 600,
+                  }}
                 >
                   עברית
                 </p>
