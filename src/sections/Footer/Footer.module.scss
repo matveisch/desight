@@ -58,9 +58,8 @@
       }
 
       @media (max-width: 744px) {
-       border-radius: 16px;
+        border-radius: 16px;
       }
-
 
       @media (max-width: 425px) {
         padding: 30px 20px;
@@ -98,10 +97,6 @@
           gap: 20px;
           color: $white;
           opacity: 70%;
-
-          @media (max-width: 450px) {
-            gap: 10px;
-          }
         }
       }
 
@@ -190,7 +185,7 @@
 
       @media (max-width: 744px) {
         border-radius: 16px;
-       }
+      }
 
       @media (max-width: 450px) {
         padding: 30px 20px;
