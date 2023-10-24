@@ -3,6 +3,7 @@ import '@styles/globals.scss';
 import type { Metadata } from 'next';
 import { Unbounded, Nunito } from 'next/font/google';
 import { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 const unbounded = Unbounded({
   subsets: ['latin', 'cyrillic'],
@@ -31,7 +32,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang} dir={params.lang === 'he' ? 'rtl' : 'ltr'}>
-      <body className={`${unbounded.variable} ${nunito.variable}`}>{children}</body>
+      <body className={`${unbounded.variable} ${nunito.variable}`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
