@@ -1,14 +1,15 @@
+import dynamic from 'next/dynamic';
 import Header from '@sections/Header/Header';
-import Services from '@sections/Services/Services';
-import Desighted from '@sections/Desighted/Desighted';
 import Hero from '@sections/Hero/Hero';
 import HeroImage from '@sections/HeroImage/HeroImage';
-import styles from '@styles/page.module.scss';
-import OurWork from '@sections/OurWork/OurWork';
-import CompleteSolution from '@sections/CompleteSolution/CompleteSolution';
+const Services = dynamic(() => import('@sections/Services/Services'));
+const Desighted = dynamic(() => import('@sections/Desighted/Desighted'));
+const OurWork = dynamic(() => import('@sections/OurWork/OurWork'));
+const CompleteSolution = dynamic(() => import('@sections/CompleteSolution/CompleteSolution'));
 import Footer from '@sections/Footer/Footer';
 import { getDictionary } from '@/app/[lang]/dictionaries';
 import { SiteContent } from '@/utils/types';
+import styles from '@styles/page.module.scss';
 
 export default async function Home({ params: { lang } }: { params: { lang: 'en' | 'ru' | 'he' } }) {
   const dict: SiteContent = await getDictionary(lang);
