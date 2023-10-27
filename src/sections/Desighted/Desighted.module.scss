@@ -1,15 +1,26 @@
 .main {
-  background-image: url(../../../public/images/Desighted-eyes.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-blend-mode: hard-light;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 570px;
-  border-radius: 32px;
   position: relative;
+
+  .eyesImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: hard-light;
+    border-radius: 32px;
+    height: 570px;
+    max-width: 100%;
+
+    @media (max-width: 769px) {
+      height: 328px;
+    }
+
+    @media (max-width: 630px) {
+      height: 150px;
+    }
+  }
 
   .button {
     position: absolute;
@@ -28,27 +39,21 @@
     height: fit-content;
     width: fit-content;
     z-index: 4;
+
+    @media (max-width: 769px) {
+      font-size: 26px;
+      padding: 15px 50px;
+    }
+
+    @media (max-width: 630px) {
+      font-size: 20px;
+      padding: 15px 50px;
+    }
   }
 
   div {
     position: absolute;
     border-radius: 32px;
-
     background-color: red;
-  }
-
-  @media (max-width: 769px) {
-    height: 328px;
-    .button {
-      font-size: 26px;
-      padding: 15px 50px;
-    }
-  }
-  @media (max-width: 630px) {
-    height: 150px;
-    .button {
-      font-size: 20px;
-      padding: 15px 50px;
-    }
   }
 }

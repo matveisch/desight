@@ -4,6 +4,8 @@ import styles from './Desighted.module.scss';
 import { motion } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import eyes from '@images/Desighted-eyes.jpg';
 
 export default function Desighted() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -80,6 +82,7 @@ export default function Desighted() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        <Image src={eyes} alt="eyes-cover" className={styles.eyesImage} />
         <motion.button
           animate={animation}
           transition={{ duration: 0.3, type: 'tween' }}
