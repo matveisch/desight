@@ -7,9 +7,9 @@ const dictionaries = {
 };
 
 export const getDictionary = async (locale: 'en' | 'ru' | 'he') => {
-  if (!(locale in dictionaries)) {
-    throw new Error(`Locale ${locale} not supported.`);
-  }
+  // if (!(locale in dictionaries)) {
+  //   throw new Error(`Locale ${locale} not supported.`);
+  // }
 
   try {
     return await dictionaries[locale]();
