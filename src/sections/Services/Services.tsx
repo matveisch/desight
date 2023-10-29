@@ -94,7 +94,7 @@ export default function Services({ dict, lang }: { dict: SiteContent; lang: 'en'
           <div className={styles.servicesContainer}>
             <ItemBlock service={designServices[0]} isBig />
             {designServices.slice(1).map((service, index) => (
-              <ItemBlock service={service} key={service.title + index} />
+              <ItemBlock service={service} key={`${service.title}-${index}-desServices`} />
             ))}
           </div>
         </SwiperSlide>
@@ -102,7 +102,7 @@ export default function Services({ dict, lang }: { dict: SiteContent; lang: 'en'
           <p className={styles.headDescription}>{servicesDict.dev.header}</p>
           <div className={styles.servicesContainerDev}>
             {devServices.map((service, index) => (
-              <ItemBlock service={service} key={service.title + index} />
+              <ItemBlock service={service} key={`${service.title}-${index}-devServices`} />
             ))}
           </div>
         </SwiperSlide>

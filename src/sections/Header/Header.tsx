@@ -77,7 +77,7 @@ export default function Header({ links, lang }: PropsType) {
         </div>
         <motion.nav transition={{ staggerChildren: 0.3 }} className={styles.nav}>
           {links.map((link, index) => (
-            <Link href={link.href} className={styles.link} key={`${link.title}-${index}`}>
+            <Link href={link.href} className={styles.link} key={`header-${link.title}-${index}`}>
               <motion.p variants={navLinkVariants}>{link.title}</motion.p>
             </Link>
           ))}
@@ -89,7 +89,7 @@ export default function Header({ links, lang }: PropsType) {
       <div className={styles.mobileMenuWrapper}>
         <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} lang={lang}>
           {links.map((link, index) => (
-            <li key={`${link.title}-${index}`}>
+            <li key={`mobile-header-${link.title}-${index}`}>
               <Link href={link.href}>
                 <p>{link.title}</p>
               </Link>

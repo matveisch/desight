@@ -53,6 +53,7 @@ export default function CompleteSolution({
       <div className={styles.stepsContainer}>
         {steps.map((step, index) => (
           <OneStep
+            key={`${step.header}-${index}-step`}
             num={index + 1}
             header={step.header}
             description={step.description}
@@ -66,6 +67,7 @@ export default function CompleteSolution({
         <div className={styles.innerContainer}>
           {steps.map((step, index) => (
             <OneStepMobile
+              key={`${step.header}-${index}-stepMobile`}
               num={index + 1}
               header={step.header}
               description={step.description}
