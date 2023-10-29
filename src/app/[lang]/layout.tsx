@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   description: 'Full Cycle Web Agency',
 };
 
+export async function generateMetadata(params: { lang: string }) {
+  return params.lang === 'en' ? englishMetadata : portugueseMetadata;
+}
+
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'he' }, { lang: 'ru' }];
 }
