@@ -15,7 +15,7 @@ const nunito = Nunito({
   variable: '--font-nunito',
 });
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const russianMetadata: Metadata = {
     title: 'Студия Desight: Профессиональная разработка и дизайн сайтов и веб приложений',
     description: 'Full Cycle Web Agency',
