@@ -54,9 +54,9 @@ export default function Footer({ dict, links, lang }: PropsType) {
               className={styles.swiper}
               // onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
             >
-              <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab lang={lang} />
-              <SwiperSlide>
-                <p className={styles.formTitle}>{dict.footer.emailMessage}</p>
+              {/* <TabSwitcher tabsNames={contact} currentTabIndex={0} darkTab lang={lang} /> */}
+              <SwiperSlide className={styles.swiperSlide}>
+                {/* <p className={styles.formTitle}>{dict.footer.emailMessage}</p> */}
                 <EmailForm
                   dict={dict}
                   setHasNotification={setHasNotification}

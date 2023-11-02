@@ -69,12 +69,12 @@ export default function Services({ dict, lang }: { dict: SiteContent; lang: 'en'
   ];
   const servicesTabs: TabType[] = [
     {
-      title: servicesDict.tabs.design,
-      icon: designIcon,
-    },
-    {
       title: servicesDict.tabs.dev,
       icon: devIcon,
+    },
+    {
+      title: servicesDict.tabs.design,
+      icon: designIcon,
     },
   ];
 
@@ -89,20 +89,21 @@ export default function Services({ dict, lang }: { dict: SiteContent; lang: 'en'
         onSlideChange={(swiper) => setCurrentTab(swiper.activeIndex)}
       >
         <TabSwitcher tabsNames={servicesTabs} currentTabIndex={currentTab} lang={lang} />
+
+        <SwiperSlide>
+          <p className={styles.headDescription}>{servicesDict.dev.header}</p>
+          <div className={styles.servicesContainerDev}>
+            {devServices.map((service, index) => (
+              <ItemBlock service={service} key={`${service.title}-${index}-devServices`} />
+            ))}
+          </div>
+        </SwiperSlide>
         <SwiperSlide>
           <p className={styles.headDescription}>{servicesDict.design.header}</p>
           <div className={styles.servicesContainer}>
             <ItemBlock service={designServices[0]} isBig />
             {designServices.slice(1).map((service, index) => (
               <ItemBlock service={service} key={`${service.title}-${index}-desServices`} />
-            ))}
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <p className={styles.headDescription}>{servicesDict.dev.header}</p>
-          <div className={styles.servicesContainerDev}>
-            {devServices.map((service, index) => (
-              <ItemBlock service={service} key={`${service.title}-${index}-devServices`} />
             ))}
           </div>
         </SwiperSlide>

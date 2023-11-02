@@ -23,23 +23,24 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
 
   const workTabs: TabType[] = [
     {
-      title: 'Libira',
+      title: 'Radar Digitaly',
     },
     {
       title: 'BeeTrade',
     },
     {
-      title: 'Radar Digitaly',
+      title: 'Libira',
     },
   ];
   const workData: WorkDataType[] = [
     {
-      title: 'Libira',
+      title: 'Radar Digitaly',
       icon: beetrade,
       link: '',
-      blockDescription: dict.ourWork.workData.libira.blockDescription,
-      description: dict.ourWork.workData.libira.description,
+      blockDescription: dict.ourWork.workData.radarDigitaly.blockDescription,
+      description: dict.ourWork.workData.radarDigitaly.description,
     },
+
     {
       title: 'BeeTrade',
       icon: beetrade,
@@ -48,11 +49,11 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
       description: dict.ourWork.workData.beeTrade.description,
     },
     {
-      title: 'Radar Digitaly',
+      title: 'Libira',
       icon: beetrade,
       link: '',
-      blockDescription: dict.ourWork.workData.radarDigitaly.blockDescription,
-      description: dict.ourWork.workData.radarDigitaly.description,
+      blockDescription: dict.ourWork.workData.libira.blockDescription,
+      description: dict.ourWork.workData.libira.description,
     },
   ];
 

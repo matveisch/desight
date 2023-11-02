@@ -2,7 +2,7 @@
   "header": {
     "services": "Services",
     "projects": "Projects",
-    "about": "About Us",
+    "about": "Complete Solution",
     "contacts": "Contacts"
   },
   "hero": {
@@ -99,10 +99,10 @@
     }
   },
   "footer": {
-    "getResponse": "Write Us",
+    "getResponse": "Let's get in touch",
     "emailMessage": "Email Message",
     "clearSight": "Clear Sight. Bright Future",
-    "email": "Email",
-    "message": "Message"
+    "email": "Your email for response",
+    "message": "What service are you interested in?"
   }
 }

@@ -53,6 +53,7 @@ function EmailForm({ dict, setHasNotification, setErrorMessage, setBeenSent }: P
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <label className={styles.label}>Email</label>
       <input
         type="email"
         className={styles.input}
@@ -60,6 +61,7 @@ function EmailForm({ dict, setHasNotification, setErrorMessage, setBeenSent }: P
         required
         {...register('email')}
       />
+      <label className={styles.label}>Message</label>
       <textarea
         placeholder={dict.footer.message}
         className={styles.textarea}

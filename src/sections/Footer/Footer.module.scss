@@ -24,6 +24,9 @@
       width: calc(50vw - 33px);
       overflow: hidden;
       border-radius: 32px;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
 
       .title {
         color: $white;
@@ -38,7 +41,7 @@
         }
 
         .formTitle {
-          text-align: center;
+          text-align: left;
           color: $white;
           margin-bottom: 15px;
         }
@@ -46,6 +49,7 @@
 
       .swiper {
         width: 100%;
+
         display: flex;
         flex-direction: column-reverse;
         gap: 15px;

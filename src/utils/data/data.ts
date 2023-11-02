@@ -41,25 +41,25 @@ export const social = [
     name: 'Telegram',
     srcWhite: require('@images/tg-w.svg').default,
     srcBlue: require('@images/tg.svg').default,
-    link: '',
+    link: 'https://t.me/lidkovsky',
   },
   {
     name: 'Facebook',
     srcWhite: require('@images/fb-w.svg').default,
     srcBlue: require('@images/fb.svg').default,
-    link: '',
+    link: 'https://instagram.com/desight_agency',
   },
-  {
-    name: 'Behance',
-    srcWhite: require('@images/behance-w.svg').default,
-    srcBlue: require('@images/behance.svg').default,
-    link: '',
-  },
+  // {
+  //   name: 'Behance',
+  //   srcWhite: require('@images/behance-w.svg').default,
+  //   srcBlue: require('@images/behance.svg').default,
+  //   link: '',
+  // },
   {
     name: 'Instagram',
     srcWhite: require('@images/insta-w.svg').default,
     srcBlue: require('@images/insta.svg').default,
-    link: '',
+    link: 'https://instagram.com/desight_agency',
   },
 ];
 

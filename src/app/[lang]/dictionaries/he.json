@@ -2,8 +2,8 @@
   "header": {
     "services": "שירותים",
     "projects": "פרוייקטים",
-    "about": "אודות",
-    "contacts": "אנשי קשר"
+    "about": "פתרון מלא",
+    "contacts": "צור קשר"
   },
   "hero": {
     "webAgency": "סטודיו שלם לאינטרנט",
@@ -103,6 +103,6 @@
     "emailMessage": "הודעת דואר",
     "clearSight": "ראיה ברורה. עתיד בהיר",
     "email": "דואר",
-    "message": "הודעה"
+    "message": "איזה שירות מעניין לך?"
   }
 }
