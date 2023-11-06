@@ -15,7 +15,7 @@ export default function WorkDescription(props: PropsType) {
     <div className={styles.workDescription}>
       <div className={styles.head}>
         <div className={styles.headData}>
-          <Image src={icon} alt={'icon'} />
+          <Image src={icon} alt={'icon'} height={100} />
           <h5>{title}</h5>
         </div>
         <div className={styles.headDataMobile}>

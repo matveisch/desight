@@ -7,7 +7,9 @@ import { useState } from 'react';
 import { TabType } from '@/utils/data/data';
 import WorkDescription from '@components/WorkDescription/WorkDescription';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import beetrade from '@images/beetrade-icon.svg';
+import beetrade from '@images/beetradelogo.svg';
+import libira from '@images/libiraLogo.svg';
+import radarDig from '@images/radarLogo.svg';
 import { SiteContent } from '@/utils/types';
 
 type WorkDataType = {
@@ -35,7 +37,7 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
   const workData: WorkDataType[] = [
     {
       title: 'Radar Digitaly',
-      icon: beetrade,
+      icon: radarDig,
       link: '',
       blockDescription: dict.ourWork.workData.radarDigitaly.blockDescription,
       description: dict.ourWork.workData.radarDigitaly.description,
@@ -50,7 +52,7 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
     },
     {
       title: 'Libira',
-      icon: beetrade,
+      icon: libira,
       link: '',
       blockDescription: dict.ourWork.workData.libira.blockDescription,
       description: dict.ourWork.workData.libira.description,

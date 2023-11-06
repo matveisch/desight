@@ -51,6 +51,7 @@ export default function RootLayout({
   children: ReactNode;
   params: { lang: string };
 }) {
+  console.log(params + ' PARAM');
   return (
     <html lang={params.lang} dir={params.lang === 'he' ? 'rtl' : 'ltr'}>
       <body className={`${unbounded.variable} ${nunito.variable}`}>
