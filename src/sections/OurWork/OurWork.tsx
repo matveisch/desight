@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { TabType } from '@/utils/data/data';
 import WorkDescription from '@components/WorkDescription/WorkDescription';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import beetrade from '@images/beetradelogo.svg';
+import beetrade from '@images/beetradeLogo.svg';
 import libira from '@images/libiraLogo.svg';
 import radarDig from '@images/radarLogo.svg';
 import { SiteContent } from '@/utils/types';
