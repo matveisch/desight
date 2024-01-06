@@ -38,7 +38,7 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
     {
       title: 'Radar Digitaly',
       icon: radarDig,
-      link: '',
+      link: 'https://www.radardigitaly.com/',
       blockDescription: dict.ourWork.workData.radarDigitaly.blockDescription,
       description: dict.ourWork.workData.radarDigitaly.description,
     },
@@ -46,7 +46,7 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
     {
       title: 'BeeTrade',
       icon: beetrade,
-      link: '',
+      link: 'https://book.beetrade.co.il/en',
       blockDescription: dict.ourWork.workData.beeTrade.blockDescription,
       description: dict.ourWork.workData.beeTrade.description,
     },

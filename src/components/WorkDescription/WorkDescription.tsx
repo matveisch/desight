@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './WorkDescription.module.scss';
 import arrow from '@images/arrow-link.svg';
+import Link from 'next/link';
 
 type PropsType = {
   icon: string;
@@ -10,7 +11,7 @@ type PropsType = {
 };
 
 export default function WorkDescription(props: PropsType) {
-  const { icon, description, title } = props;
+  const { icon, description, title, link } = props;
   return (
     <div className={styles.workDescription}>
       <div className={styles.head}>
@@ -21,14 +22,17 @@ export default function WorkDescription(props: PropsType) {
         <div className={styles.headDataMobile}>
           <Image src={icon} alt={'icon'} className={styles.icon} />
           <h5>{title}</h5>
-          <Image src={arrow} alt={'arrow-link'} className={styles.arrow} />
+          {link && (
+            <Link href={link} target="_blank">
+              <Image src={arrow} alt={'arrow-link'} className={styles.arrow} />
+            </Link>
+          )}
         </div>
-        <Image
-          src={arrow}
-          alt={'arrow-link'}
-          className={styles.arrow}
-          style={{ visibility: 'hidden' }} // todo: unhide later
-        />
+        {link && (
+          <Link href={link} target="_blank">
+            <Image src={arrow} alt={'arrow-link'} className={styles.arrow} />
+          </Link>
+        )}
       </div>
       <p className={styles.description}>{description}</p>
     </div>
