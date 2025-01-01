@@ -1,16 +1,16 @@
 'use client';
 
-import WorkGrid from '@components/WorkGrid/WorkGrid';
-import styles from './OurWork.module.scss';
-import TabSwitcher from '@components/TabSwitcher/TabSwitcher';
-import { useState } from 'react';
 import { TabType } from '@/utils/data/data';
+import { SiteContent } from '@/utils/types';
+import TabSwitcher from '@components/TabSwitcher/TabSwitcher';
 import WorkDescription from '@components/WorkDescription/WorkDescription';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import WorkGrid from '@components/WorkGrid/WorkGrid';
 import beetrade from '@images/beetradeLogo.svg';
 import libira from '@images/libiraLogo.svg';
 import radarDig from '@images/radarLogo.svg';
-import { SiteContent } from '@/utils/types';
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import styles from './OurWork.module.scss';
 
 type WorkDataType = {
   title: string;
@@ -38,7 +38,7 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
     {
       title: 'Radar Digitaly',
       icon: radarDig,
-      link: 'https://www.radardigitaly.com/',
+      link: '',
       blockDescription: dict.ourWork.workData.radarDigitaly.blockDescription,
       description: dict.ourWork.workData.radarDigitaly.description,
     },
@@ -46,7 +46,7 @@ export default function OurWork({ dict, lang }: { dict: SiteContent; lang: 'en' 
     {
       title: 'BeeTrade',
       icon: beetrade,
-      link: 'https://book.beetrade.co.il/en',
+      link: '',
       blockDescription: dict.ourWork.workData.beeTrade.blockDescription,
       description: dict.ourWork.workData.beeTrade.description,
     },
