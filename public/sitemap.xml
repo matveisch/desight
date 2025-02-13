@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.desight.co/en</loc>
+    <loc>https://www.desight.co</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.desight.co/en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.desight.co"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.desight.co/ru"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.desight.co/he"/>
   </url>
@@ -15,7 +15,7 @@
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.desight.co/en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.desight.co"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.desight.co/ru"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.desight.co/he"/>
   </url>
@@ -24,7 +24,7 @@
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.desight.co/en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.desight.co"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.desight.co/ru"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.desight.co/he"/>
   </url>

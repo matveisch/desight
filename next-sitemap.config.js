@@ -4,7 +4,7 @@ module.exports = {
   generateRobotsTxt: true,
   alternateRefs: [
     {
-      href: 'https://www.desight.co/en',
+      href: 'https://www.desight.co',
       hreflang: 'en',
     },
     {
