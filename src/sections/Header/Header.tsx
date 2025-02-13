@@ -1,14 +1,14 @@
 'use client';
 
-import styles from './Header.module.scss';
-import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import LangSwitch from '@/components/LangSwitch/LangSwitch';
+import MobileMenu from '@/components/MobileMenu/MobileMenu';
+import burger from '@images/burger.svg';
+import logo from '@images/logo.svg';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '@images/logo.svg';
-import burger from '@images/burger.svg';
-import { motion } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import styles from './Header.module.scss';
 
 const navVariants = {
   inView: {

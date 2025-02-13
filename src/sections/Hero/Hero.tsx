@@ -1,12 +1,10 @@
 'use client';
 
-import styles from './Hero.module.scss';
-import Social from '@/components/Social/Social';
-import { useRef } from 'react';
-import { social } from '@/utils/data/data';
-import { motion, useInView } from 'framer-motion';
-import { HeroAnimation } from '@components/HeroAnimation/HeroAnimaton';
 import { SiteContent } from '@/utils/types';
+import { HeroAnimation } from '@components/HeroAnimation/HeroAnimaton';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import styles from './Hero.module.scss';
 
 const titleAnimation = {
   inView: { x: 0, scale: 1, opacity: 1, filter: 'blur(0px)' },
@@ -87,7 +85,7 @@ export default function Hero(props: { dict: SiteContent; lang: 'ru' | 'en' | 'he
               </div>
             </div>
           </motion.div>
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, filter: 'blur(16px)' }}
             animate={
               isInView ? { opacity: 1, filter: 'blur(0px)' } : { opacity: 0, filter: 'blur(16px)' }
@@ -105,7 +103,7 @@ export default function Hero(props: { dict: SiteContent; lang: 'ru' | 'en' | 'he
                 link={icon.link}
               />
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
         <div className={styles.animation}>
           <motion.div

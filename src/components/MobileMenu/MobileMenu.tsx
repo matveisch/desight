@@ -1,9 +1,9 @@
-import styles from './MobileMenu.module.scss';
+import translateIcon from '@images/translate-icon.svg';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import translateIcon from '@images/translate-icon.svg';
-import { ReactNode, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { ReactNode, useEffect, useRef } from 'react';
+import styles from './MobileMenu.module.scss';
 
 type Props = {
   isOpen: boolean;
@@ -43,7 +43,7 @@ export default function MobileMenu({ isOpen, setIsOpen, children, lang }: Props)
         <div>
           <ul>
             <li>
-              <Link href="/en">
+              <Link href="/">
                 <p
                   style={{
                     opacity: lang === 'en' ? 1 : 0.7,

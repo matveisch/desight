@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import styles from './LangSwitch.module.scss';
 import languageIcon from '@images/translate-icon.svg';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import styles from './LangSwitch.module.scss';
 
 export default function LangSwitch({ lang }: { lang: 'en' | 'ru' | 'he' }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -52,7 +52,7 @@ export default function LangSwitch({ lang }: { lang: 'en' | 'ru' | 'he' }) {
       </div>
       <ul onClick={() => setIsOpen(false)}>
         <li>
-          <Link href="/en">
+          <Link href="/">
             <p style={{ opacity: lang == 'en' ? 1 : 0.7, fontWeight: lang == 'en' ? 800 : 600 }}>
               English
             </p>

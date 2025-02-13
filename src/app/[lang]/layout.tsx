@@ -1,10 +1,10 @@
-import 'normalize.css';
 import '@styles/globals.scss';
-import type { Metadata } from 'next';
-import { Unbounded, Nunito } from 'next/font/google';
-import { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import type { Metadata } from 'next';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
+import { Nunito, Unbounded } from 'next/font/google';
+import 'normalize.css';
+import { ReactNode } from 'react';
 
 const unbounded = Unbounded({
   subsets: ['latin', 'cyrillic'],
@@ -51,7 +51,6 @@ export default function RootLayout({
   children: ReactNode;
   params: { lang: string };
 }) {
-  console.log(params + ' PARAM');
   return (
     <html lang={params.lang} dir={params.lang === 'he' ? 'rtl' : 'ltr'}>
       <body className={`${unbounded.variable} ${nunito.variable}`}>
