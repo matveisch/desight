@@ -1,10 +1,10 @@
-import styles from './EmailForm.module.scss';
+import { zodResolver } from '@hookform/resolvers/zod';
 import send from '@images/send-button.svg';
 import Image from 'next/image';
-import { z } from 'zod';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Dispatch, SetStateAction } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { z } from 'zod';
+import styles from './EmailForm.module.scss';
 
 interface PropsType {
   dict: any;
@@ -17,6 +17,7 @@ function EmailForm({ dict, setHasNotification, setErrorMessage, setBeenSent }: P
   const SignUpSchema = z.object({
     email: z.string().email(),
     message: z.string().max(100),
+    website: z.string().optional(),
   });
   type SignUpSchemaType = z.infer<typeof SignUpSchema>;
   const { register, handleSubmit, reset } = useForm<SignUpSchemaType>({
@@ -25,6 +26,9 @@ function EmailForm({ dict, setHasNotification, setErrorMessage, setBeenSent }: P
   const onSubmit: SubmitHandler<SignUpSchemaType> = (data) => sendEmail(data);
 
   async function sendEmail(data: SignUpSchemaType) {
+    if (data.website) {
+      return;
+    }
     try {
       const res = await fetch('/api/sendEmail', {
         method: 'POST',
@@ -53,6 +57,14 @@ function EmailForm({ dict, setHasNotification, setErrorMessage, setBeenSent }: P
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <input
+        type="text"
+        id="website"
+        style={{visibility: 'hidden'}}
+        autoComplete="off"
+        tabIndex={-1}
+        {...register("website")}
+      />
       <label className={styles.label}>Email</label>
       <input
         type="email"
